@@ -1,1 +1,0 @@
-file.edit(fname)

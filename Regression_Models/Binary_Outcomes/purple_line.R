@@ -1,1 +1,0 @@
-abline(v=23, lwd=5, col="purple")

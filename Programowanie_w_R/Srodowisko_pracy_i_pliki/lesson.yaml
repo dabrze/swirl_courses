@@ -1,127 +1,127 @@
 - Class: meta
   Course: Programowanie w R
-  Lesson: Œrodowisko pracy i pliki
-  Author: Dariusz, Brzeziñski, David Kane
+  Lesson: Åšrodowisko pracy i pliki
+  Author: Dariusz, BrzeziÅ„ski, David Kane
   Type: Standard
   Organization: Poznan University of Technology
   Version: 1.0.1
 
 - Class: text
-  Output: "W ramach tej lekcji dowiesz siê jak poruszaæ siê po œrodowisku 
-    uruchomieniowym R i poznasz jego powi¹zanie z systemem plików na komputerze."
+  Output: "W ramach tej lekcji dowiesz siÄ™ jak poruszaÄ‡ siÄ™ po Å›rodowisku 
+    uruchomieniowym R i poznasz jego powiÄ…zanie z systemem plikÃ³w na komputerze."
 
 - Class: text
-  Output: "Poniewa¿ ró¿ne systemy operacyjne maj¹ ró¿ne podejœcia do takich rzeczy
-    jak œcie¿ki do plików, wyniki komend wykonywanych w ramach tej lekcji mog¹
-    siê ró¿niæ w zale¿noœci od systemu operacyjnego."
+  Output: "PoniewaÅ¼ rÃ³Å¼ne systemy operacyjne majÄ… rÃ³Å¼ne podejÅ›cia do takich rzeczy
+    jak Å›cieÅ¼ki do plikÃ³w, wyniki komend wykonywanych w ramach tej lekcji mogÄ…
+    siÄ™ rÃ³Å¼niÄ‡ w zaleÅ¼noÅ›ci od systemu operacyjnego."
 
 - Class: text
-  Output: Niemniej jednak R dostarcza wspólny interfejs do pracy z plikami i dziêki
-    temu, komendy ktore poznacie w ramach tej lekcji bêda dzia³a³y na wszystkich
+  Output: Niemniej jednak R dostarcza wspÃ³lny interfejs do pracy z plikami i dziÄ™ki
+    temu, komendy ktore poznacie w ramach tej lekcji bÄ™da dziaÅ‚aÅ‚y na wszystkich
     systemach operacyjnych.
 
 - Class: text
   Output: Zacznijmy od razu od podstawowych komend!
 
 - Class: cmd_question
-  Output: Za pomoc¹ komendy getwd() okreœl aktualn¹ œcie¿kê do katalogu roboczego tej sesji R.
+  Output: Za pomocÄ… komendy getwd() okreÅ›l aktualnÄ… Å›cieÅ¼kÄ™ do katalogu roboczego tej sesji R.
   CorrectAnswer: getwd()
   AnswerTests: omnitest(correctExpr='getwd()')
-  Hint: Wpisz getwd(), aby okresliæ scie¿kê katalogu roboczego.
+  Hint: Wpisz getwd(), aby okresliÄ‡ scieÅ¼kÄ™ katalogu roboczego.
 
 - Class: cmd_question
-  Output: Wypisz wszystkie obiekty w aktualnym œrodowisku za pomoc¹ ls().
+  Output: Wypisz wszystkie obiekty w aktualnym Å›rodowisku za pomocÄ… ls().
   CorrectAnswer: ls()
   AnswerTests: omnitest(correctExpr='ls()')
-  Hint: Wpisz ls(), aby zaobaczyæ wszystkie obiekty w œrodowisku roboczym.
+  Hint: Wpisz ls(), aby zaobaczyÄ‡ wszystkie obiekty w Å›rodowisku roboczym.
 
 - Class: text
-  Output: Niektóre komendy w R s¹ takie same jak ich odpowiedniki na systemach Unix.
-    Ci co pamiêtaj¹ komendy Unixowe s¹ trochê do przodu ;)
+  Output: NiektÃ³re komendy w R sÄ… takie same jak ich odpowiedniki na systemach Unix.
+    Ci co pamiÄ™tajÄ… komendy Unixowe sÄ… trochÄ™ do przodu ;)
 
 - Class: cmd_question
   Output: Przypisz numer na koszulce Michaela Jordana do zmiennej mj.
   CorrectAnswer: mj <- 9
   AnswerTests: omnitest(correctExpr='mj <- 23')
-  Hint: Wpisz mj <- 23, aby przypisaæ 23 to mj.
+  Hint: Wpisz mj <- 23, aby przypisaÄ‡ 23 to mj.
 
 - Class: cmd_question
-  Output: Obejrzyj teraz obiekty dostêpne w œrodowisku roboczym za pomoc¹ ls().
+  Output: Obejrzyj teraz obiekty dostÄ™pne w Å›rodowisku roboczym za pomocÄ… ls().
   CorrectAnswer: ls()
   AnswerTests: omnitest(correctExpr='ls()')
-  Hint: Wpisz ls(), aby zaobaczyæ obiekty w œrodowisku roboczym..
+  Hint: Wpisz ls(), aby zaobaczyÄ‡ obiekty w Å›rodowisku roboczym..
 
 - Class: cmd_question
-  Output: Wypisz wszystkie pliki znajduj¹ce siê w aktualnym katalogu roboczym
-    za pomoc¹ komendy list.files() lub dir().
+  Output: Wypisz wszystkie pliki znajdujÄ…ce siÄ™ w aktualnym katalogu roboczym
+    za pomocÄ… komendy list.files() lub dir().
   CorrectAnswer: list.files()
   AnswerTests: any_of_exprs('list.files()', 'dir()')
-  Hint: Wpisz list.files(), aby przejrzeæ listê plików w katalogu roboczym.
+  Hint: Wpisz list.files(), aby przejrzeÄ‡ listÄ™ plikÃ³w w katalogu roboczym.
 
 - Class: cmd_question
-  Output: W trakcie tej lekcji (jak i nastepnych) powinieneœ zagl¹daæ do plików 
-    pomocy kazdej nowo poznanej funkcji. SprawdŸ plik pomocy dla funkcji
-    list.files za pomoc¹ komendy ?list.files.
+  Output: W trakcie tej lekcji (jak i nastepnych) powinieneÅ› zaglÄ…daÄ‡ do plikÃ³w 
+    pomocy kazdej nowo poznanej funkcji. SprawdÅº plik pomocy dla funkcji
+    list.files za pomocÄ… komendy ?list.files.
   CorrectAnswer: ?list.files
   AnswerTests: any_of_exprs('?list.files', '?dir', 'help("list.files")', 'help("dir")')
   Hint: Wpisz ?list.files, aby zobaczyc plik pomocy.
 
 - Class: text
-  Output: Jedn¹ z najprzydatniejszych czêœci ka¿dego pliku pomocy w R jest sekcja
-    See also. Przeczytaj tê sekcjê dla funkcji list.files. Niektóre z wypisanych
-    tam funkcji zostan¹ wykorzystane w dalszej czêœci lekcji.
+  Output: JednÄ… z najprzydatniejszych czÄ™Å›ci kaÅ¼dego pliku pomocy w R jest sekcja
+    See also. Przeczytaj tÄ™ sekcjÄ™ dla funkcji list.files. NiektÃ³re z wypisanych
+    tam funkcji zostanÄ… wykorzystane w dalszej czÄ™Å›ci lekcji.
 
 - Class: text
-  Output: Wywo³uj¹c funkcjê args() na nazwie dowolnej funkcji mo¿na w ³atwy 
-    sposób sprawdziæ jakie argumenty przyjmuje.
+  Output: WywoÅ‚ujÄ…c funkcjÄ™ args() na nazwie dowolnej funkcji moÅ¼na w Å‚atwy 
+    sposÃ³b sprawdziÄ‡ jakie argumenty przyjmuje.
 
 
 - Class: cmd_question
-  Output: Skorzystaj z funkcji args(), aby okreœliæ argumenty list.files().
+  Output: Skorzystaj z funkcji args(), aby okreÅ›liÄ‡ argumenty list.files().
   CorrectAnswer: args(list.files)
   AnswerTests: omnitest(correctExpr='args(list.files)')
-  Hint: Wpisz args(list.files), aby zobacyzæ argumenty list.files.
+  Hint: Wpisz args(list.files), aby zobacyzÄ‡ argumenty list.files.
 
 
 - Class: cmd_question
-  Output: Przypisz œcie¿kê aktualnego katalogu roboczego do zmiennej "old.dir".
+  Output: Przypisz Å›cieÅ¼kÄ™ aktualnego katalogu roboczego do zmiennej "old.dir".
   CorrectAnswer: old.dir <- getwd()
   AnswerTests: omnitest(correctExpr='old.dir <- getwd()')
-  Hint: Wpisz old.dir <- getwd(), aby przypisaæ œcie¿kê aktualnego katalogu 
+  Hint: Wpisz old.dir <- getwd(), aby przypisaÄ‡ Å›cieÅ¼kÄ™ aktualnego katalogu 
     roboczego zmiennej "old.dir".
 
 - Class: text
-  Output: Wykorzystamy old.dir pod koniec lekcji, aby wróciæ do miejsca z którego
-    zaczêliœmy.  like getwd() have the 
+  Output: Wykorzystamy old.dir pod koniec lekcji, aby wrÃ³ciÄ‡ do miejsca z ktÃ³rego
+    zaczÄ™liÅ›my.  like getwd() have the 
     useful property that they return the answer to the question as a result of 
     the function.
 
 - Class: cmd_question
-  Output: U¿yj polecenia dir.create() aby stworzyæ folder "testdir" w bie¿acym katalogu.
+  Output: UÅ¼yj polecenia dir.create() aby stworzyÄ‡ folder "testdir" w bieÅ¼acym katalogu.
   CorrectAnswer: dir.create("testdir")
   AnswerTests: omnitest(correctExpr='dir.create("testdir")')
-  Hint: Wpisz dir.create("testdir") aby stworzyæ folder "testdir" w bie¿¹cym katalogu roboczym.
+  Hint: Wpisz dir.create("testdir") aby stworzyÄ‡ folder "testdir" w bieÅ¼Ä…cym katalogu roboczym.
 
 - Class: text
-  Output: Pozosta³e æwiczenia wykonamy w tym katalogu a potem go usuniemy.
+  Output: PozostaÅ‚e Ä‡wiczenia wykonamy w tym katalogu a potem go usuniemy.
 
 - Class: cmd_question
-  Output: Ustaw katalog roboczy na "testdir" za pomoc¹ polecenia setwd().
+  Output: Ustaw katalog roboczy na "testdir" za pomocÄ… polecenia setwd().
   CorrectAnswer: setwd("testdir")
   AnswerTests: any_of_exprs('setwd("testdir")', 'setwd("testdir/")')
-  Hint: U¿yj setwd("testdir") , aby ustawiæ "testdir" jako katalog roboczy.
+  Hint: UÅ¼yj setwd("testdir") , aby ustawiÄ‡ "testdir" jako katalog roboczy.
 
 - Class: text
-  Output: Z regu³y jako katalog roboczy ustawia siê jakiœ katalog zwi¹zany z
+  Output: Z reguÅ‚y jako katalog roboczy ustawia siÄ™ jakiÅ› katalog zwiÄ…zany z
     aktualnie wykonywanym projektem. W RStudio katalog roboczy projektu czy
-    pakietu jest ustawiany na folder gdzie znajduje siê plik .rproj.
+    pakietu jest ustawiany na folder gdzie znajduje siÄ™ plik .rproj.
 
 - Class: cmd_question
-  Output: Stwórz plik "mytest.R" za pomoca funkcji file.create().
+  Output: StwÃ³rz plik "mytest.R" za pomoca funkcji file.create().
   CorrectAnswer: file.create("mytest.R")
   AnswerTests: omnitest(correctExpr='file.create("mytest.R")')
-  Hint: file.create("mytest.R") za³atwi sprawê. Pamiêtaj, aby w razie w¹tpliwoœci
-    zawsze zagl¹daæ do pomocy, np. ?file.create.
+  Hint: file.create("mytest.R") zaÅ‚atwi sprawÄ™. PamiÄ™taj, aby w razie wÄ…tpliwoÅ›ci
+    zawsze zaglÄ…daÄ‡ do pomocy, np. ?file.create.
 
 - Class: cmd_question
   Output: "This should be the only file in this newly created directory. Let's
@@ -131,90 +131,90 @@
   Hint: list.files() shows that the directory only contains mytest.R.
 
 - Class: cmd_question
-  Output: SprawdŸ czy plik "mytest.R" istnieje w katalogu roboczym za pomoc¹ funkcji
+  Output: SprawdÅº czy plik "mytest.R" istnieje w katalogu roboczym za pomocÄ… funkcji
     file.exists().
   CorrectAnswer: file.exists("mytest.R")
   AnswerTests: omnitest(correctExpr='file.exists("mytest.R")')
-  Hint: Wpisz file.exists("mytest.R"), aby sprawdziæ czy plik wystepuje.
+  Hint: Wpisz file.exists("mytest.R"), aby sprawdziÄ‡ czy plik wystepuje.
 
 - Class: text
-  Output: Funkcje typu file.exists() wydaj¹ siê ma³o interesuj¹ce przy korzystaniu z R
-    interaktywnie w konsoli, ale w skryptach, w pêtlach, w automatycznych raportach
-    moga okazaæ siê bardzo przydatne.
+  Output: Funkcje typu file.exists() wydajÄ… siÄ™ maÅ‚o interesujÄ…ce przy korzystaniu z R
+    interaktywnie w konsoli, ale w skryptach, w pÄ™tlach, w automatycznych raportach
+    moga okazaÄ‡ siÄ™ bardzo przydatne.
 
 - Class: cmd_question
-  Output: SprawdŸ informacje o pliku "mytest.R" za pomoc¹ file.info().
+  Output: SprawdÅº informacje o pliku "mytest.R" za pomocÄ… file.info().
   CorrectAnswer: file.info("mytest.R")
   AnswerTests: omnitest(correctExpr='file.info("mytest.R")')
   Hint: file.info("mytest.R") ;)
 
 - Class: text
-  Output: Mo¿esz wykorzystaæ operator $ --- np. file.info("mytest.R")$mode --- 
-    aby wyci¹gn¹æ konkretny fragment zestawienia.
+  Output: MoÅ¼esz wykorzystaÄ‡ operator $ --- np. file.info("mytest.R")$mode --- 
+    aby wyciÄ…gnÄ…Ä‡ konkretny fragment zestawienia.
 
 - Class: cmd_question
-  Output: Zmieñ nazwê pliku "mytest.R" na "mytest2.R" wykorzystuj¹c do tego 
+  Output: ZmieÅ„ nazwÄ™ pliku "mytest.R" na "mytest2.R" wykorzystujÄ…c do tego 
     file.rename().
   CorrectAnswer: file.rename("mytest.R", "mytest2.R")
   AnswerTests: any_of_exprs('file.rename("mytest.R", "mytest2.R")', 'file.rename(from = "mytest.R", to = "mytest2.R")')
-  Hint: file.rename("mytest.R", "mytest2.R") to poprawna odpowiedŸ. W razie czego, 
-    oprócz plików pomocy, jest te¿ zawsze Google, StackOverflow i takie tam.
-    Polecam ¯anet Kaleta.
+  Hint: file.rename("mytest.R", "mytest2.R") to poprawna odpowiedÅº. W razie czego, 
+    oprÃ³cz plikÃ³w pomocy, jest teÅ¼ zawsze Google, StackOverflow i takie tam.
+    Polecam Å»anet Kaleta.
 
 - Class: text
-  Output: "Móg³byœ teraz spróbowaæ usun¹æ plik mytest.R za pomoc¹ 
-    file.remove('mytest.R'), ale to nie zadzia³a --- ju¿ nie istnieje, bo zmieniliœmy
-    jego nazwê."
+  Output: "MÃ³gÅ‚byÅ› teraz sprÃ³bowaÄ‡ usunÄ…Ä‡ plik mytest.R za pomocÄ… 
+    file.remove('mytest.R'), ale to nie zadziaÅ‚a --- juÅ¼ nie istnieje, bo zmieniliÅ›my
+    jego nazwÄ™."
 
 - Class: cmd_question
-  Output: Zrób kopiê "mytest2.R" o nazwie "mytest3.R" za pomoc¹ file.copy().
+  Output: ZrÃ³b kopiÄ™ "mytest2.R" o nazwie "mytest3.R" za pomocÄ… file.copy().
   CorrectAnswer: file.copy("mytest2.R", "mytest3.R")
   AnswerTests: any_of_exprs('file.copy("mytest2.R", "mytest3.R")', 'file.copy(from = "mytest2.R", to = "mytest3.R")')
   Hint: file.copy("mytest2.R", "mytest3.R")...
 
 - Class: cmd_question
-  Output: SprawdŸ œcie¿kê wzglêdn¹ do "mytest3.R" za pomoc¹ file.path().
+  Output: SprawdÅº Å›cieÅ¼kÄ™ wzglÄ™dnÄ… do "mytest3.R" za pomocÄ… file.path().
   CorrectAnswer: file.path("mytest3.R")
   AnswerTests: omnitest(correctExpr='file.path("mytest3.R")')
-  Hint: file.path("mytest3.R") powinno zadzia³aæ.
+  Hint: file.path("mytest3.R") powinno zadziaÅ‚aÄ‡.
 
 - Class: cmd_question
-  Output: "Mo¿esz wykorzystaæ file.path do stworzenia œcie¿ek niezale¿nych od 
-    systemu operacyjnego na którym dzia³a R. Przeka¿ 'folder1' i 'folder2' jako
-    argumenty file.path, by stworzyæ tak¹ œcie¿kê."
+  Output: "MoÅ¼esz wykorzystaÄ‡ file.path do stworzenia Å›cieÅ¼ek niezaleÅ¼nych od 
+    systemu operacyjnego na ktÃ³rym dziaÅ‚a R. PrzekaÅ¼ 'folder1' i 'folder2' jako
+    argumenty file.path, by stworzyÄ‡ takÄ… Å›cieÅ¼kÄ™."
   CorrectAnswer: file.path("folder1", "folder2")
   AnswerTests: omnitest(correctExpr='file.path("folder1", "folder2")')
-  Hint: file.path("folder1", "folder2") zadzia³a.
+  Hint: file.path("folder1", "folder2") zadziaÅ‚a.
 
 - Class: cmd_question
-  Output: "Przejrzyj dokumentacje polecenia dir.create. Zwróæ uwagê na parametr
-    'recursive'. Aby stworzyæ zagnie¿d¿one foldery 'recursive' musi byc ustawione 
+  Output: "Przejrzyj dokumentacje polecenia dir.create. ZwrÃ³Ä‡ uwagÄ™ na parametr
+    'recursive'. Aby stworzyÄ‡ zagnieÅ¼dÅ¼one foldery 'recursive' musi byc ustawione 
     na TRUE."
   CorrectAnswer: ?dir.create
   AnswerTests: omnitest(correctExpr='?dir.create')
-  Hint: ?dir.create poka¿e dokumentacjê.
+  Hint: ?dir.create pokaÅ¼e dokumentacjÄ™.
 
 - Class: cmd_question
-  Output: W bie¿¹cym katalogu roboczym stwórz folder "testdir2" i podfolder
-    "testdir3", wszystko w jednym poleceniu wykorzystuj¹cym dir.create() i file.path().
+  Output: W bieÅ¼Ä…cym katalogu roboczym stwÃ³rz folder "testdir2" i podfolder
+    "testdir3", wszystko w jednym poleceniu wykorzystujÄ…cym dir.create() i file.path().
   CorrectAnswer: dir.create(file.path("testdir2", "testdir3"), recursive = TRUE)
   AnswerTests: omnitest(correctExpr='dir.create(file.path("testdir2", "testdir3"), recursive = TRUE)')
   Hint: "dir.create(file.path('testdir2', 'testdir3'), recursive = TRUE) 
-    powinno za³atwiæ sprawê. Jeœli zapomnia³eœ ustawiæ recursive, polecenie mog³o
-    sprawiæ wra¿enie jakby zadzia³a³o, ale nie stworzy³o podfolderu."
+    powinno zaÅ‚atwiÄ‡ sprawÄ™. JeÅ›li zapomniaÅ‚eÅ› ustawiÄ‡ recursive, polecenie mogÅ‚o
+    sprawiÄ‡ wraÅ¼enie jakby zadziaÅ‚aÅ‚o, ale nie stworzyÅ‚o podfolderu."
 
 - Class: text
-  Output:  "Aby usun¹æ katalog musisz ustawiæ recursive = TRUE w
+  Output:  "Aby usunÄ…Ä‡ katalog musisz ustawiÄ‡ recursive = TRUE w
     finkcji unlink(). Podobnie jak w Unixaxh,  jesli nie ustawisz recursive na TRUE,
-    R pomyœli, ¿e nie jestes œwiadom tego ¿e usuwasz folder wraz z zawartoœci¹. 
-    R zak³ada, ¿e jeœli nie poda³eœ argumentu recursive równego TRUE, nie wiesz
-    ¿e coœ znajduje siê w usuwanym folderze i próbuje uchroniæ Ciê przed pomy³k¹."
+    R pomyÅ›li, Å¼e nie jestes Å›wiadom tego Å¼e usuwasz folder wraz z zawartoÅ›ciÄ…. 
+    R zakÅ‚ada, Å¼e jeÅ›li nie podaÅ‚eÅ› argumentu recursive rÃ³wnego TRUE, nie wiesz
+    Å¼e coÅ› znajduje siÄ™ w usuwanym folderze i prÃ³buje uchroniÄ‡ CiÄ™ przed pomyÅ‚kÄ…."
 
 - Class: cmd_question
-  Output: Usuñ folder "testdir2" za pomoc¹ unlink().
+  Output: UsuÅ„ folder "testdir2" za pomocÄ… unlink().
   CorrectAnswer: unlink("testdir2", recursive = TRUE)
   AnswerTests: omnitest(correctExpr='unlink("testdir2", recursive = TRUE)')
-  Hint: Spróbuj unlink("testdir2", recursive = TRUE).
+  Hint: SprÃ³buj unlink("testdir2", recursive = TRUE).
 
 - Class: text
   Output: Why is this command named "unlink" rather than something more 
@@ -222,21 +222,21 @@
     unlink is the traditional Unix command for removing directories.
 
 - Class: cmd_question
-  Output: Wróæ do pierwotnego katalogu roboczego za pomoc¹ korzystaj¹c z funkcji
-    setwd(). (Stworzy³eœ zmienn¹ old.dir, ¿eby u³atwiæ sobie to zadanie)
+  Output: WrÃ³Ä‡ do pierwotnego katalogu roboczego za pomocÄ… korzystajÄ…c z funkcji
+    setwd(). (StworzyÅ‚eÅ› zmiennÄ… old.dir, Å¼eby uÅ‚atwiÄ‡ sobie to zadanie)
   CorrectAnswer: setwd(old.dir)
   AnswerTests: omnitest(correctExpr='setwd(old.dir)')
   Hint: Wpisz setwd(old.dir).
 
 - Class: cmd_question
-  Output: "Usuñ folder 'testdir', który w³aœnie opuœci³eœ, wraz z ca³¹ jego zawartoœci¹"
+  Output: "UsuÅ„ folder 'testdir', ktÃ³ry wÅ‚aÅ›nie opuÅ›ciÅ‚eÅ›, wraz z caÅ‚Ä… jego zawartoÅ›ciÄ…"
   CorrectAnswer: unlink("testdir", recursive = TRUE)
   AnswerTests: omnitest(correctExpr='unlink("testdir", recursive = TRUE)')
   Hint: Wpisz unlink("testdir", recursive = TRUE).
 
 - Class: text
-  Output: I w ten sposób zatarliœmy po sobie œlady...
+  Output: I w ten sposÃ³b zatarliÅ›my po sobie Å›lady...
 
 - Class: text
-  Output: "W ramach tej lekcji pozna³eœ podstawowe funkcje pozwalaj¹ce poruszaæ
-    siê œrodowisku roboczym i systemie plików w ramach R."
+  Output: "W ramach tej lekcji poznaÅ‚eÅ› podstawowe funkcje pozwalajÄ…ce poruszaÄ‡
+    siÄ™ Å›rodowisku roboczym i systemie plikÃ³w w ramach R."

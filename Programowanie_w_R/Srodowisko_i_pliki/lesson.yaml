@@ -16,21 +16,21 @@
     się różnić w zależności od systemu operacyjnego."
 
 - Class: text
-  Output: Niemniej jednak R dostarcza wspólny interfejs do pracy z plikami i dzięki
+  Output: Niemniej jednak R dostarcza wspólnego interfejsu do pracy z plikami i dzięki
     temu, komendy ktore poznacie w ramach tej lekcji będa działały na wszystkich
     systemach operacyjnych.
 
 - Class: text
-  Output: Zacznijmy od razu od podstawowych komend!
+  Output: Zacznijmy od podstawowych komend!
 
 - Class: cmd_question
-  Output: Za pomocą komendy getwd() określ aktualną ścieżkę do katalogu roboczego tej sesji R.
+  Output: Za pomocą komendy getwd() określ bieżącą ścieżkę do katalogu roboczego tej sesji R.
   CorrectAnswer: getwd()
   AnswerTests: omnitest(correctExpr='getwd()')
   Hint: Wpisz getwd(), aby okreslić scieżkę katalogu roboczego.
 
 - Class: cmd_question
-  Output: Wypisz wszystkie obiekty w aktualnym środowisku za pomocą ls().
+  Output: Wypisz wszystkie obiekty w bieżącym środowisku za pomocą ls().
   CorrectAnswer: ls()
   AnswerTests: omnitest(correctExpr='ls()')
   Hint: Wpisz ls(), aby zaobaczyć wszystkie obiekty w środowisku roboczym.
@@ -59,7 +59,7 @@
   Hint: Wpisz list.files(), aby przejrzeć listę plików w katalogu roboczym.
 
 - Class: cmd_question
-  Output: W trakcie tej lekcji (jak i nastepnych) powinieneś zaglądać do plików 
+  Output: W trakcie tej lekcji (jak i nastepnych) warto zaglądać do plików 
     pomocy kazdej nowo poznanej funkcji. Sprawdź plik pomocy dla funkcji
     list.files za pomocą komendy ?list.files.
   CorrectAnswer: ?list.files
@@ -92,9 +92,7 @@
 
 - Class: text
   Output: Wykorzystamy old.dir pod koniec lekcji, aby wrócić do miejsca z którego
-    zaczęliśmy.  like getwd() have the 
-    useful property that they return the answer to the question as a result of 
-    the function.
+    zaczęliśmy.
 
 - Class: cmd_question
   Output: Użyj polecenia dir.create() aby stworzyć folder "testdir" w bieżacym katalogu.
@@ -106,7 +104,8 @@
   Output: Pozostałe ćwiczenia wykonamy w tym katalogu a potem go usuniemy.
 
 - Class: cmd_question
-  Output: Ustaw katalog roboczy na "testdir" za pomocą polecenia setwd().
+  Output: Ustaw katalog roboczy na "testdir" za pomocą polecenia setwd(). P.S. RStudio 
+  próbuje podpowiadać ścieżki do plików. Po stworzeniu "ciapek", wciśnij Ctrl+Spacja ;)
   CorrectAnswer: setwd("testdir")
   AnswerTests: any_of_exprs('setwd("testdir")', 'setwd("testdir/")')
   Hint: Użyj setwd("testdir") , aby ustawić "testdir" jako katalog roboczy.
@@ -124,11 +123,11 @@
     zawsze zaglądać do pomocy, np. ?file.create.
 
 - Class: cmd_question
-  Output: "This should be the only file in this newly created directory. Let's
-    check this by listing all the files in the current directory."
+  Output: "Powienien to być jedyny plik w nowym folderze. Sprawdźmy to wypisując
+    wszystkie pliki w bieżącym katalogu."
   CorrectAnswer: list.files()
   AnswerTests: any_of_exprs('list.files()', 'dir()')
-  Hint: list.files() shows that the directory only contains mytest.R.
+  Hint: list.files() powinno pokazać pliki w bieżącym folderze.
 
 - Class: cmd_question
   Output: Sprawdź czy plik "mytest.R" istnieje w katalogu roboczym za pomocą funkcji

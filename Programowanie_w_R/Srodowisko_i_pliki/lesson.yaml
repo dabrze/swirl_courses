@@ -139,7 +139,7 @@
 - Class: text
   Output: Funkcje typu file.exists() wydają się mało interesujące przy korzystaniu z R
     interaktywnie w konsoli, ale w skryptach, w pętlach, w automatycznych raportach
-    moga okazać się bardzo przydatne.
+    mogą okazać się bardzo przydatne.
 
 - Class: cmd_question
   Output: Sprawdź informacje o pliku "mytest.R" za pomocą file.info().
@@ -178,15 +178,15 @@
   Hint: file.path("mytest3.R") powinno zadziałać.
 
 - Class: cmd_question
-  Output: "Możesz wykorzystać file.path do stworzenia ścieżek niezależnych od 
-    systemu operacyjnego na którym działa R. Przekaż 'folder1' i 'folder2' jako
+  Output: "Możesz wykorzystać file.path do tworzenia ścieżek (niezależnych od 
+    systemu operacyjnego na którym działa R). Przekaż 'folder1' i 'folder2' jako
     argumenty file.path, by stworzyć taką ścieżkę."
   CorrectAnswer: file.path("folder1", "folder2")
   AnswerTests: omnitest(correctExpr='file.path("folder1", "folder2")')
   Hint: file.path("folder1", "folder2") zadziała.
 
 - Class: cmd_question
-  Output: "Przejrzyj dokumentacje polecenia dir.create. Zwróć uwagę na parametr
+  Output: "Przejrzyj dokumentację polecenia dir.create. Zwróć uwagę na parametr
     'recursive'. Aby stworzyć zagnieżdżone foldery 'recursive' musi byc ustawione 
     na TRUE."
   CorrectAnswer: ?dir.create
@@ -204,10 +204,10 @@
 
 - Class: text
   Output:  "Aby usunąć katalog musisz ustawić recursive = TRUE w
-    finkcji unlink(). Podobnie jak w Unixaxh,  jesli nie ustawisz recursive na TRUE,
-    R pomyśli, że nie jestes świadom tego że usuwasz folder wraz z zawartością. 
+    funkcji unlink(). Podobnie jak w systemach Unixowych, jeśli nie ustawisz recursive na TRUE,
+    R pomyśli, że nie jesteś świadomy tego, że usuwasz folder wraz z zawartością. 
     R zakłada, że jeśli nie podałeś argumentu recursive równego TRUE, nie wiesz
-    że coś znajduje się w usuwanym folderze i próbuje uchronić Cię przed pomyłką."
+    że coś znajduje się w usuwanym folderze i R próbuje uchronić Cię przed pomyłką."
 
 - Class: cmd_question
   Output: Usuń folder "testdir2" za pomocą unlink().
@@ -216,12 +216,12 @@
   Hint: Spróbuj unlink("testdir2", recursive = TRUE).
 
 - Class: text
-  Output: Why is this command named "unlink" rather than something more 
-    sensible like "dir.delete" or "dir.remove"? Mainly, history. 
-    unlink is the traditional Unix command for removing directories.
+  Output: Dlaczego "unlink" zamiast czegoś bardziej przewidywalnego jak 
+    "dir.delete" albo "dir.remove"? Głównie ze względu na historię. 
+    unlink to tradycyjne polecenie Unixowe do usuwania folderów.
 
 - Class: cmd_question
-  Output: Wróć do pierwotnego katalogu roboczego za pomocą korzystając z funkcji
+  Output: Wróć do pierwotnego katalogu roboczego za pomocą funkcji
     setwd(). (Stworzyłeś zmienną old.dir, żeby ułatwić sobie to zadanie)
   CorrectAnswer: setwd(old.dir)
   AnswerTests: omnitest(correctExpr='setwd(old.dir)')

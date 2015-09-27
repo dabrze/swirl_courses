@@ -105,7 +105,7 @@
 
 - Class: cmd_question
   Output: Ustaw katalog roboczy na "testdir" za pomocą polecenia setwd(). P.S. RStudio 
-  próbuje podpowiadać ścieżki do plików. Po stworzeniu "ciapek", wciśnij Ctrl+Spacja ;)
+  próbuje podpowiadać ścieżki do plików. Po stworzeniu "ciapek", wciśnij Ctrl+Spacja.
   CorrectAnswer: setwd("testdir")
   AnswerTests: any_of_exprs('setwd("testdir")', 'setwd("testdir/")')
   Hint: Użyj setwd("testdir") , aby ustawić "testdir" jako katalog roboczy.

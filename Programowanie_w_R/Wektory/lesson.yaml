@@ -74,7 +74,7 @@
 
 - Class: text
   Output: Jak się domyślasz oprócz operatorów `<` i `>=` do warunków logicznych
-    możesz wykorzystać także symbole `>`, `<=`, `==` (równość) `!=` (nierówność).
+    możesz wykorzystać także symbole `>`, `<=`, `==`, `!=`.
 
 - Class: text
   Output: Jeśli mamy dwa wyrażenia logiczne, A i B, możemy je połączyć za pomocą
@@ -111,21 +111,21 @@
     logiczne: A || B i A && B. Podobnie jak w innych językach programowania "podwójne"
     operatory AND i OR kończą swoją pracę jak tylko znają wynik. Pojedyncze operatory
     wywołują i sprawdzają wszystkie wyrażenia. Oznacza to zupełnie inny wynik przy
-    warunkach opratych o wektory. Oznacza to również, że "podwójne" operatory przydadzą
+    warunkach opratych na wektorach. Oznacza to również, że "podwójne" operatory przydadzą
     nam się przy "ifach" ale nie przy np. filtrowaniu wektorów.'
 
 - Class: text
   Output: 'Przejdźmy do wektorów tekstowych (ang. character vectors). Łańcuchy znaków, potocznie
-  wane przez nas stringami, trzymane sa w R w zmiennych typu character. Aby stworzyć takie zmienne
+  zwane przez nas stringami, trzymane są w R w zmiennych typu character. Aby stworzyć takie zmienne
   korzystamy z tzw. "ciapek" (nomenklatura prowadzącego). Ciapki mogą być pojedyncze ('' - apostrof)
   lub podwójne (" - cudzysłów). Obie wersje zadziałają, ale preferowane w R są podwójne ciapki.'
 
 - Class: cmd_question
   Output: 'Stwórz wektor tekstowy składający się z następujących słów: "Mam", "na",
-    "imie" (tak, bez polskich znaków). Użyj podwójnych ciapek. zapisz wynik do zmiennej my_char.'
-  CorrectAnswer: my_char <- c("Mam", "na", "imie")
-  AnswerTests: omnitest(Mam='my_char <- c("Mam", "na", "imie")')
-  Hint: Wpisz my_char <- c("My", "na", "imie") aby stowrzyć nową zmienną my_char, która przechowuje wektor tekstowy o długości 3.
+    "imię". Użyj podwójnych ciapek. zapisz wynik do zmiennej my_char.'
+  CorrectAnswer: my_char <- c("Mam", "na", "imię")
+  AnswerTests: omnitest(Mam='my_char <- c("Mam", "na", "imię")')
+  Hint: Wpisz my_char <- c("My", "na", "imię") aby stowrzyć nową zmienną my_char, która przechowuje wektor tekstowy o długości 3.
 
 - Class: cmd_question
   Output: Wypisz zawartość my_char na konsolę.

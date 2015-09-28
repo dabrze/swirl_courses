@@ -2,7 +2,7 @@
   Course: Programowanie w R
   Lesson: Wektory
   Author: Nick Carchedi, Dariusz Brzeziński
-  Type: Coursera
+  Type: Standard
   Organization: JHU Biostat, Poznan University of Technology
   Version: 1.0.0
 
@@ -122,9 +122,9 @@
 
 - Class: cmd_question
   Output: 'Stwórz wektor tekstowy składający się z następujących słów: "Mam", "na",
-    "imię". Użyj podwójnych ciapek. zapisz wynik do zmiennej my_char.'
+    "imię". Użyj podwójnych ciapek. Zapisz wynik do zmiennej my_char.'
   CorrectAnswer: my_char <- c("Mam", "na", "imię")
-  AnswerTests: omnitest(Mam='my_char <- c("Mam", "na", "imię")')
+  AnswerTests: omnitest(correctExpr='my_char <- c("Mam", "na", "imię")')
   Hint: Wpisz my_char <- c("My", "na", "imię") aby stowrzyć nową zmienną my_char, która przechowuje wektor tekstowy o długości 3.
 
 - Class: cmd_question
@@ -152,14 +152,14 @@
   Output: Wygląda jakbysmy o czymś zapomnieli.... No tak! Imię!
 
 - Class: cmd_question
-  Output: 'Aby dodać (albo tak jak lubimy to określać "skonkatenować") imię na koniec my_char, uzyj
+  Output: 'Aby dodać imię na koniec my_char, uzyj
     funkjci c() w ten sposób: c(my_char, "Twoje imię"). Spróbuj to zrobić i przypisz wynik do nowej 
     zmiennej o nazwie my_name.'
   CorrectAnswer: my_name <- c(my_char, "Swirl")
   AnswerTests: var_is_a("character", "my_name"); expr_uses_func("c"); expr_creates_var("my_name");
     val_has_length(4)
   Hint: Doklej swoje imię na koniec wektora my_char za pomocą funkcji c(). Upewnij się, że
-    przypisałeś wynik do zmiennej o nazwie my_name. Jeśli miałbys na imię "Swirl",
+    przypisałeś wynik do zmiennej o nazwie my_name. Jeśli miałbyś na imię "Swirl",
     wpisałbyś my_name <- c(my_char, "Swirl").
 
 - Class: cmd_question

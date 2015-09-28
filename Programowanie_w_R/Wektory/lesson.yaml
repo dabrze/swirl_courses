@@ -26,17 +26,13 @@
     jakichś warunków logicznych. Poeksperymentujmy z prostymi warunkami.
 
 - Class: cmd_question
-  Output: Najpierw stwórzmy wektor liczbowy num_vect zawierający wartości 0.5, 55,
-    -10, i 6.
+  Output: Najpierw stwórzmy wektor liczbowy num_vect zawierający wartości 0.5, 55, -10, i 6.
   CorrectAnswer: num_vect <- c(0.5, 55, -10, 6)
   AnswerTests: omnitest(correctExpr='num_vect <- c(0.5, 55, -10, 6)')
-  Hint: Pamiętaj, że funkcja c() służy do tworzenia wektora. Jeśli nie pamiętasz
-  jak jej użyć, wpisz ?c, aby otworzyć pomoc. Nie zapomnij przypisać wyniku
-  do nowej zmiennej o nazwie num_vect.
+  Hint: Pamiętaj, że funkcja c() służy do tworzenia wektora. Jeśli nie pamiętasz jak jej użyć, wpisz ?c, aby otworzyć pomoc. Nie zapomnij przypisać wyniku do nowej zmiennej o nazwie num_vect.
 
 - Class: cmd_question
-  Output: Teraz stwórz zmienną o nazwie tf, do której przypiszesz num_vect < 1, 
-  czyli 'num_vect mniejsze od 1'.
+  Output: Teraz stwórz zmienną o nazwie tf, do której przypiszesz num_vect < 1, czyli 'num_vect mniejsze od 1'.
   CorrectAnswer: tf <- num_vect < 1
   AnswerTests: omnitest(correctExpr='tf <- num_vect < 1')
   Hint: Wpisz tf <- num_vect < 1 , aby przypisać wynik num_vect < 1 do zmiennej
@@ -46,8 +42,8 @@
   Output: Jak myślisz, jak będzie wyglądała zmienna tf?
   CorrectAnswer: wektor 4 wartości logicznych
   AnswerChoices: wektor 4 wartości logicznych; pojedyncza wartość logiczna
-  AnswerTests: omnitest(correctVal='a vector of 4 logical values')
-  Hint: Pamiętaj, że lekacja dotyczy wektorów. Większość operacji na wektorach R 
+  AnswerTests: omnitest(correctVal='wektor 4 wartości logicznych')
+  Hint: Pamiętaj, że lekcja dotyczy wektorów. Większość operacji na wektorach R 
     wykonuje element po elemencie.
 
 - Class: cmd_question
@@ -121,7 +117,7 @@
 - Class: text
   Output: 'Przejdźmy do wektorów tekstowych (ang. character vectors). Łańcuchy znaków, potocznie
   wane przez nas stringami, trzymane sa w R w zmiennych typu character. Aby stworzyć takie zmienne
-  korzystamy z tzw. "ciapek" (nomenklatura prowadzącego). Ciapki mogą być pojedyncze (\' - apostrof)
+  korzystamy z tzw. "ciapek" (nomenklatura prowadzącego). Ciapki mogą być pojedyncze ('' - apostrof)
   lub podwójne (" - cudzysłów). Obie wersje zadziałają, ale preferowane w R są podwójne ciapki.'
 
 - Class: cmd_question
@@ -129,8 +125,7 @@
     "imie" (tak, bez polskich znaków). Użyj podwójnych ciapek. zapisz wynik do zmiennej my_char.'
   CorrectAnswer: my_char <- c("Mam", "na", "imie")
   AnswerTests: omnitest(Mam='my_char <- c("Mam", "na", "imie")')
-  Hint: Wpisz my_char <- c("My", "na", "imie") aby stowrzyć nową zmienną my_char,
-  która przechowuje wektor tekstowy o długości 3.
+  Hint: Wpisz my_char <- c("My", "na", "imie") aby stowrzyć nową zmienną my_char, która przechowuje wektor tekstowy o długości 3.
 
 - Class: cmd_question
   Output: Wypisz zawartość my_char na konsolę.
@@ -144,8 +139,7 @@
     nam się do tego funkcja paste().
 
 - Class: cmd_question
-  Output: Wpisz paste(my_char, collapse = " "). Upewnij się, że w argumencie 
-  collapse jest spacja między cudzysłowami. Zaraz zobaczysz dlaczego.
+  Output: Wpisz paste(my_char, collapse = " "). Upewnij się, że w argumencie collapse jest spacja między cudzysłowami. Zaraz zobaczysz dlaczego.
   CorrectAnswer: paste(my_char, collapse = " ")
   AnswerTests: omnitest(correctExpr='paste(my_char, collapse = " ")')
   Hint: Wpisz paste(my_char, collapse = " "), aby połączyć elementy wektora w zdanie.
@@ -176,7 +170,7 @@
 
 - Class: cmd_question
   Output: Użyj teraz funkcji paste(), aby skleić zawrtość wektora my_name w
-  jeden łańcuch znaków. Nie zapomnij dodać collapse = " "!
+   jeden łańcuch znaków. Nie zapomnij dodać collapse = " "!
   CorrectAnswer: paste(my_name, collapse = " ")
   AnswerTests: omnitest(correctExpr='paste(my_name, collapse = " ")')
   Hint: Użyj paste(my_name, collapse = " "), aby połączyć wszystkie cztery słowa za pomocą spacji.

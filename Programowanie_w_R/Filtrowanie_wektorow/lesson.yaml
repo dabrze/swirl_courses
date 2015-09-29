@@ -7,10 +7,10 @@
   Version: 1.0.0
 
 - Class: text
-  Output: W ramach tej lekcji dowiesz się jak filtrować elementy wektorów w oparciu o zdefiniowana przez Ciebie warunki.
+  Output: W ramach tej lekcji dowiesz się jak filtrować elementy wektorów w oparciu o zdefiniowane przez Ciebie warunki.
 
 - Class: text
-  Output: Dla przykładu, możesz być zainteresowany tylko pierwszymi 20 elementami wektora, tylko elementami, które nie są NA albo tymi które sa dodatnie lub równe wybranej zmiennej. Pod koniec tej lekcji będziesz wiedział jak poradzić sobie z każdym z tych scenariuszy.
+  Output: Dla przykładu, możesz być zainteresowany tylko pierwszymi 20 elementami wektora, tylko elementami które nie są NA albo tymi które sa dodatnie lub równe wybranej zmiennej. Pod koniec tej lekcji będziesz wiedział jak poradzić sobie z każdym z tych scenariuszy.
 
 - Class: cmd_question
   Output: Stworzyłem dla Ciebie wektor o nazwie x który zawiera 20 losowych liczb (ze standardowego rozkładu normalnego) i 20 wartości NA. Wpisz x, aby zobaczyć jak wygląda.
@@ -37,7 +37,7 @@
   Output: Jak myślisz co zwróci x[is.na(x)]?
   AnswerChoices: Wektor wypełniony samymi NA; Wektor bez NA; Wektor z wartościami TRUE i FALSE; Wektor o długości 0
   CorrectAnswer: Wektor wypełniony samymi NA
-  AnswerTests: omnitest(correctVal="A vector of all NAs")
+  AnswerTests: omnitest(correctVal="Wektor wypełniony samymi NA")
   Hint: Pamiętaj, że is.na(x) mówi nam gdzie są wartości NA w wektorze. Zatem jeśli filtrujemy x w oparciu o tę informację, co powinniśmy dostać?
 
 - Class: cmd_question
@@ -84,13 +84,13 @@
   Output: Ponieważ NA nie jest tak naprawdę żadną wartością tylko nośnikiem nieznanej wartości, wyrażenie NA > 0 zwraca NA. Dlatego dostaliśmy całą stertę NA wymieszaną z dodatnimi elementami.
 
 - Class: cmd_question
-  Output: Łącząc wiedzę o operatorach logicznych z nowo zdobytą wiedzą o filtrowania, możemy zrobić coś takiego -- x[!is.na(x) & x > 0]. Spróbuj.
+  Output: Łącząc wiedzę o operatorach logicznych z nowo zdobytą wiedzą o filtrowaniu, możemy zrobić coś takiego -- x[!is.na(x) & x > 0]. Spróbuj.
   CorrectAnswer: x[!is.na(x) & x > 0]
   AnswerTests: omnitest(correctExpr='x[!is.na(x) & x > 0]')
   Hint: Wpisz x[!is.na(x) & x > 0] i zobacz co dostaniesz.
 
 - Class: text
-  Output: W tym wyrażeniu poprosiliśmy o tylko te elementy x mają wartość i jest ona większa od zera.
+  Output: W tym wyrażeniu poprosiliśmy o tylko te elementy x, które mają znaną wartość i jest ona większa od zera.
 
 - Class: text
   Output: Już wcześniej widziałeś jak odfiltrować pierwsze dziesięć elementów wektora x za pomocą wyrażenia x[1:10]. Jest to przykład przekazania wektora liczb (całkowitych!) dodatnich, który mówi R, że ma zostawić elementy o pozycji/identyfikatorze od 1 do 10.
@@ -105,13 +105,13 @@
   Hint: Stwórz wektor indeksujący c(3, 5, 7) i użyj go w nawiasach kwadratowych.
 
 - Class: cmd_question
-  Output: Ważnym jest aby filtrując x liczbami naturalnymi trzymać się indeksów ze zbioru {1, 2, ..., 40}, gdyż x ma tylko 40 elementów. Co się stanie jeśli poprosimy o zerowy element wektora x (x[0])? Zobacz.
+  Output: Ważnym jest, aby filtrując x liczbami naturalnymi trzymać się indeksów ze zbioru {1, 2, ..., 40}, gdyż x ma tylko 40 elementów. Co się stanie jeśli poprosimy o zerowy element wektora x (x[0])? Zobacz.
   CorrectAnswer: x[0]
   AnswerTests: omnitest(correctExpr='x[0]')
   Hint: Wpisz x[0], aby zobaczyć co się stanie jeśli odwolamy się do zerowego indeksu, który nie jest zdefiniowany w R.
 
 - Class: cmd_question
-  Output: Jak można się było spodziewać, nie dostaliśmy niczego pożytecznego. Niestety R nie powstrzyma nas przed zrobieniem czegoś takiego. A co jęsli poprosimy o 3000 element x? Sprawdź.
+  Output: Jak można się było spodziewać, nie dostaliśmy niczego pożytecznego. Niestety R nie powstrzyma nas przed zrobieniem czegoś takiego. A co jeśli poprosimy o 3000 element x? Sprawdź.
   CorrectAnswer: x[3000]
   AnswerTests: omnitest(correctExpr='x[3000]')
   Hint: Poproś o 3000 element x (który nie istnieje) za pomocą wyrażenia x[3000].
@@ -120,7 +120,7 @@
   Output: Ponownie, nic ciekawego, ale R nie powstrzyma nas przed zadaniem takiego pytania. To powinna być przestroga. Powinieneś się zawsze upewnić, że to o co prosisz leży w zakresie wektora, z którym pracujesz.
 
 - Class: text
-  Output: A co jeśli chcemy zwrócić wszystkie elementy wektora x POZA drugim and dziesiątym? Nie byłoby to zbyt wygodne gdybyś musiał zbudować wektor zawierający wszystkie liczby z przedziału od 1 do 40 OPRÓCZ 2 i 10.
+  Output: A co jeśli chcemy zwrócić wszystkie elementy wektora x POZA drugim i dziesiątym? Nie byłoby to zbyt wygodne gdybyś musiał zbudować wektor zawierający wszystkie liczby z przedziału od 1 do 40 OPRÓCZ 2 i 10.
 
 - Class: cmd_question
   Output: Na szczęście R przyjmuje także liczby ujemne jako indeksy. Podczas gdy x[c(2, 10)] zwraca TYLKO drugi i dziesiąty element wektora x, x[c(-2, -10)] zwraca wszystkie elementy OPRÓCZ drugiego i dziesiątego. Wypróbuj x[c(-2, -10)], aby to sprawdzić.
@@ -135,7 +135,7 @@
   Hint: Użyj wyrażenia x[-c(2, 10)], aby trochę upróścić kod. To może się naprawdę przydać, gdy specyfikujesz dużo liczb ujemnych.
 
 - Class: text
-  Output: Do tej pory omówiliśmy trzy typy wektorów indeksujących -- logiczne, liczb dodatnichi liczb ujemnych. Ostatni typ wektorów indeksujących wymaga od nas wprowadzenia koncepcji elementów nazwanych.
+  Output: Do tej pory omówiliśmy trzy typy wektorów indeksujących -- logiczne, liczb dodatnich i liczb ujemnych. Ostatni typ wektorów indeksujących wymaga od nas wprowadzenia koncepcji elementów nazwanych.
 
 - Class: cmd_question
   Output: Stwórz wektor liczbowy zawierący trzy elementy nazwane za pomocą vect <- c(foo = 11, bar = 2, norf = NA).

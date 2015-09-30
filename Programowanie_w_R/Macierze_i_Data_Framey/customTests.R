@@ -11,12 +11,12 @@ expr_creates_var <- function(correctName=NULL){
     results <- expectThat(length(delta) >= 1,
                           testthat::is_true(),
                           label=paste(deparse(e$expr), 
-                                      "does not create a variable."))  
+                                      "nie tworzy zmiennej."))  
   } else {
     results <- expectThat(correctName %in% names(delta), 
                           testthat::is_true(), 
                           label=paste(deparse(e$expr),
-                                      "does not create a variable named",
+                                      "nie tworzy zmiennej o nazwie",
                                       correctName))
   }
   if(results$passed){
@@ -74,8 +74,8 @@ omnitest <- function(correctExpr=NULL, correctVal=NULL, strict=FALSE){
   if(valGood && exprGood){
     return(TRUE)
   } else if (valGood && !exprGood && !strict){
-    swirl_out("That's not the expression I expected but it works.")
-    swirl_out("I've executed the correct expression in case the result is needed in an upcoming question.")
+    swirl_out("To nie to wyrażenie, o które mi chodziło, ale zdaje się działać.")
+    swirl_out("Odpaliłem oczekiwaną odpowiedż, w razie gdyby jej wynik wpływał na kolejne pytania.")
     eval(parse(text=correctExpr),globalenv())
     return(TRUE)
   } else {

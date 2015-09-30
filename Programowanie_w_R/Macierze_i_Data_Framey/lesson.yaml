@@ -1,178 +1,175 @@
 - Class: meta
-  Course: R Programming
-  Lesson: Matrices and Data Frames
-  Author: Nick Carchedi
-  Type: Coursera
-  Organization: JHU Biostat
-  Version: 2.2.0
+  Course: Programowanie w R
+  Lesson: Macierze i Data Frame'y
+  Author: Nick Carchedi, Dariusz Brzeziński
+  Type: Standard
+  Organization: JHU Biostat, Poznan University of Technology
+  Version: 1.0.0
 
 - Class: text
-  Output: In this lesson, we'll cover matrices and data frames. Both represent 'rectangular' data types, meaning that they are used to store tabular data, with rows and columns.
+  Output: W ramach tej leksji omówimy macierze i data frame'y (mógłbym je nazwać tabelami, ale i tak by się to nie przyjęło...). Obie struktury są typami "tabelarycznymi", składającymi się z wierszy i kolumn.
 
 - Class: text
-  Output: The main difference, as you'll see, is that matrices can only contain a single class of data, while data frames can consist of many different classes of data.
+  Output: Główną różnicą między oboma typami jest to, że macierze przechowują elementy tylko jednego typu, podczas gdy data frame'y mogą składać się z wielu typów danych.
 
 - Class: cmd_question
-  Output: Let's create a vector containing the numbers 1 through 20 using the `:` operator. Store the result in a variable called my_vector.
+  Output: Stwórzmy wektor zawierający liczby od 1 do 20 za pomocą operatora `:`. Przypisz wynik do zmiennej my_vector.
   CorrectAnswer: my_vector <- 1:20
   AnswerTests: omnitest(correctExpr='my_vector <- 1:20')
-  Hint: You learned about the `:` operator in the lesson on sequences. If you wanted to create a vector containing the numbers 1, 2, and 3 (in that order), you could use either c(1, 2, 3) or 1:3. In this case, we want the numbers 1 through 20 stored in a variable called my_vector. Also, remember that you don't need the c() function when using `:`.
+  Hint: Uczyłeś się o operatorze `:` na lekcji dotyczącej ciągów liczbowych. Jeśli chcesz stworzyć wektor zawriejący licbzy 1, 2, 3 (w tej kolejności), możesz skorzystać z c(1, 2, 3) albo 1:3. W tym przypadku, chcemy przechować liczby od 1 do 20. Pamiętaj także, że nie potrzebujesz funkcji c(), gdy korzystasz z `:`.
 
 - Class: cmd_question
-  Output: View the contents of the vector you just created.
+  Output: Przejrzyj zawrtość wektora, który właśnie stworzyłeś.
   CorrectAnswer: my_vector
   AnswerTests: omnitest(correctExpr='my_vector')
-  Hint: Type my_vector to view its contents.
+  Hint: Wpisz my_vector, żeby zobaczyć jego zawartość.
 
 - Class: cmd_question
-  Output: The dim() function tells us the 'dimensions' of an object. What happens if we do dim(my_vector)? Give it a try.
+  Output: Funkcja dim() opisuje wymiary obiektu. Co się stanie, gdy wpiszemy dim(my_vector)? Sprawdź to.
   CorrectAnswer: dim(my_vector)
   AnswerTests: omnitest(correctExpr='dim(my_vector)')
-  Hint: Just type dim(my_vector) to see what happens.
+  Hint: Po porstu wpisz dim(my_vector) i zobacz co się stanie.
 
 - Class: cmd_question
-  Output: Clearly, that's not very helpful! Since my_vector is a vector, it doesn't have a `dim` attribute (so it's just NULL), but we can find its length using the length() function. Try that now.
+  Output: Nie było to zbyt pomocne! Ponieważ my_vector jest wektorem, nie ma atrybutu `dim` (stąd NULL), ale możemy określić jego dlugość za pomocą funkcji length. Wypróbuj to teraz.
   CorrectAnswer: length(my_vector)
   AnswerTests: omnitest(correctExpr='length(my_vector)')
-  Hint: Type length(my_vector) to view the length of the vector you just created.
+  Hint: Wpisz length(my_vector), aby zobaczyć długość wektora.
 
 - Class: cmd_question
-  Output: Ah! That's what we wanted. But, what happens if we give my_vector a `dim` attribute? Let's give it a try. Type dim(my_vector) <- c(4, 5).
+  Output: No i oto nam chodziło! Ale co się stanie, gdy dodamy do my_vect atrybut `dim`? Sprawdźmy to. Wpisz dim(my_vector) <- c(4, 5).
   CorrectAnswer: dim(my_vector) <- c(4, 5)
   AnswerTests: omnitest(correctExpr='dim(my_vector) <- c(4, 5)')
-  Hint: Type dim(my_vector) <- c(4, 5) to give my_vector a `dim` attribute.
+  Hint: Wpisz dim(my_vector) <- c(4, 5), aby ustawić atrybut `dim`.
 
 - Class: text
-  Output: It's okay if that last command seemed a little strange to you. It should! The dim() function allows you to get OR set the `dim` attribute for an R object. In this case, we assigned the value c(4, 5) to the `dim` attribute of my_vector.
+  Output: Nie martw się jeśli ostatnie polecenie wydało Ci się dziwne. Powinno! Funkcja dim() pozwala odczytać LUB ustawić atrybut `dim` obiektu w R. W tym wypadku przypisaliśmy wartość c(4, 5) do atrybutu `dim` wektora my_vector.
 
 - Class: cmd_question
-  Output: Use dim(my_vector) to confirm that we've set the `dim` attribute correctly.
+  Output: Wywołaj dim(my_vector), aby potwierdzić, że poprawnie ustawiliśmy wartość atrybutu `dim`.
   CorrectAnswer: dim(my_vector)
   AnswerTests: omnitest(correctExpr='dim(my_vector)')
-  Hint: Just type dim(my_vector) to make sure the `dim` attribute has been set.
+  Hint: Po prostu wpisz dim(my_vector), aby upewnić się, że atrybut `dim` został ustawiony.
 
 - Class: cmd_question
-  Output: Another way to see this is by calling the attributes() function on my_vector. Try it now.
+  Output: Innym sposobem, aby sprawdzić czy ustawienie wymiarów się udało jest wywołanie funkcji attributes() na my_vector. Zobacz jak to działa.
   CorrectAnswer: attributes(my_vector)
   AnswerTests: omnitest(correctExpr='attributes(my_vector)')
-  Hint: The command attributes(my_vector) will show you all of the attributes for the my_vector object.
+  Hint: Polecenie attributes(my_vector) pokaże wszystkie atrybuty obiektu my_vector.
 
 - Class: text
-  Output: Just like in math class, when dealing with a 2-dimensional object (think rectangular table), the first number is the number of rows and the second is the number of columns. Therefore, we just gave my_vector 4 rows and 5 columns.
+  Output: Gdy mówimy o dwuwymiarowych obiektach w R, pierwszy wymiar to wiersze, drugi to kolumny. Sprawiliśmy zatem, że my_vector ma 4 wiersze i 5 kolumn.
 
 - Class: cmd_question
-  Output: But, wait! That doesn't sound like a vector any more. Well, it's not. Now it's a matrix. View the contents of my_vector now to see what it looks like.
+  Output: Ale, chwila moment! To już nie wygląda na wektor. No i nim nie jest -- teraz to macierz. Obejrzyj zawartość my_vector, żeby zobaczyć jak wygląda.
   CorrectAnswer: my_vector
   AnswerTests: omnitest(correctExpr='my_vector')
-  Hint: Type my_vector to view its contents.
+  Hint: Wpisz my_vector, aby zobaczyć jego zawartość.
 
 - Class: cmd_question
-  Output: Now, let's confirm it's actually a matrix by using the class() function. Type class(my_vector) to see what I mean.
+  Output: Potwierdźmy teraz, że to rzeczywiście macierz wywołując funkcję class(). Wpisz class(my_vector) i zobacz o co mi chodzi.
   CorrectAnswer: class(my_vector)
   AnswerTests: omnitest(correctExpr='class(my_vector)')
-  Hint: Type class(my_vector) to view the class of my_vector.
+  Hint: Wpisz class(my_vector), aby sprawdić klasę/typ zmiennej my_vector.
 
 - Class: cmd_question
-  Output: Sure enough, my_vector is now a matrix. We should store it in a new variable that helps us remember what it is. Store the value of my_vector in a new variable called my_matrix.
+  Output: Nie ma wątpliwości, że my_vector jest teraz macierzą. Powinniśmy zachować ją do nowej zmiennej, która pomoże nam zapamiętać, że to macierz. Przypisz wartość my_vector do nowej zmiennej o nazwie my_matrix.
   CorrectAnswer: my_matrix <- my_vector
   AnswerTests: omnitest(correctExpr='my_matrix <- my_vector')
-  Hint: Since we can't just change the name of our my_vector variable, we'll assign its value to a new variable with my_matrix <- my_vector.
+  Hint: Skoro nie możemy po prostu zmienić nazwy zmiennej my_vector, musimy przypisać jej wartość do nowej zmiennej my_matrix <- my_vector.
 
 - Class: text
-  Output: The example that we've used so far was meant to illustrate the point that a matrix is simply an atomic vector with a dimension attribute. A more direct method of creating the same matrix uses the matrix() function.
+  Output: Rozważany do tej pory przykład miał pokazać, że macierz jest niczym innym jak wektorem z atrybutem dimension. Bardziej bezpośrednim sposobem tworzenia macierzy jest wykorzystanie funkcji matrix().
 
 - Class: cmd_question
-  Output: Bring up the help file for the matrix() function now using the `?` function.
+  Output: Otwórz plik pomocy dla funkcji matrix() korzystając z operatora `?`.
   CorrectAnswer: ?matrix
   AnswerTests: omnitest(correctExpr='?matrix')
-  Hint: The command ?matrix will do the trick.
+  Hint: Polecenie ?matrix powinno załatwić sprawę.
 
 - Class: cmd_question
-  Output: Now, look at the documentation for the matrix function and see if you can figure out how to create a matrix containing the same numbers (1-20) and dimensions (4 rows, 5 columns) by calling the matrix() function. Store the result in a variable called my_matrix2.
+  Output: Spójrz na dokumentację funkcji matrix i zobacz czy dasz radę wymyśleć sposób na stworzenie macierzy z tymi samymi liczbami (1-20) i wymiarami (4 wiersze, 5 kolumn). Przypisz wynik do zmiennej o nazwie my_matrix2.
   CorrectAnswer: my_matrix2 <- matrix(1:20, nrow=4, ncol=5)
   AnswerTests: calculates_same_value('matrix(1:20, nrow=4, ncol=5)'); expr_creates_var('my_matrix2')
-  Hint: Call the matrix() function with three arguments -- 1:20, the number of rows, and the number of columns. Be sure to specify arguments by their proper names and store the result in my_matrix2 (not in my_matrix).
+  Hint: Wywołaj funkcję matrix() z trzema argumentami -- 1:20, liczbą wierszy i liczbą kolumn. Upewnij się, że odwołujesz się do argumentów przez ich nazwy i zapisz wynik do zmiennej my_matrix2 (nie my_matrix).
 
 - Class: cmd_question
-  Output: Finally, let's confirm that my_matrix and my_matrix2 are actually identical. The identical() function will tell us if its first two arguments are the same. Try it out.
+  Output: Sprawdźmy teraz czy zmienne my_matrix i my_matrix2 są identyczne. Pomoże nam w tym funkcja identical(). Spróbuj.
   CorrectAnswer: identical(my_matrix, my_matrix2)
   AnswerTests: any_of_exprs('identical(my_matrix, my_matrix2)', 'identical(my_matrix2, my_matrix)')
-  Hint: If you're not sure about this one, then checkout the documentation for identical() using the `?` function.
+  Hint: Jeśli ne jestes pewien co robić, sprawdź dokumentację funkcji identical() za pomocą operatora `?`.
 
 - Class: text
-  Output: Now, imagine that the numbers in our table represent some measurements from a clinical experiment, where each row represents one patient and each column represents one variable for which measurements were taken.
+  Output: Wyobraź sobie teraz, że liczby w macierzy reprezentują wyniki badań laboratoryjnych, gdzie każdy wiersz oznacza jednego pacjenta, a kolumna wynik jednego badania.
 
 - Class: text
-  Output: We may want to label the rows, so that we know which numbers belong to each patient in the experiment. One way to do this is to add a column to the matrix, which contains the names of all four people.
+  Output: Warto by było poetykietować wiersze, aby wiedzieć które pomiary należą do której osoby. Jedną z możliwości jest dodanie do macierzy kolumny z imionami.
 
 - Class: cmd_question
-  Output: Let's start by creating a character vector containing the names of our patients -- Bill, Gina, Kelly, and Sean. Remember that double quotes tell R that something is a character string. Store the result in a variable called patients.
-  CorrectAnswer: patients <- c("Bill", "Gina", "Kelly", "Sean")
-  AnswerTests: omnitest(correctExpr='patients <- c("Bill", "Gina", "Kelly", "Sean")')
-  Hint: Make sure to capitalize the first letter of each name and to store the result in a variable called patients. Also, don't get the order of the patients mixed up! That would be a disaster!
+  Output: Zacznijmy od stworzenia wektora tekstowego zawierającego imiona naszych pacjentów -- Domarad, Lubomira, Drogomysł, Uniegosta. Przypisz wektor imion do zmiennej patients.
+  CorrectAnswer: patients <- c("Domarad", "Lubomira", "Drogomysł", "Uniegosta")
+  AnswerTests: omnitest(correctExpr='patients <- c("Domarad", "Lubomira", "Drogomysł", "Uniegosta")')
+  Hint: Upewnij się, że zaczynasz imiona z wielkiej litery i nie pokręć ich kolejności!
 
 - Class: cmd_question
-  Output: Now we'll use the cbind() function to 'combine columns'. Don't worry about storing the result in a new variable. Just call cbind() with two arguments -- the patients vector and my_matrix.
+  Output: Teraz wykorzystamy funkcję cbind(), aby 'połączyć kolumny'. Na razie nie zachowuj wyniku do żadnej zmiennej. Po prostu wywołaj cbind() z dwoma argumentami -- wektorem patients i my_matrix.
   CorrectAnswer: cbind(patients, my_matrix)
   AnswerTests: omnitest(correctExpr='cbind(patients, my_matrix)')
-  Hint: Type cbind(patients, my_matrix) to add the names of our patients to the matrix of numbers.
+  Hint: Wpisz cbind(patients, my_matrix) i dodaj imiona pacjentów do macierzy liczb.
 
 - Class: text
-  Output: Something is fishy about our result! It appears that combining the character vector with our matrix of numbers caused everything to be enclosed in double quotes. This means we're left with a matrix of character strings, which is no good.
+  Output: Coś tu nie gra! Wygląda na to, że połączenie wektora tekstowego z macierzą liczb sprawiło, że wszystkie elementy są otoczone cudzysłowami. To oznacza, że dostaliśmy macierz łańcuchów znakowych, a nie o to nam chodziło.
 
 - Class: text
-  Output: If you remember back to the beginning of this lesson, I told you that matrices can only contain ONE class of data. Therefore, when we tried to combine a character vector with a numeric matrix, R was forced to 'coerce' the numbers to characters, hence the double quotes.
-
-- Class: text
-  Output: This is called 'implicit coercion', because we didn't ask for it. It just happened. But why didn't R just convert the names of our patients to numbers? I'll let you ponder that question on your own.
+  Output: Może pamiętasz jak na początku lekcji wspominałem, że macierze mogą przechowywać tylko JEDEN typ danych. Przez to ograniczenie, kiedy próbowaliśmy połączyć wektor tekstowy z macierzą liczbową, R było zmuszone niejawnie rzutować liczby na łańcuchy znaków, stąd "ciapki" w wyniku.
 
 - Class: cmd_question
-  Output: So, we're still left with the question of how to include the names of our patients in the table without destroying the integrity of our numeric data. Try the following -- my_data <- data.frame(patients, my_matrix)
+  Output: Ok, ale wciąż pozostaje pytanie jak zawrzeć imiona pacjentów w tabeli bez niszczenia danych liczbowych. Spróbuj następującego polecenia -- my_data <- data.frame(patients, my_matrix)
   CorrectAnswer: my_data <- data.frame(patients, my_matrix)
   AnswerTests: omnitest(correctExpr='my_data <- data.frame(patients, my_matrix)')
-  Hint: Type my_data <- data.frame(patients, my_matrix), so we can explore what happens.
+  Hint: Wpisz my_data <- data.frame(patients, my_matrix) i zobacz co sie stanie.
 
 - Class: cmd_question
-  Output: Now view the contents of my_data to see what we've come up with.
+  Output: Obejrzyj teraz zawartość zmiennej my_data, aby zobaczyć co wskóraliśmy.
   CorrectAnswer: my_data
   AnswerTests: omnitest(correctExpr='my_data')
   Hint: Type my_data to view its contents.
 
 - Class: text
-  Output: It looks like the data.frame() function allowed us to store our character vector of names right alongside our matrix of numbers. That's exactly what we were hoping for! 
+  Output: Wygląda na to, że funkcja data.frame() pozwoliła nam przechować imiona pacjentów wespół z wynikami badań. I o to chodziło! 
 
 - Class: text
-  Output: Behind the scenes, the data.frame() function takes any number of arguments and returns a single object of class `data.frame` that is composed of the original objects.
+  Output: Funkcja data.frame() to tak naprawdę konstruktor tworzący obiekty typu (tak, zgadłeś) `data.frame`.
 
 - Class: cmd_question
-  Output: Let's confirm this by calling the class() function on our newly created data frame.
+  Output: Sprawdźmy czy tak rzeczywiście jest wywołując funkcję class() na my_data.
   CorrectAnswer: class(my_data)
   AnswerTests: omnitest(correctExpr='class(my_data)')
-  Hint: The class function takes one argument -- the object of which you want to determine the class.
+  Hint: Funkcja class poiera tylk jeden parametr -- obiekt dla którego chcemy określić typ.
 
 - Class: text
-  Output: It's also possible to assign names to the individual rows and columns of a data frame, which presents another possible way of determining which row of values in our table belongs to each patient.
+  Output: Istnieje także możliwość przypisywania nazw do pojedynczych wierszy i kolumn data frame'a. Byłby to inny sposób na określenie który wiersz odpowiada ktoremu pacjentowi.
 
 - Class: text
-  Output: However, since we've already solved that problem, let's solve a different problem by assigning names to the columns of our data frame so that we know what type of measurement each column represents.
+  Output: Ale skoro już rozwiązaliśmy ten problem, rozwiążmy inny. Przypiszmy nazwy kolumnom data frame'a, aby rozróżnić pomiary laboratoryjne.
 
 - Class: cmd_question
-  Output: Since we have six columns (including patient names), we'll need to first create a vector containing one element for each column. Create a character vector called cnames that contains the following values (in order) -- "patient", "age", "weight", "bp", "rating", "test".
-  CorrectAnswer: cnames <- c("patient", "age", "weight", "bp", "rating", "test")
-  AnswerTests: omnitest(correctExpr='cnames <- c("patient", "age", "weight", "bp", "rating", "test")')
-  Hint: Make sure all of the names are lowercase, surrounded by double quotes, and separated with commas. Don't forget to use the c() function.
+  Output: Ponieważ mamy sześć kolumn (łącznie z imionami pacjentów), musimy stworzyć wektor sześciu nazw. Stwórz wektor tekstowy o nazwie cnames, który zawiera następujące nazwy (w tej kolejności) -- "pacjent", "wiek", "waga", "MCV", "MCH", "MCHC".
+  CorrectAnswer: cnames <- c("pacjent", "wiek", "waga", "MCV", "MCH", "MCHC")
+  AnswerTests: omnitest(correctExpr='cnames <- c("pacjent", "wiek", "waga", "MCV", "MCH", "MCHC")')
+  Hint: Nie zapomnij o funkcji c().
 
 - Class: cmd_question
-  Output: Now, use the colnames() function to set the `colnames` attribute for our data frame. This is similar to the way we used the dim() function earlier in this lesson.
+  Output: Teraz za pomocą funkcji colnames() ustaw atrybut `colnames` naszego data frame'a. Powinno to wyglądać podobnie do tego jak wykorzystaliśmy funkcję dim().
   CorrectAnswer: colnames(my_data) <- cnames
   AnswerTests: omnitest(correctExpr='colnames(my_data) <- cnames')
-  Hint: Try colnames(my_data) <- cnames.
+  Hint: Spróbuj colnames(my_data) <- cnames.
 
 - Class: cmd_question
-  Output: Let's see if that got the job done. Print the contents of my_data.
+  Output: Zobaczmy czy to załatwiło sprawę. Wyświetl my_data.
   CorrectAnswer: my_data
   AnswerTests: omnitest(correctExpr='my_data')
-  Hint: Print the contents of my_data to the console.
+  Hint: Wyświetl zawartość my_data.
 
 - Class: text
-  Output: In this lesson, you learned the basics of working with two very important and common data structures -- matrices and data frames. There's much more to learn and we'll be covering more advanced topics, particularly with respect to data frames, in future lessons.
+  Output: W ramach tej lekcji poznałeś podstawy działania dwóch bardzo ważnych struktur danych -- macierzy i data frame'a. Jest oczywiście wiele więcej rzeczy do poznania i będziemy jeszcze omawiać bardziej zaawanasowane problemy w przyszłych lekcjach, szczególnie jeśli chodzi o data frame'y.

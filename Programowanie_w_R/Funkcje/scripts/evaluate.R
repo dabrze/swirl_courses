@@ -1,5 +1,5 @@
-# You can pass functions as arguments to other functions just like you can pass
-# data to functions. Let's say you define the following functions:
+# FUnkcje można przekazywać jako parametry innych tak samo jak dane. Załóżmy, 
+# że zdefinowałeś następujące funkcje:
 #
 # add_two_numbers <- function(num1, num2){
 #    num1 + num2
@@ -13,23 +13,20 @@
 #    func(2, 4)
 # }
 #
-# As you can see we use the argument name "func" like a function inside of 
-# "some_function()." By passing functions as arguments 
-# some_function(add_two_numbers) will evaluate to 6, while
-# some_function(multiply_two_numbers) will evaluate to 8.
+# Jak widzisz, wykorzystujemy argument "func" jak funkcję w "some_function()." 
+# some_function(add_two_numbers) zwróci 6, podczas gdy
+# some_function(multiply_two_numbers) zwróci 8.
 # 
-# Finish the function definition below so that if a function is passed into the
-# "func" argument and some data (like a vector) is passed into the dat argument
-# the evaluate() function will return the result of dat being passed as an
-# argument to func.
+# Dokończ definicję poniższej funkcji, tak traktując "func" jak funkcję, a dat 
+# jak zmienną z danymi (np. wektorem liczbowym). Funkcja  evaluate() powinna
+# wynik wywołania func na danych dat.
 #
-# Hints: This exercise is a little tricky so I'll provide a few example of how
-# evaluate() should act:
-#    1. evaluate(sum, c(2, 4, 6)) should evaluate to 12
-#    2. evaluate(median, c(7, 40, 9)) should evaluate to 9
-#    3. evaluate(floor, 11.1) should evaluate to 11
+# Podpowiedź: Kilka testów:
+#    1. evaluate(sum, c(2, 4, 6)) powinno zwrócić 12
+#    2. evaluate(median, c(7, 40, 9)) powinno zwrócić 9
+#    3. evaluate(floor, 11.1) powinno zwrócić 11
 
 evaluate <- function(func, dat){
-  # Write your code here!
-  # Remember: the last expression evaluated will be returned! 
+  # Wprowadź kod tutaj!
+  # Pamiętaj: ostatnie wywołane wyrażenie to wartość zwracana przez funkcję!
 }

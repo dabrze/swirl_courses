@@ -1,37 +1,35 @@
-# Let's explore how to "unpack" arguments from an ellipses when you use the
-# ellipses as an argument in a function. Below I have an example function that
-# is supposed to add two explicitly named arguments called alpha and beta.
+# Zobaczmy jak "rozpakowuje się" argumenty ukryte za wielkropkiem. Poniżej
+# masz przykład funkcji, która powinna dodać dwa jawnie nazwane parametry
+# alpha i beta.
 # 
 # add_alpha_and_beta <- function(...){
-#   # First we must capture the ellipsis inside of a list
-#   # and then assign the list to a variable. Let's name this
-#   # variable `args`.
+#   # Najpierw zamieniami argumenty w ... na listę
+#   # a następnie przypisujemy wynik do zmiennej `args`.
 #
 #   args <- list(...)
 #
-#   # We're now going to assume that there are two named arguments within args
-#   # with the names `alpha` and `beta.` We can extract named arguments from
-#   # the args list by used the name of the argument and double brackets. The
-#   # `args` variable is just a regular list after all!
+#   # Założymy teraz, że w tej liście znajdują się zmienne
+#   # o nazwach `alpha` i `beta.` Możemy je wyekstrahować
+#   # z listy args podając ich nazwy jako łańcuchy znaków
+#   # przekazane do podwójnych nawiasów kwadratowych. Zmienna
+#   # `args` to w końcu zwykła lista!
 #   
 #   alpha <- args[["alpha"]]
 #   beta  <- args[["beta"]]
 #
-#   # Then we return the sum of alpha and beta.
+#   # Teraz zwrócimy sumę zmiennych alpha i beta.
 #
 #   alpha + beta 
 # }
 #
-# Have you ever played Mad Libs before? The function below will construct a
-# sentence from parts of speech that you provide as arguments. We'll write most
-# of the function, but you'll need to unpack the appropriate arguments from the
-# ellipses.
+# Jest taka prosta gra towarzyska, gdzie zwija się kartkę i podając ją w kółko dopisuje 
+# się kolejne słowa. "Zagramanicą" zwą to Mad Libs. Dokończ poniższą funkcję, aby 
+# zasymulować prostszą wersję tej zabawy.
 
 mad_libs <- function(...){
-  # Do your argument unpacking here!
+  # Tu rozpakuj argumenty!
   
-  # Don't modify any code below this comment.
-  # Notice the variables you'll need to create in order for the code below to
-  # be functional!
-  paste("News from", place, "today where", adjective, "students took to the streets in protest of the new", noun, "being installed on campus.")
+  # Nie modyfikuj poniższego kodu.
+  # Zwróć uwagę na nazwy zmiennych, których będziesz potrzebował
+  paste("Z ostatniej chwili! W ", miejsce, ", gdzie", przymiotnik, "studenci wyszli na ulicę, aby protestować przeciwko", rzeczownik, "na uczelni.")
 }

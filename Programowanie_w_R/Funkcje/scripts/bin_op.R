@@ -1,29 +1,29 @@
-# The syntax for creating new binary operators in R is unlike anything else in
-# R, but it allows you to define a new syntax for your function. I would only
-# recommend making your own binary operator if you plan on using it often!
+# Składnia tworzenia nowych operatorów binarnych jest wyjątkowa w ramach R,
+# ale efekt pozwala też wyjątkowo wywoływać funkcje. Warto stworzyć własny
+# operator binarny jeśli, będziesz często z niego korzystał.
+# P.S. W ramach zajęć poznasz operatory definiowane przez biblioteki takie jak np. dplyr.
 #
-# User-defined binary operators have the following syntax:
-#      %[whatever]% 
-# where [whatever] represents any valid variable name.
+# Zdefiniowane przez użytkownika operatory binarne mają następującą składnię:
+#      %[coś]% 
+# gdzie [coś] oznacza poprawny identyfikator (nazwę zmiennej) w R.
 # 
-# Let's say I wanted to define a binary operator that multiplied two numbers and
-# then added one to the product. An implementation of that operator is below:
+# Załóżmy, że chę zdefiniować operator binarny, który pomnoży dwie liczby i doda
+# doda do nich jeden. Implementacja takiego operatora wyglądałaby następująco:
 #
-# "%mult_add_one%" <- function(left, right){ # Notice the quotation marks!
+# "%mult_add_one%" <- function(left, right){ # Zwróć uwagę na ciapki!
 #   left * right + 1
 # }
 #
-# I could then use this binary operator like `4 %mult_add_one% 5` which would
-# evaluate to 21.
+# Z tak zdefiniowanym operatorem mógłby wykonać następujące wyrażenie `4 %mult_add_one% 5`
+# które zwróciłoby 21.
 #
-# Write your own binary operator below from absolute scratch! Your binary
-# operator must be called %p% so that the expression:
+# Napisz własny operator binarny! Powinien nazywać się %p% i działać tak, że:
 #
-#       "Good" %p% "job!"
+#       "Ahoj" %p% "przygodo!"
 #
-# will evaluate to: "Good job!"
+# zwróci: "Ahoj przygodo!"
 
-"%p%" <- function(){ # Remember to add arguments!
+"%p%" <- function(){ # Pamiętaj, aby dodać argumenty!
   
 }
 

@@ -1,34 +1,32 @@
-# The ellipses can be used to pass on arguments to other functions that are
-# used within the function you're writing. Usually a function that has the
-# ellipses as an argument has the ellipses as the last argument. The usage of
-# such a function would look like:
+# Wielokropek można wykorzystać do przekazania argumentów do funkcji 
+# wykorzystywanych wewnątrz funkcji, którą tworzysz. Zwykle funkcja, która
+# ma wielokropek jako argument, ma wielokropek jako ostatni argument. 
+# Wykorzystanie takiej funkcji wyglądałoby w ten sposób:
 #
 # ellipses_func(arg1, arg2 = TRUE, ...)
 #
-# In the above example arg1 has no default value, so a value must be provided
-# for arg1. arg2 has a default value, and other arguments can come after arg2
-# depending on how they're defined in the ellipses_func() documentation.
-# Interestingly the usage for the paste function is as follows:
+# W powyższym przykładzie arg1 nie ma wartości domyślnej, więc trzeba podać
+# wartość arg1. arg2 hma wartość domyślną i wszystkie pozostałe argumenty 
+# mogą wystąpić po arg2. Co ciekawe funkcja paste działa w ten sposób:
 #
 # paste (..., sep = " ", collapse = NULL)
 #
-# Notice that the ellipses is the first argument, and all other arguments after
-# the ellipses have default values. This is a strict rule in R programming: all
-# arguments after an ellipses must have default values. Take a look at the
-# simon_says function below:
+# Zauważ, że wielokropek jest pierwszym argumentem i wszystkie pozostałe
+# parametry mają wartości domyślne. To jest sztywna reguła języka R: 
+# wszystkie parametry występujące po wilokropku muszą mieć wartości domyślne. 
+# Spójrz na funkcję simon_says:
 #
 # simon_says <- function(...){
 #   paste("Simon says:", ...)
 # }
 #
-# The simon_says function works just like the paste function, except the
-# begining of every string is prepended by the string "Simon says:"
+# Funkcja simon_says function działa zupełnie jak paste z tą rożnicą, że na
+# na początku każdego zdania dodaje "Simon says".
 #
-# Telegrams used to be peppered with the words START and STOP in order to
-# demarcate the beginning and end of sentences. Write a function below called 
-# telegram that formats sentences for telegrams.
-# For example the expression `telegram("Good", "morning")` should evaluate to:
-# "START Good morning STOP"
+# Telegramy były okraszone słowami START i STOP, aby oznaczyć początek i 
+# koniec zdań. Napisz funkcję telegram, która formatuje zdania tak jak telegramy.
+# Dla przykładu, wyrażenie `telegram("Powiedz", "nic", "to")` powinno zwrócić:
+# "START Powiedz nic to STOP"
 
 telegram <- function(...){
   

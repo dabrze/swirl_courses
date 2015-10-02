@@ -59,7 +59,7 @@
   Hint: "Wpisz my_mean(c(4, 5, 10)), aby wypróbować swoją nową funkcję." 
 
 - Class: text
-  Output: "Teraz spróbujemy napisać funkcję z domyślnymi wartościami argumentów. Możesz ustawiać wartości domyślne, jeśli uważasz, że wywoływana będzie głównie z daną wartością parametru."
+  Output: "Teraz spróbujemy napisać funkcję z domyślnymi wartościami argumentów. Możesz ustawiać wartości domyślne, jeśli uważasz, że funkcja wywoływana będzie głównie z daną wartością parametru."
 
 - Class: script
   Output: Upewnij się, że zapisałeś skrypt zanim wpiszesz submit().
@@ -74,7 +74,7 @@
   Hint: "Wypróbujmy napisaną przez Ciebie funkcję, wywołując: remainder(5)"
 
 - Class: text
-  Output: "Upewnijmy się, że rozumiemy co się stało. Przekazałeś jeden argument do funkcji, R dopasowało ten argument do 'num', ponieważ 'num' jest periwszym parametrem. Domyślną wartością 'divisor' 2, więc funkcja wykorzystała tę wartość jako drugi parametr."
+  Output: "Upewnijmy się, że rozumiemy co się stało. Przekazałeś jeden argument do funkcji, a R dopasowało ten argument do 'num' ponieważ 'num' jest periwszym parametrem. Domyślną wartością 'divisor' jest 2, więc funkcja wykorzystała tę wartość jako drugi parametr."
 
 - Class: cmd_question
   Output: "Wypróbujmy działanie funkcji z dwoma parametrami. Wpisz: remainder(11, 5) i zobaczymy co się stanie."
@@ -101,7 +101,7 @@
   Hint: "Przetestuj częściowe dopasowywanie parametrów: remainder(4, div = 2)"
 
 - Class: text
-  Output: "Słowo przestrogi: chcesz pisać jak najczytelniejszy kod. Zmienianie kolejności parametrów w wywołaniu poprzez parametry nazwanych czy wykorzystywanie częściowego dopasowywania może być mylące, dlatego korzystaj z tych opcji z rozwagą!"
+  Output: "Słowo przestrogi: chcesz pisać jak najczytelniejszy kod. Zmienianie kolejności parametrów w wywołaniu poprzez parametry nazwane czy wykorzystywanie częściowego dopasowywania może być mylące, dlatego korzystaj z tych opcji z rozwagą!"
 
 - Class: cmd_question
   Output: "Przy tym całym gadaniu o argumentach, możesz się zastanawiać czy jest sposób na poznanie argumentów funkcji bez otwierania dokumentacji. Okazuje się, że jest! Wpisz: args(remainder), aby poznać argumenty funkcji remainder."
@@ -131,7 +131,7 @@
   Output: "Warto też wspomnieć, że można przekazywać funkcje jako parametr bez nazywania ich. Funkcje, które nie posiadają nazwy zwane są funkcjami anonimowymi."
 
 - Class: text
-  Output: "Wykorzystajmy funkcję evaluate, aby zbadać jak funkcje anonimowe działają. Jako pierwszy argument evaluate przekażemy malutką funkcję, mieszczącą się w jednej linii kodu. Jako drugi argument przekażemy dane do wykorzystania przez naszą małą funkcję anonimową."
+  Output: "Wykorzystajmy funkcję evaluate, aby zbadać jak funkcje anonimowe działają. Jako pierwszy argument evaluate przekażemy malutką funkcję mieszczącą się w jednej linii kodu. Jako drugi argument przekażemy dane do wykorzystania przez naszą małą funkcję anonimową."
 
 - Class: cmd_question
   Output: "Wpisz następujące polecenie, a potem omówimy jak działa: evaluate(function(x){x+1}, 6)"
@@ -164,7 +164,7 @@
   Output: "Jak widzisz pierwszym argumentem paste() jest `...`, które będę nazywał wielokropkiem. Wielokropek pozwala przekazać nieokreśloną liczbę argumentów do funkcji. W przypadku paste() dowolna liczba łańcuchów znaków może być przekazana jako argument funkcji paste(), która zwróci połączenie tych łańcuchów."
 
 - Class: cmd_question
-  Output: 'Tak żeby zobaczyć jak paste() działa, wpisz paste("R", "jest", "gites!")'
+  Output: 'Tak żeby zobaczyć jak paste() działa, wpisz paste("R", "jest", "gites!").'
   CorrectAnswer: paste("R", "jest", "gites!")
   AnswerTests: omnitest(correctExpr='paste("R", "jest", "gites!")')
   Hint: 'Po prostu wpisz: paste("R", "jest", "gites!")'

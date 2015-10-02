@@ -1,4 +1,4 @@
-# FUnkcje można przekazywać jako parametry innych tak samo jak dane. Załóżmy, 
+# Funkcje można przekazywać jako parametry innych funkcji tak samo jak dane. Załóżmy, 
 # że zdefinowałeś następujące funkcje:
 #
 # add_two_numbers <- function(num1, num2){
@@ -17,9 +17,9 @@
 # some_function(add_two_numbers) zwróci 6, podczas gdy
 # some_function(multiply_two_numbers) zwróci 8.
 # 
-# Dokończ definicję poniższej funkcji, tak traktując "func" jak funkcję, a dat 
+# Dokończ definicję poniższej funkcji, traktując "func" jak funkcję a dat 
 # jak zmienną z danymi (np. wektorem liczbowym). Funkcja  evaluate() powinna
-# wynik wywołania func na danych dat.
+# zwrócić wynik wywołania func na danych dat.
 #
 # Podpowiedź: Kilka testów:
 #    1. evaluate(sum, c(2, 4, 6)) powinno zwrócić 12

@@ -1,9 +1,9 @@
-# Zobaczmy jak "rozpakowuje się" argumenty ukryte za wielkropkiem. Poniżej
+# Zobaczmy jak "rozpakowuje się" argumenty ukryte za wielokropkiem. Poniżej
 # masz przykład funkcji, która powinna dodać dwa jawnie nazwane parametry
 # alpha i beta.
 # 
 # add_alpha_and_beta <- function(...){
-#   # Najpierw zamieniami argumenty w ... na listę
+#   # Najpierw zamieniami argumenty ukryte w ... na listę,
 #   # a następnie przypisujemy wynik do zmiennej `args`.
 #
 #   args <- list(...)
@@ -31,5 +31,5 @@ mad_libs <- function(...){
   
   # Nie modyfikuj poniższego kodu.
   # Zwróć uwagę na nazwy zmiennych, których będziesz potrzebował
-  paste("Z ostatniej chwili! W ", miejsce, ", gdzie", przymiotnik, "studenci wyszli na ulicę, aby protestować przeciwko", rzeczownik, "na uczelni.")
+  paste("News from", place, "today where", adjective, "students took to the streets in protest of the new", noun, "being installed on campus.")
 }

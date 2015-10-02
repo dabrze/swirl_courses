@@ -13,8 +13,8 @@
 # function_name(value1, value2)
 #
 # Poniżej stworzysz funkcję o nazwie boring_function. Funkcja ta pobiera
-# argument `x` i zwraca wartość x bez wykonywania na niej żadnej operacji.
-# Usuń kratkę (hash) stojący przed x. Natępnie zapisz zmodyfikowany skrypt
+# argument `x` i zwraca jego wartość bez wykonywania na nim żadnej operacji.
+# Usuń kratkę (hash) stojącą przed x. Natępnie zapisz zmodyfikowany skrypt
 # i wpisz w konsoli submit().
 
 boring_function <- function(x) {

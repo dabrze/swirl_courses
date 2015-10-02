@@ -8,13 +8,13 @@
 #     number + by
 # }
 #
-# Jeśli spojrzysz na kod między nawiasami okrągłymi zobaczysz, że ustawiłem wartość
-# "by" na 1. To oznacza, że argument "by" będzie miał wartość domyślną 1.
+# Jeśli spojrzysz na kod zobaczysz, że ustawiłem wartość "by" na 1. To oznacza,
+# że argument "by" będzie miał wartość domyślną 1.
 #
 # Mogę wywołać funkcję bez podawania parametru "by": 
 # increment(5) zwróci 6. 
 #
-# Niemniej jednak, jeśli chcę, wciąż mogę podać wartość argumenty "by"! Wyrażenie:
+# Niemniej jednak, jeśli chcę, wciąż mogę podać wartość argumentu "by"! Wyrażenie:
 # increment(5, 2) zwróci 7. 
 #
 # Warto wspomnieć, że `=` to operator przypisania, podobnie jak `<-`. Różnica polega
@@ -22,10 +22,10 @@
 # a operator `<-` pozwala zmienić wartość zmiennej spoza zakresu.
 # 
 # Napiszesz teraz funkcję o nazwie "remainder." Funkcja remainder() będzie pobierała
-# dwa argumenty: "num" i "divisor", gdzie "num" jest dzielony przez "divisor",a
+# dwa argumenty: "num" i "divisor", gdzie "num" jest dzielony przez "divisor", a
 # zwracana jest reszta z dzielenia. Załóżmy, że w większości przypadków chcemy poznać
 # resztę z dzielenia przez 2. Dlatego ustaw wartość domyślną parametru "divisor" 
-# równą 2. Upewnij się, że "num" pierwszym, a "divisor" drugim argumentem.
+# równą 2. Upewnij się, że "num" jest pierwszym, a "divisor" drugim argumentem.
 #
 # Podpowiedź #1: Możesz wykorzystać operator modulo %%.
 

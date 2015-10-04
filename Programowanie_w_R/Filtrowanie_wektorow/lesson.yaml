@@ -1,10 +1,10 @@
 - Class: meta
   Course: Programowanie w R
   Lesson: Filtrowanie wektorow
-  Author: Nick Carchedi
+  Author: Nick Carchedi, Dariusz Brzeziński
   Type: Standard
   Organization: JHU Biostat, Poznan University of Technology
-  Version: 1.0.0
+  Version: 1.0.1
 
 - Class: text
   Output: W ramach tej lekcji dowiesz się jak filtrować elementy wektorów w oparciu o zdefiniowane przez Ciebie warunki.

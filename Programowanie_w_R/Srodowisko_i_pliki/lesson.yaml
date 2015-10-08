@@ -17,7 +17,7 @@
 
 - Class: text
   Output: Niemniej jednak R dostarcza wspólnego interfejsu do pracy z plikami i dzięki
-    temu, komendy ktore poznacie w ramach tej lekcji będa działały na wszystkich
+    temu, komendy które poznacie w ramach tej lekcji będa działały na wszystkich
     systemach operacyjnych.
 
 - Class: text
@@ -59,8 +59,8 @@
   Hint: Wpisz list.files(), aby przejrzeć listę plików w katalogu roboczym.
 
 - Class: cmd_question
-  Output: W trakcie tej lekcji (jak i nastepnych) warto zaglądać do plików 
-    pomocy kazdej nowo poznanej funkcji. Sprawdź plik pomocy dla funkcji
+  Output: W trakcie tej lekcji (jak i następnych) warto zaglądać do plików 
+    pomocy każdej nowo poznanej funkcji. Sprawdź plik pomocy dla funkcji
     list.files za pomocą komendy ?list.files.
   CorrectAnswer: ?list.files
   AnswerTests: any_of_exprs('?list.files', '?dir', 'help("list.files")', 'help("dir")')
@@ -123,7 +123,7 @@
     zawsze zaglądać do pomocy, np. ?file.create.
 
 - Class: cmd_question
-  Output: "Powienien to być jedyny plik w nowym folderze. Sprawdźmy to wypisując
+  Output: "Powinien to być jedyny plik w nowym folderze. Sprawdźmy to wypisując
     wszystkie pliki w bieżącym katalogu."
   CorrectAnswer: list.files()
   AnswerTests: any_of_exprs('list.files()', 'dir()')

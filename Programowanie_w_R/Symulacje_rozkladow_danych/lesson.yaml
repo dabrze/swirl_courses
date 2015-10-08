@@ -1,0 +1,172 @@
+- Class: meta
+  Course: Programowanie w R
+  Lesson: Symulacje rozkladow danych
+  Author: Nick Carchedi, Dariusz Brzezinski
+  Type: Standard
+  Organization: JHU Biostat, Poznan University of Technology
+  Version: 1.0.0
+
+- Class: text
+  Output: Jedną z największych zalet statystycznego języka programowania jakim jest R jest bogata kolekcja do losowania liczb i symulowania rozkładów danych.
+
+- Class: text
+  Output: Ta lekcja zakłada znajomość kilku podstawowych rozkładów prawdopodobieństwa, ale prezentowane tematy będą dotyczyć tylko generowania liczb losowych. Choć warto przypomnieć sobie właściwości i zastosowania poszczególnych rozkładów, to bez ich znajomości też powinieneś zrozumieć główne idee prezentowane w ramach lekcji.
+
+- Class: cmd_question
+  Output: Pierwszą funkcją, którą wykorzystamy do generowania liczb losowych jest sample(). Wpisz ?sample, aby otworzyć dokumentację.
+  CorrectAnswer: ?sample
+  AnswerTests: omnitest(correctExpr='?sample')
+  Hint: Wpisz '?sample', aby otworzyć dokumentację funkcji sample().
+
+- Class: cmd_question
+  Output: "Zasymulujmy rzut czterema sześciościennymi kostkami (4 x K6 dla znawców tematu): sample(1:6, 4, replace = TRUE)."
+  CorrectAnswer: sample(1:6, 4, replace = TRUE)
+  AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
+  Hint: Wpisz sample(1:6, 4, replace = TRUE), aby rzut czterema kostkami K6.
+
+- Class: cmd_question
+  Output: Teraz powtórz polecenie i zobacz czy wynik się różni. (Prawdopodobieństwo wyrzucenia dokładnie tego samego wyniku wynosi (1/6)^4 = 0.00077, więc szanse są raczej małe!)
+  CorrectAnswer: sample(1:6, 4, replace = TRUE)
+  AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
+  Hint: Wpisz sample(1:6, 4, replace = TRUE), aby zasymulować rzut czterema kostkami K6.
+
+- Class: text
+  Output: sample(1:6, 4, replace = TRUE) prosi R, aby losowo wybrać cztery liczby między 1 a 6 ZE ZWRACANIEM. Dla przypomnienia, losowanie ze zwracaniem oznacza, że dany element zbioru może zostać wylosowany więcej niż raz.
+
+- Class: cmd_question
+  Output: Teraz wylosuj 10 liczb z przedziału [1; 20] BEZ ZWRACANIA. Wystarczy, że pominiesz argument 'replace'.
+  CorrectAnswer: sample(1:20, 10)
+  AnswerTests: match_call('sample(1:20, 10)')
+  Hint: Wpisz sample(1:20, 10), aby wylosować 10 liczb między 1 a 20 bez zwracania.
+
+- Class: text
+  Output: Ponieważ ostatnie polecenie losowało bez zwracania, żaden wynik się nie powtarza.
+
+- Class: cmd_question
+  Output: LETTERS to predefiniowana zmienna w R zawierająca wektor 26 liter z angielskiego alfabetu. Wyświetl jej zawartość.
+  CorrectAnswer: LETTERS
+  AnswerTests: omnitest(correctExpr='LETTERS')
+  Hint: Wpisz LETTERS i wypisz zawartość tej zmiennej na konsolę.
+
+- Class: cmd_question
+  Output: Funkcja sample() może być także wykorzystana do permutacji elementów wektora. Dla przykładu wpisz sample(LETTERS), aby dokonać permutacji 26 liter angielskiego alfabetu.
+  CorrectAnswer: sample(LETTERS)
+  AnswerTests: omnitest(correctExpr='sample(LETTERS)')
+  Hint: Wpisz sample(LETTERS), aby dokonać permutacji 26 liter angielskiego alfabetu.
+
+- Class: text
+  Output: To to samo co wziąć próbkę z LETTERS o rozmiarze 26 bez zwracania. Kiedy pominiesz argument 'size', sample() bierze próbkę równą rozmiarowi wektora, z którego losujesz.
+
+- Class: text
+  Output: Załóżmy teraz, że chcemy zasymulować 100 sto rzutów nieuczciwą monetą. Ta moneta daje prawdopodobieństwo 0.3, że wypadnie 'orzeł', i 0.7, że wypadnie 'reszka'.
+
+- Class: cmd_question
+  Output: Niech wartość zero reprezentuje orła a wartość 1 reszkę. Użyj funkcji sample(), aby wylosować próbkę o rozmiarze 100 z wektora c(0,1). Ponieważ moneta jest nieuczciwa, musimy podać konkretne prawdopodobieństwa poszczególnych wyników korzystając z czwartego argumentu: prob = c(0.3, 0.7). Przypisz wynik do nowej zmiennej o nazwie flips.
+  CorrectAnswer: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
+  AnswerTests: match_call('flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))')
+  Hint: 'Następujące polecenie zasynuluje 100 rzutów nieuczciwą monetą i przypisze wynik do zmiennej: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))'
+
+- Class: cmd_question
+  Output: Zobacz zawartość zmiennej flips.
+  CorrectAnswer: flips
+  AnswerTests: omnitest(correctExpr='flips')
+  Hint: Po prostu wpisz flips, aby zobaczyć zawartość tej zmiennej.
+
+- Class: cmd_question
+  Output: Ponieważ prawdopodobieństwo tego, że wypadnie reszka wynosi 0.7, spodziewamy się że ok. 70 losowań zwróciło wartość 1. Policz faktyczną liczbę jedynek za pomocą funkcji sum().
+  CorrectAnswer: sum(flips)
+  AnswerTests: omnitest(correctExpr='sum(flips)')
+  Hint: sum(flips) doda jedynki i zera w wektorze dając sumę jedynek w zmiennej flips.
+
+- Class: cmd_question
+  Output: Rzut monetą daje dwa możliwe wyniki (0 lub 1) i wykonujemy 100 nie zależnych powtórzeń tej czynności, możemy zatem wykorzystać funkcję rbinom(), aby zasymulować rozkład dwumianowy. Otwórz dokumentację funkcji rbinom() wpisując ?rbinom.
+  CorrectAnswer: ?rbinom
+  AnswerTests: omnitest(correctExpr='?rbinom')
+  Hint: Wpisz ?rbinom, aby otworzyć plik pomocy dla funkcji rbinom().
+
+- Class: text
+  Output: Każdy rozkład prawdopodobieństwa w R ma funkcję r*** (jak "random"), d*** (jak "density"), p*** (jak "probability") i q*** (jak "quantile"). W ramach tej lekcji skupimy się na funkcjach r***, ale zachęcam do poeksperymentowania z pozostałymi rodzinami funkcji.
+
+- Class: cmd_question
+  Output: Zmienna losowa o rozkładzie dwumianowym reprezentuje liczbę 'sukcesów' (reszek, bo ten wynik zakodowaliśmy wartością 1) w zadanej liczbie niezależnych prób (rzutów monetą). Można zatem stworzyć zmienną losową, która reprezentuje liczbę reszek po 100 rzutach naszą nieuczciwą monetą: rbinom(1, size = 100, prob = 0.7). Zwróć uwagę, że specyfikujemy tylko prawdopodobieństwo 'sukcesu' (reszki) a nie prawdopodobieństwo 'porażki'. Wypróbuj wskazanae polecenie teraz.
+  CorrectAnswer: rbinom(1, size = 100, prob = 0.7)
+  AnswerTests: match_call('rbinom(1, size = 100, prob = 0.7)')
+  Hint: Wywołaj rbinom() z parametrami n = 1, size = 100 i prob = 0.7.
+
+- Class: cmd_question
+  Output: Równoważnie możemy wykonać 1 eksperyment składający się ze 100 obserwacji o łącznym prawdopodobieństwie 0.7. Wypróbuj tę opcję i przypisz wynik do zmiennej flips2.
+  CorrectAnswer: flips2 <- rbinom(100, size = 1, prob = 0.7)
+  AnswerTests: match_call('flips2 <- rbinom(100, size = 1, prob = 0.7)')
+  Hint: Wywołaj rbinom() z parametrami n = 100, size = 1, prob = 0.7 i przypisz wynik do zmiennej flips2.
+
+- Class: cmd_question
+  Output: Obejrzyj zawartość zmiennej flips2.
+  CorrectAnswer: flips2
+  AnswerTests: omnitest('flips2')
+  Hint: Wpisz flips2, aby obejzeć zawartość tej zmiennej.
+
+- Class: cmd_question
+  Output: Teraz uzyj funkcji sum(), aby policzyć ile wypadlo reszek. Wynik powinien oscylować wokół 70!
+  CorrectAnswer: sum(flips2)
+  AnswerTests: omnitest('sum(flips2)')
+  Hint: Wpisz sum(flips2), aby policzyć liczbę jedynek.
+
+- Class: cmd_question
+  Output: Podobnie do rbinom(), możemy wykorzystać R do zasymulowania wielu innych rozkładów prawdopodobieństwa. Otwórz dokumentację zmiennej rnorm().
+  CorrectAnswer: ?rnorm
+  AnswerTests: omnitest('?rnorm')
+  Hint: Wpisz ?rnorm, aby zobaczyć plik pomocy funkcji rnorm.
+
+- Class: cmd_question
+  Output: Standardowy rozkład normalny ma średnią 0 i odchylenie standardowe 1. Jak widać w sekcji 'Usage' dokumentacji, domyślnymi wartościami parametrów 'mean' i 'sd' funkcji rnorm() to 0 i 1. Zatem polecenie rnorm(10) wylosuje 10 liczb ze standardowego rozkładu normalnego. Spróbuj.
+  CorrectAnswer: rnorm(10)
+  AnswerTests: omnitest('rnorm(10)')
+  Hint: Wpisz rnorm(10), aby wylosować 10 liczb ze standardowego rozkładu normalnego.
+
+- Class: cmd_question
+  Output: Teraz zrób to samo tylko ze średnią 100 i odchyleniem standardowym 25.
+  CorrectAnswer: rnorm(10, 100, 25)
+  AnswerTests: match_call('rnorm(10, 100, 25)')
+  Hint: Wpisz rnorm(10, mean = 100, sd = 25), aby wygenerować 10 losowych liczb z rozkładu normalnego o średniej 100 i odchyleniu standardowym 25.
+
+- Class: text
+  Output: Na koniec załóżmy, że chcemy zasymulować 100 *grup* liczb losowych, każdą zawierającą 5 wartości z rozkładu Poissona o średniej 10. Zacznijmy od stworzenia jednej grupy 5 liczb, a potem wyjaśnię jak powtórzyć tę operację 100 razy w wygodny i zwięzły sposób.
+
+- Class: cmd_question
+  Output: Wygeneruj 5 liczb losowych z rozkładu Poissona o średniej 10. Jeśli będziesz miał problemy spójrz na dokumentację funkcji rpois().
+  CorrectAnswer: rpois(5, 10)
+  AnswerTests: match_call('rpois(5, 10)')
+  Hint: Użyj polecenia rpois(5, 10), aby wygenerować 5 liczb z rozkładu Poissona o średniej 10.
+
+- Class: cmd_question
+  Output: Teraz wywołaj replicate(100, rpois(5, 10)), aby powtórzyć tę operację 100 razy. Zapisz wynik do zmiennej my_pois.
+  CorrectAnswer: my_pois <- replicate(100, rpois(5, 10))
+  AnswerTests: match_call('my_pois <- replicate(100, rpois(5, 10))')
+  Hint: my_pois <- replicate(100, rpois(5, 10)) powtórzy tworzenie *grupy* 100 razy i zapisze wynik do zmiennej.
+
+- Class: cmd_question
+  Output: Spójrz na zawartość my_pois.
+  CorrectAnswer: my_pois
+  AnswerTests: omnitest('my_pois')
+  Hint: Wypisz zawartość my_pois na konsolę.
+
+- Class: cmd_question
+  Output: Funkcja replicate() stworzyła macierz, w której każda kolumna zawiera 5 liczb z rozkładu Poissona o średniej 10. Teraz możemy znaleźć średnią każdej z kolumn my_pois korzystając z funkcji colMeans(). Wynik zapisz do zmiennej cm.
+  CorrectAnswer: cm <- colMeans(my_pois)
+  AnswerTests: omnitest('cm <- colMeans(my_pois)')
+  Hint: Wpisz cm <- colMeans(my_pois), aby stworzyć wektor średnich i zapisać go do zmiennej cm.
+
+- Class: cmd_question
+  Output: Spójrzmy teraz na rozkład tych średnich. Stwórz histogram wpisując hist(cm).
+  CorrectAnswer: hist(cm)
+  AnswerTests: omnitest('hist(cm)')
+  Hint: hist(cm) zwróci histogram średnich.
+
+- Class: text
+  Output: Wygląda jakby średnie kolumn tworzyły rozkład normalny. Tak działa centralne twierdzenie graniczne, które część osób może pamięta z wykładów innych przedmiotów...
+
+- Class: text
+  Output: Wszystkie podstawowe rozkłady są wbudowane w R, w tym: wykładniczy (rexp()), chi-kwadrat (rchisq()), gamma (rgamma()), .... widzicie chyba jak się będą nazywać kolejne.
+
+- Class: text
+  Output: Symulacje mogą okazać się bardzo przydatne, a my tylko musnęliśmy temat. Zachęcam do samodzielnych eksperymentów z innymi funkcjami!

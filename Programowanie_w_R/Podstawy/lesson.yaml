@@ -176,7 +176,7 @@
  
 
 - Class: cmd_question
-  Output: W wielu środowiskach programistycznych strzałka w górę będzie przelatywać przez poprzednie polecenia. Spróbuj wciskać strzałkę w górę na klawiaturze, póki nie dojedziesz do poolecenia (z * 2 + 100), potem zmień 100 na 1000 i wciśnij Enter. Jeśli z jakiegoś powodu nie działa strzałka w górę, po prostu wpisz poprawione polecenie. 
+  Output: W wielu środowiskach programistycznych strzałka w górę będzie przelatywać przez poprzednie polecenia. Spróbuj wciskać strzałkę w górę na klawiaturze, póki nie dojedziesz do polecenia (z * 2 + 100), potem zmień 100 na 1000 i wciśnij Enter. Jeśli z jakiegoś powodu nie działa strzałka w górę, po prostu wpisz poprawione polecenie. 
   CorrectAnswer: z * 2 + 1000
   AnswerTests: omnitest(correctExpr='z * 2 + 1000')
   Hint: Jeśli w twoim środowisku nie działa strzałka w górę, wpisz po prostu poprawione polecenie.
@@ -185,7 +185,7 @@
   Output: Na koniec załóżmy, że chciałbyś wyświetlić zawartość zmiennej, którą wcześniej utworzyłeś, ale nie pamiętasz czy nazwałeś ją my_div czy myDiv. Możesz wypróbować oba, żeby zobaczyć co działa albo... 
 
 - Class: text
-  Output: Możesz wpisać pierwsze dwie litery nazwy zmiennej, potem wcisnąć Tab (możliwe, że więcej niż jeden raz). Większość środowisk programistycznych wyświetli listę zmiennych, które stworzyłeś, zaczynająych się od 'my'. Nazywamy to autouzupełnianiem i może się przydać kiedy w swojej przestrzeni roboczej będziesz miał wiele zmiennych. (P.S. Dla fanów IDE do praktycznie wszystkich języków programowania, w RStudio powinien też działać skrót Ctrl+Spacja ;))
+  Output: Możesz wpisać pierwsze dwie litery nazwy zmiennej, potem wcisnąć Tab (możliwe, że więcej niż jeden raz). Większość środowisk programistycznych wyświetli listę zmiennych, które stworzyłeś, zaczynających się od 'my'. Nazywamy to autouzupełnianiem i może się przydać kiedy w swojej przestrzeni roboczej będziesz miał wiele zmiennych. (P.S. Dla fanów IDE do praktycznie wszystkich języków programowania, w RStudio powinien też działać skrót Ctrl+Spacja ;))
   
 - Class: cmd_question
   Output: Teraz spróbuj sam. (Jeśli nie lubisz autouzupełniania, po prostu wpisz my_div i wciśnij Enter.)

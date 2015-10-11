@@ -111,7 +111,7 @@
     logiczne: A || B i A && B. Podobnie jak w innych językach programowania "podwójne"
     operatory AND i OR kończą swoją pracę jak tylko znają wynik. Pojedyncze operatory
     wywołują i sprawdzają wszystkie wyrażenia. Oznacza to zupełnie inny wynik przy
-    warunkach opratych na wektorach. Oznacza to również, że "podwójne" operatory przydadzą
+    warunkach opartych na wektorach. Oznacza to również, że "podwójne" operatory przydadzą
     nam się przy "ifach" ale nie przy np. filtrowaniu wektorów.'
 
 - Class: text
@@ -149,11 +149,11 @@
     znajdujące się w wektorze my_char. Tu powiedzieliśmy, że chcemy je skleić spacjami.
 
 - Class: text
-  Output: Wygląda jakbysmy o czymś zapomnieli.... No tak! Imię!
+  Output: Wygląda jakbyśmy o czymś zapomnieli.... No tak! Imię!
 
 - Class: cmd_question
   Output: 'Aby dodać imię na koniec my_char, uzyj
-    funkjci c() w ten sposób: c(my_char, "Twoje imię"). Spróbuj to zrobić i przypisz wynik do nowej 
+    funkcji c() w ten sposób: c(my_char, "Twoje imię"). Spróbuj to zrobić i przypisz wynik do nowej 
     zmiennej o nazwie my_name.'
   CorrectAnswer: my_name <- c(my_char, "Swirl")
   AnswerTests: var_is_a("character", "my_name"); expr_uses_func("c"); expr_creates_var("my_name");
@@ -169,7 +169,7 @@
   Hint: Wpisz my_name i wciśnij Enter.
 
 - Class: cmd_question
-  Output: Użyj teraz funkcji paste(), aby skleić zawrtość wektora my_name w
+  Output: Użyj teraz funkcji paste(), aby skleić zawartość wektora my_name w
    jeden łańcuch znaków. Nie zapomnij dodać collapse = " "!
   CorrectAnswer: paste(my_name, collapse = " ")
   AnswerTests: omnitest(correctExpr='paste(my_name, collapse = " ")')
@@ -182,7 +182,7 @@
 - Class: cmd_question
   Output: W najprostszym przypadku, możemy połączyć dwa wektory tekstowe, każdy o
     długości 1. Wpisz paste("Hello", "world!", sep = " "), gdzie
-    argument `sep` mówi R że chcemy rozdzialić elementy pojedynczą spacją.
+    argument `sep` mówi R że chcemy rozdzielić elementy pojedynczą spacją.
   CorrectAnswer: paste("Hello", "world!", sep = " ")
   AnswerTests: omnitest(correctExpr='paste("Hello", "world!", sep = " ")')
   Hint: Wpisz paste("Hello", "world!", sep = " "), aby połączyć słowa (wektory) "Hello" i

@@ -25,7 +25,7 @@
   Hint: Wpisz x * 3.
 
 - Class: text
-  Output: Zwróć uwagę, że elemnty wynikowego wektora mają wartości NA tam gdzie miał je wektor x.
+  Output: Zwróć uwagę, że elementy wynikowego wektora mają wartości NA tam gdzie miał je wektor x.
 
 - Class: cmd_question
   Output: Aby urozmaicić trochę sprawę, stwórzmy wektor zawierający 1000 wartości losowych ze standardowego rozkładu normalnego y <- rnorm(1000).
@@ -67,13 +67,13 @@
   Hint: Wypróbuj my_data == NA i zobacz co się stanie.
 
 - Class: text
-  Output: Powód dla którego dostałeś wektor cały wypełniony wartościami NA jest taki, że NA nie ma tak naprawdę konkretnej wartości, a jest raczej znacznikiem wartości, która jest niedostępna. Dlatego też wyrażenie logiczne jest niepełne i R nie ma innego wyboru jak tylko zwrócić wektor o tej samej długości co my_data cały wypelniony wartościami/znacznikami NA.
+  Output: Powód dla którego dostałeś wektor cały wypełniony wartościami NA jest taki, że NA nie ma tak naprawdę konkretnej wartości, a jest raczej znacznikiem wartości, która jest niedostępna. Dlatego też wyrażenie logiczne jest niepełne i R nie ma innego wyboru jak tylko zwrócić wektor o tej samej długości co my_data cały wypełniony wartościami/znacznikami NA.
 
 - Class: text
   Output: Trochę to zakręcone, ale clue jest takie żeby uważać na operacje logiczne gdy tylko pojawiają się w okolicy wartości NA. Jeśli stracisz czujność, zaczniesz dostawać pełno NA i nie będziesz zadowolony ;)
 
 - Class: text
-  Output: Wracając do zadania. Jak już mamy wektor my_na, w którym wartości TRUE odpowiadają każdej wartości NA a FALSE każdej liczbie, możemy policzyć łączną liczbę wzstpień NA w naszych danych.
+  Output: Wracając do zadania. Jak już mamy wektor my_na, w którym wartości TRUE odpowiadają każdej wartości NA a FALSE każdej liczbie, możemy policzyć łączną liczbę wystąpień NA w naszych danych.
 
 - Class: text
   Output: Trik polega na tym, aby zrozumieć, że gdzieś głęboko w środku R reprezentuje TRUE jako 1 a FALSE jako 0 (sic!). A zatem, jeśli policzymy sumę sterty TRUE-ów  FALSE-ów, dostaniemy łączną liczbę TRUE-ów (piękne te spolszczenia... wzruszyłem się...).

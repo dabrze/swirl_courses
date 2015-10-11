@@ -1,193 +1,193 @@
 - Class: meta
-  Course: R Programming
-  Lesson: Dates and Times
-  Author: Nick Carchedi
-  Type: Coursera
-  Organization: JHU Biostat
-  Version: 2.2.11
+  Course: Programowanie w R
+  Lesson: Daty i godziny
+  Author: Nick Carchedi, Dariusz Brzezinski
+  Type: Standard
+  Organization: JHU Biostat, Poznan University of Technology
+  Version: 1.0.0
 
 - Class: text
-  Output: R has a special way of representing dates and times, which can be helpful if you're working with data that show how something changes over time (i.e. time-series data) or if your data contain some other temporal information, like dates of birth.
+  Output: R potrafi przetwarzać daty i godziny, co pomocne jest jeśli pracujesz z szeregami czasowymi albo jeśli dane zawierają inne informacje związane z czasem, takie jak daty urodzin. 
 
 - Class: text
-  Output: Dates are represented by the 'Date' class and times are represented by the 'POSIXct' and 'POSIXlt' classes. Internally, dates are stored as the number of days since 1970-01-01 and times are stored as either the number of seconds since 1970-01-01 (for 'POSIXct') or a list of seconds, minutes, hours, etc. (for 'POSIXlt').
+  Output: Daty reprezentuje klasa 'Date' a godziny klasy 'POSIXct' i 'POSIXlt'. Wewnątrz, daty zapisane są jako liczba dni od 1970-01-01, a godziny zapisane są albo jako liczba sekund od 1970-01-01 (POSIXct) albo lista sekund, minut, godzin, itd.(POSIXlt).
 
 - Class: cmd_question
-  Output: Let's start by using d1 <- Sys.Date() to get the current date and store it in the variable d1. (That's the letter 'd' and the number 1.)
+  Output: Zacznijmy od wpisania d1 <- Sys.Date(), aby uzyskać bieżące dane i zapisać je w zmiennej d1. (To litera 'd' i liczba 1.)
   CorrectAnswer: d1 <- Sys.Date()
   AnswerTests: omnitest(correctExpr='d1 <- Sys.Date()')
-  Hint: Type d1 <- Sys.Date() to get the current date and store it in a new variable called d1.
+  Hint: Wpisz d1 <- Sys.Date(), aby uzyskać bieżące dane i zapisać je w zmiennej d1.
 
 - Class: cmd_question
-  Output: Use the class() function to confirm d1 is a Date object.
+  Output: Użyj funkcji class(), aby powierdzić, że d1 jest obiektem typu Date.
   CorrectAnswer: class(d1)
   AnswerTests: omnitest(correctExpr='class(d1)')
-  Hint: class(d1) will tell you the class of d1.
+  Hint: class(d1) zwróci klasę/typ zmiennej d1.
 
 - Class: cmd_question
-  Output: We can use the unclass() function to see what d1 looks like internally. Try it out.
+  Output: Możesz skorzystać z funkcji unclass(), aby zobaczyć co naprawdę d1 kryje w środku. Spróbuj.
   CorrectAnswer: unclass(d1)
   AnswerTests: omnitest(correctExpr='unclass(d1)')
-  Hint: Use unclass(d1) to see what d1 looks like internally.
+  Hint: Skorzystaj z funkcji unclass(), aby zobaczyć jak d1 wygląda od wewnątrz.
 
 - Class: text
   Output: That's the exact number of days since 1970-01-01!
 
 - Class: cmd_question
-  Output: However, if you print d1 to the console, you'll get today's date -- YEAR-MONTH-DAY. Give it a try.
+  Output: Jeśli jednak wypiszesz d1 na konsoli, otrzymasz dzisiejszą datę Spróbuj.
   CorrectAnswer: d1
   AnswerTests: omnitest(correctExpr='d1')
-  Hint: Type d1 to print its contents.
+  Hint: Wpisz d1, aby wypisać tę zmienną na konsoli.
 
 - Class: cmd_question
-  Output: What if we need to reference a date prior to 1970-01-01? Create a variable d2 containing as.Date("1969-01-01").
+  Output: A co jeśli musimy uzyskać datę sprzed 1.01.1970 r.? Utwórz zmienną d2, która zawiera as.Date("1969-01-01").
   CorrectAnswer: d2 <- as.Date("1969-01-01")
   AnswerTests: omnitest(correctExpr='d2 <- as.Date("1969-01-01")')
-  Hint: Try d2 <- as.Date("1969-01-01").
+  Hint: Wypróbuj d2 <- as.Date("1969-01-01").
 
 - Class: cmd_question
-  Output: Now use unclass() again to see what d2 looks like internally.
+  Output: Teraz znów użyj unclass(), aby zobaczyć co d2 kryje w środku. 
   CorrectAnswer: unclass(d2)
   AnswerTests: omnitest(correctExpr='unclass(d2)')
-  Hint: unclass(d2) will show you what d2 looks like internally.
+  Hint: unclass(d2) pokaże ci jak d2 wygląda od wewnątrz.
 
 - Class: text
-  Output: As you may have anticipated, you get a negative number. In this case, it's -365, since 1969-01-01 is exactly one calendar year (i.e. 365 days) BEFORE 1970-01-01.
+  Output: Jak pewnie mogłeś się spodziewać, otrzymałeś liczbę ujemną. W tym przypadku -365 jako że 1969-01-01 wypada dokładnie jeden rok kalendarzowy (tj. 365 dni) PRZED datą 1970-01-01.
 
 - Class: cmd_question
-  Output: Now, let's take a look at how R stores times. You can access the current date and time using the Sys.time() function with no arguments. Do this and store the result in a variable called t1.
+  Output: A teraz zobaczmy jak R przechowuje godziny. Możesz sprawdzić aktualną datę i godzinę korzystając z fukncji Sys.time() bez argumentów. Zrób to i zapisz wynik w zmiennej o nazwie t1.
   CorrectAnswer: t1 <- Sys.time()
   AnswerTests: omnitest(correctExpr='t1 <- Sys.time()')
-  Hint: t1 <- Sys.time() will store the current date and time in a variable called t1.
+  Hint: t1 <- Sys.time() zapisze aktualną datę i godzinę do zmiennej o nazwie t1. 
 
 - Class: cmd_question
-  Output: View the contents of t1.
+  Output: Wyświetl zawartość t1.
   CorrectAnswer: t1
   AnswerTests: omnitest(correctExpr='t1')
-  Hint: Type t1 to view its contents.
+  Hint: Wpisz t1, aby zobaczyć jej zawartość.
 
 - Class: cmd_question
-  Output: And check the class() of t1.
+  Output: I speawdź typ zmiennej t1.
   CorrectAnswer: class(t1)
   AnswerTests: omnitest(correctExpr='class(t1)')
-  Hint: View the class of t1 with class(t1).
+  Hint: Wyświetl typ zmiennej t1 używając class(t1).
 
 - Class: cmd_question
-  Output: As mentioned earlier, POSIXct is just one of two ways that R represents time information. (You can ignore the second value above, POSIXt, which just functions as a common language between POSIXct and POSIXlt.) Use unclass() to see what t1 looks like internally -- the (large) number of seconds since the beginning of 1970.
+  Output: Jak już wspominaliśmy, POSIXct jest tylko jedynym z dwóch sposobów w jaki R przedstawia informacje o godzinie (możesz zignorować format POSIXt, który funkcjonuje jako powszechny język pomiędzy POSIXct i POSIXlt.) Użyj unclass(), aby zobaczyć jak t1 wygląda od wewnątrz -- powinna to być liczba sekund od początku 1970 roku. 
   CorrectAnswer: unclass(t1)
   AnswerTests: omnitest(correctExpr='unclass(t1)')
-  Hint: Use unclass(t1) to see how many seconds have passed since the beginning of 1970.
+  Hint: Użyj unclass(t1), aby zobaczyć ile sekund minęło od początku 1970 roku. 
 
 - Class: cmd_question
-  Output: By default, Sys.time() returns an object of class POSIXct, but we can coerce the result to POSIXlt with as.POSIXlt(Sys.time()). Give it a try and store the result in t2.
+  Output: Sys.time() domyślnie zwraca obiekt klasy POSIXct, ale możemy rzutować to na POSIXlt za pomocą as.POSIXlt(Sys.time()). Spróbuj i zapisz wynik w t2. 
   CorrectAnswer: t2 <- as.POSIXlt(Sys.time())
   AnswerTests: omnitest(correctExpr='t2 <- as.POSIXlt(Sys.time())')
-  Hint: t2 <- as.POSIXlt(Sys.time()) will coerce the result of Sys.time to 'POSIXlt' and store the result.
+  Hint: t2 <- as.POSIXlt(Sys.time()) zrzutuje wynik Sys.time na 'POSIXlt' i zapisze rezultat.
 
 - Class: cmd_question
-  Output: Check the class of t2.
+  Output: Sprawdź klasę t2.
   CorrectAnswer: class(t2)
   AnswerTests: omnitest(correctExpr='class(t2)')
-  Hint: Type class(t2) to view its class.
+  Hint: Wpisz class(t2), aby wyświetlić jej klasę.
 
 - Class: cmd_question
-  Output: Now view its contents.
+  Output: A teraz wyświetl jej zawartość.  
   CorrectAnswer: t2
   AnswerTests: omnitest(correctExpr='t2')
-  Hint: Type t2 to view its contents.
+  Hint: Wipsz t2, aby wyświetlić jej zawartość. 
 
 - Class: cmd_question
-  Output: The printed format of t2 is identical to that of t1. Now unclass() t2 to see how it is different internally.
+  Output: t2 zwraca ten sam format gdziny co t1. Teraz użyj unclass() na t2, aby zobaczyć jak różni się wewnętrznie. 
   CorrectAnswer: unclass(t2)
   AnswerTests: omnitest(correctExpr='unclass(t2)')
-  Hint: Use unclass(t2) to view its internal structure.
+  Hint: Użyj unclass(t2), aby wyświetlić jego wewnętrzną strukturę.
 
 - Class: cmd_question
-  Output: t2, like all POSIXlt objects, is just a list of values that make up the date and time. Use str(unclass(t2)) to have a more compact view.
+  Output: t2, jak wszystkie obiekty POSIXlt, jest listą wartości, które składają się na datę i godzinę. Wpisz str(unclass(t2)), aby zobaczyć bardziej kompaktową reprezentację tej struktury.
   CorrectAnswer: str(unclass(t2))
   AnswerTests: omnitest(correctExpr='str(unclass(t2))')
-  Hint: Use str(unclass(t2)) to view its internal structure in a more compact way.
+  Hint: Wpisz str(unclass(t2)), aby zobaczyć bardziej kompaktową reprezentację struktury zmiennej t2.
 
 - Class: cmd_question
-  Output: If, for example, we want just the minutes from the time stored in t2, we can access them with t2$min. Give it a try.
+  Output: Jeśli, na przykład, chcemy uzyskać jedynie minuty z godzin zapisanych w t2, możemy je wyświetlić przy pomocy t2$min. Spróbuj.
   CorrectAnswer: t2$min
   AnswerTests: omnitest(correctExpr='t2$min')
-  Hint: t2$min will give you the number of minutes from the time stored in t2.
+  Hint: Dzięki t2$min uzyskasz liczbę minut z godziny zapisanych w t2.
 
 - Class: text
-  Output: Now that we have explored all three types of date and time objects, let's look at a few functions that extract useful information from any of these objects -- weekdays(), months(), and quarters().
+  Output: Gdy już zapoznaliśmy się ze wszystkimi trzema typami obiektów dat i godzin, spójrzmy na kilka funkcji, które wyciągają przydatne informacje z każdego z tych obiektów -- weekdays(), months() i quarters().
 
 - Class: cmd_question
-  Output: The weekdays() function will return the day of week from any date or time object. Try it out on d1, which is the Date object that contains today's date.
+  Output: Funkcja weekdays() wyświetli dzień tygodnia każdego obiektu daty czy godziny. Wypróbuj tę funkcję na d1, która jest obiektem Date zawierającym dzisiejszą datę.  
   CorrectAnswer: weekdays(d1)
   AnswerTests: omnitest(correctExpr='weekdays(d1)')
-  Hint: Try weekdays(d1) to get the day of the week.
+  Hint: Wypróbuj weekdays(d1), aby otrzymać dzień tygodnia. 
 
 - Class: cmd_question
-  Output: The months() function also works on any date or time object. Try it on t1, which is the POSIXct object that contains the current time (well, it was the current time when you created it).
+  Output: Funkcja months() również działa dla każdego obiektu daty i godziny. Wypróbuj ją na t1, który jest obiektem POSIXct zawierającym aktualną godzinę (a raczej była to aktualna godzina kiedy ją tworzyłeś).
   CorrectAnswer: months(t1)
   AnswerTests: omnitest(correctExpr='months(t1)')
-  Hint: months(t1) will give you the current month.
+  Hint: Dzięki months(t1) uzyskasz aktualny miesiąc. 
 
 - Class: cmd_question
-  Output: The quarters() function returns the quarter of the year (Q1-Q4) from any date or time object. Try it on t2, which is the POSIXlt object that contains the time at which you created it.
+  Output: Funkcja quarters() pozyska kwartał roku (Q1-Q4) z każdego obiektu daty i godziny. Wypróbuj ją na t2, który jest obiektem POSIXlt zawierającym czas kiedy go utworzyłeś.  
   CorrectAnswer: quarters(t2)
   AnswerTests: omnitest(correctExpr='quarters(t2)')
-  Hint: quarters(t2) will give you the current quarter.
+  Hint: Dzięki quarters(t2) uzyskasz aktualny kwartał. 
 
 - Class: text
-  Output: Often, the dates and times in a dataset will be in a format that R does not recognize. The strptime() function can be helpful in this situation.
+  Output: Często daty i godziny w zbiorze danych będą w formacie, którego R nie rozpozna. W tej sytuacji pomocna może okazać się funkcja strptime().
 
 - Class: text
-  Output: strptime() converts character vectors to POSIXlt. In that sense, it is similar to as.POSIXlt(), except that the input doesn't have to be in a particular format (YYYY-MM-DD).
+  Output: strptime() przekształca wektory tekstowe w obiekty POSIXlt. W tym znaczeniu są one podobne do as.POSIXlt(). Różnią się tym, że dane wejściowe nie muszą być w konkretnym formacie.
 
 - Class: cmd_question
-  Output: 'To see how it works, store the following character string in a variable called t3: "October 17, 1986 08:24" (with the quotes).'
+  Output: Żeby zobaczyć jak to dziala, zapisz następujący łańcuch znaków w zmiennej o nazwie t3: "October 17, 1986 08:24".
   CorrectAnswer: t3 <- "October 17, 1986 08:24"
   AnswerTests: omnitest(correctExpr='t3 <- "October 17, 1986 08:24"')
-  Hint: Store "October 17, 1986 08:24" (including the quotes) in a new variable called t3.
+  Hint: Zapisz tekst "October 17, 1986 08:24" w nowej zmiennej o nazwie t3. 
 
 - Class: cmd_question
-  Output: 'Now, use strptime(t3, "%B %d, %Y %H:%M") to help R convert our date/time object to a format that it understands. Assign the result to a new variable called t4. (You should pull up the documentation for strptime() if you''d like to know more about how it works.)'
+  Output: Teraz użyj strptime(t3, "%B %d, %Y %H:%M"), aby pomóc R przekształcić nasz obiekt daty/godziny na format który rozumie. Przypisz wynik do nowej zmiennej o nazwie t4 (powinieneś otworzyć dokumentację strptime(), jeśli chcesz wiedzieć lepiej jak to działa). 
   CorrectAnswer: t4 <- strptime(t3, "%B %d, %Y %H:%M")
   AnswerTests: omnitest(correctExpr='t4 <- strptime(t3, "%B %d, %Y %H:%M")')
-  Hint: 't4 <- strptime(t3, "%B %d, %Y %H:%M") will convert our date/time object to a format that R understands.'
+  Hint: 't4 <- strptime(t3, "%B %d, %Y %H:%M") przekształci nasz obiekt daty/godziny na format, który R rozumie. 
 
 - Class: cmd_question
-  Output: Print the contents of t4.
+  Output: Wypisz na konsolę zawartość t4.  
   CorrectAnswer: t4
   AnswerTests: omnitest(correctExpr='t4')
-  Hint: Type t4 to print its contents.
+  Hint: Wpisz t4, aby wypisać na konsolę jej treść.
 
 - Class: cmd_question
-  Output: That's the format we've come to expect. Now, let's check its class().
+  Output: Takiego formatu mogliśmy się spodziewać. Teraz sprawdźmy jego klasę, class().
   CorrectAnswer: class(t4)
   AnswerTests: omnitest(correctExpr='class(t4)')
-  Hint: Type class(t4) to check its class.
+  Hint: Wpisz class(t4), aby sprawdzić jego klasę.
 
 - Class: text
-  Output: Finally, there are a number of operations that you can perform on dates and times, including arithmetic operations (+ and -) and comparisons (<, ==, etc.) 
+  Output: Na koniec, możesz wykonać jeszcze kilka operacji na datach i godzinach, m.in. operacje arytmetyczne (+ i -) i porównania (<, ==, itd.) 
 
 - Class: cmd_question
-  Output: "The variable t1 contains the time at which you created it (recall you used Sys.time()). Confirm that some time has passed since you created t1 by using the 'greater than' operator to compare it to the current time: Sys.time() > t1"
+  Output: "Zmienna t1 zawiera godzinę, o której ją utworzyłeś (pamiętaj, że użyłeś Sys.time()). Potwierdź, że upłynął czas odkąd utworzyłeś t1, korzystając z operatora 'większy niż', aby porównać ją z aktualnym czasem: Sys.time() > t1"
   CorrectAnswer: Sys.time() > t1
   AnswerTests: omnitest(correctExpr='Sys.time() > t1')
-  Hint: Sys.time() > t1 will tell you that the current time is after the time contained in t1 (which was the current time when you created it).
+  Hint: Sys.time() > t1 powie ci, że aktualna godzina jest po czasie zawartym w t1 (co było aktualnym czasem, gdy ją tworzyłeś).  
 
 - Class: cmd_question
-  Output: So we know that some time has passed, but how much? Try subtracting t1 from the current time using Sys.time() - t1. Don't forget the parentheses at the end of Sys.time(), since it is a function.
+  Output: Wiemy więc, że upłynął pewien czas, ale ile dokładnie? Spróbuj odjąć t1 od aktualnej godziny używając Sys.time() - t1.
   CorrectAnswer: Sys.time() - t1
   AnswerTests: omnitest(correctExpr='Sys.time() - t1')
-  Hint: Sys.time() - t1 will give you the amount of time that has passed since t1 was created.
+  Hint: Sys.time() - t1 poda ci ile czasu minęło odkąd utworzona została zmienna t1. 
 
 - Class: text
-  Output: The same line of thinking applies to addition and the other comparison operators. If you want more control over the units when finding the above difference in times, you can use difftime(), which allows you to specify a 'units' parameter. 
+  Output: Tak samo możemy potraktować dodawanie i inne operatory porównania. Jeśli chcesz mieć większą kontrolę nad jednostakami, szukając powyższej różnicy pomiędzy godzinami, możesz użyć funkcji difftime(), która pozwala określić parametr 'units'. 
 
 - Class: cmd_question
-  Output: Use difftime(Sys.time(), t1, units = 'days') to find the amount of time in DAYS that has passed since you created t1.
+  Output: Użyj difftime(Sys.time(), t1, units = 'days'), aby dowiedzieć się ile DNI upłynęło odkąd utworzyłeś t1.
   CorrectAnswer: difftime(Sys.time(), t1, units = 'days')
   AnswerTests: match_call("difftime(Sys.time(), t1, units = 'days')")
-  Hint: difftime(Sys.time(), t1, units = 'days') will tell you how many days have passed since t1 was created (which better be less than 1!)
+  Hint: difftime(Sys.time(), t1, units = 'days') pokaże Ci ile dni upłynęło odkąd utworzone zostało t1 (i lepiej, żeby nie było ich więcej niż 1!) 
 
 - Class: text
-  Output: In this lesson, you learned how to work with dates and times in R. While it is important to understand the basics, if you find yourself working with dates and times often, you may want to check out the lubridate package by Hadley Wickham.
+  Output: W czasie tej lekcji nauczyłeś się jak pracować z datami i godzinami w R. Ważne jest by rozumieć podstawy, jeśli jednak często będziesz pracował z datami i godzinami, warto zapoznać się z paczką lubridate Hadley'a Wickhama. Ale o lubridate pogadamy jeszcze na innej lekcji...

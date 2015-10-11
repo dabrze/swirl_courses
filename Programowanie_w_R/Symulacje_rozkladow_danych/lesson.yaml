@@ -7,7 +7,7 @@
   Version: 1.0.0
 
 - Class: text
-  Output: Jedną z największych zalet statystycznego języka programowania jakim jest R jest bogata kolekcja do losowania liczb i symulowania rozkładów danych.
+  Output: Jedną z największych zalet statystycznego języka programowania jakim jest R jest bogata kolekcja funkcji do losowania liczb i symulowania rozkładów danych.
 
 - Class: text
   Output: Ta lekcja zakłada znajomość kilku podstawowych rozkładów prawdopodobieństwa, ale prezentowane tematy będą dotyczyć tylko generowania liczb losowych. Choć warto przypomnieć sobie właściwości i zastosowania poszczególnych rozkładów, to bez ich znajomości też powinieneś zrozumieć główne idee prezentowane w ramach lekcji.
@@ -61,7 +61,7 @@
   Output: Załóżmy teraz, że chcemy zasymulować 100 sto rzutów nieuczciwą monetą. Ta moneta daje prawdopodobieństwo 0.3, że wypadnie 'orzeł', i 0.7, że wypadnie 'reszka'.
 
 - Class: cmd_question
-  Output: Niech wartość zero reprezentuje orła a wartość 1 reszkę. Użyj funkcji sample(), aby wylosować próbkę o rozmiarze 100 z wektora c(0,1). Ponieważ moneta jest nieuczciwa, musimy podać konkretne prawdopodobieństwa poszczególnych wyników korzystając z czwartego argumentu: prob = c(0.3, 0.7). Przypisz wynik do nowej zmiennej o nazwie flips.
+  Output: 'Niech wartość zero reprezentuje orła a wartość 1 reszkę. Użyj funkcji sample(), aby wylosować próbkę o rozmiarze 100 z wektora c(0,1). Ponieważ moneta jest nieuczciwa, musimy podać konkretne prawdopodobieństwa poszczególnych wyników korzystając z czwartego argumentu: prob = c(0.3, 0.7). Przypisz wynik do nowej zmiennej o nazwie flips.'
   CorrectAnswer: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
   AnswerTests: match_call('flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))')
   Hint: 'Następujące polecenie zasynuluje 100 rzutów nieuczciwą monetą i przypisze wynik do zmiennej: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))'
@@ -79,7 +79,7 @@
   Hint: sum(flips) doda jedynki i zera w wektorze dając sumę jedynek w zmiennej flips.
 
 - Class: cmd_question
-  Output: Rzut monetą daje dwa możliwe wyniki (0 lub 1) i wykonujemy 100 nie zależnych powtórzeń tej czynności, możemy zatem wykorzystać funkcję rbinom(), aby zasymulować rozkład dwumianowy. Otwórz dokumentację funkcji rbinom() wpisując ?rbinom.
+  Output: Rzut monetą daje dwa możliwe wyniki (0 lub 1) i wykonujemy 100 niezależnych powtórzeń tej czynności, możemy zatem wykorzystać funkcję rbinom(), aby zasymulować rozkład dwumianowy. Otwórz dokumentację funkcji rbinom() wpisując ?rbinom.
   CorrectAnswer: ?rbinom
   AnswerTests: omnitest(correctExpr='?rbinom')
   Hint: Wpisz ?rbinom, aby otworzyć plik pomocy dla funkcji rbinom().
@@ -88,7 +88,7 @@
   Output: Każdy rozkład prawdopodobieństwa w R ma funkcję r*** (jak "random"), d*** (jak "density"), p*** (jak "probability") i q*** (jak "quantile"). W ramach tej lekcji skupimy się na funkcjach r***, ale zachęcam do poeksperymentowania z pozostałymi rodzinami funkcji.
 
 - Class: cmd_question
-  Output: Zmienna losowa o rozkładzie dwumianowym reprezentuje liczbę 'sukcesów' (reszek, bo ten wynik zakodowaliśmy wartością 1) w zadanej liczbie niezależnych prób (rzutów monetą). Można zatem stworzyć zmienną losową, która reprezentuje liczbę reszek po 100 rzutach naszą nieuczciwą monetą: rbinom(1, size = 100, prob = 0.7). Zwróć uwagę, że specyfikujemy tylko prawdopodobieństwo 'sukcesu' (reszki) a nie prawdopodobieństwo 'porażki'. Wypróbuj wskazanae polecenie teraz.
+  Output: "Zmienna losowa o rozkładzie dwumianowym reprezentuje liczbę 'sukcesów' (reszek, bo ten wynik zakodowaliśmy wartością 1) w zadanej liczbie niezależnych prób (rzutów monetą). Można zatem stworzyć zmienną losową, która reprezentuje liczbę reszek po 100 rzutach naszą nieuczciwą monetą: rbinom(1, size = 100, prob = 0.7). Zwróć uwagę, że specyfikujemy tylko prawdopodobieństwo 'sukcesu' (reszki) a nie prawdopodobieństwo 'porażki'. Wypróbuj wskazane polecenie teraz."
   CorrectAnswer: rbinom(1, size = 100, prob = 0.7)
   AnswerTests: match_call('rbinom(1, size = 100, prob = 0.7)')
   Hint: Wywołaj rbinom() z parametrami n = 1, size = 100 i prob = 0.7.
@@ -103,7 +103,7 @@
   Output: Obejrzyj zawartość zmiennej flips2.
   CorrectAnswer: flips2
   AnswerTests: omnitest('flips2')
-  Hint: Wpisz flips2, aby obejzeć zawartość tej zmiennej.
+  Hint: Wpisz flips2, aby obejrzeć zawartość tej zmiennej.
 
 - Class: cmd_question
   Output: Teraz uzyj funkcji sum(), aby policzyć ile wypadlo reszek. Wynik powinien oscylować wokół 70!
@@ -112,7 +112,7 @@
   Hint: Wpisz sum(flips2), aby policzyć liczbę jedynek.
 
 - Class: cmd_question
-  Output: Podobnie do rbinom(), możemy wykorzystać R do zasymulowania wielu innych rozkładów prawdopodobieństwa. Otwórz dokumentację zmiennej rnorm().
+  Output: Podobnie do rbinom(), możemy wykorzystać R do zasymulowania wielu innych rozkładów prawdopodobieństwa. Otwórz dokumentację funkcji rnorm().
   CorrectAnswer: ?rnorm
   AnswerTests: omnitest('?rnorm')
   Hint: Wpisz ?rnorm, aby zobaczyć plik pomocy funkcji rnorm.
@@ -166,7 +166,7 @@
   Output: Wygląda jakby średnie kolumn tworzyły rozkład normalny. Tak działa centralne twierdzenie graniczne, które część osób może pamięta z wykładów innych przedmiotów...
 
 - Class: text
-  Output: Wszystkie podstawowe rozkłady są wbudowane w R, w tym: wykładniczy (rexp()), chi-kwadrat (rchisq()), gamma (rgamma()), .... widzicie chyba jak się będą nazywać kolejne.
+  Output: 'Wszystkie podstawowe rozkłady są wbudowane w R, w tym: wykładniczy (rexp()), chi-kwadrat (rchisq()), gamma (rgamma()), .... widzisz chyba jak się będą nazywać kolejne.'
 
 - Class: text
   Output: Symulacje mogą okazać się bardzo przydatne, a my tylko musnęliśmy temat. Zachęcam do samodzielnych eksperymentów z innymi funkcjami!

@@ -7,16 +7,16 @@
   Version: 1.0.0
 
 - Class: text
-  Output: W ramach tej lekcji poznasz dwie bardzo ważne funkcje z rodziny *apply: lapply() i sapply().
+  Output: 'W ramach tej lekcji poznasz dwie bardzo ważne funkcje z rodziny *apply: lapply() i sapply().'
 
 - Class: text
-  Output: Te bardzo przydatne funkcje, wraz z m.in. vapply() i tapply(), pozwalają w prosty i zwięzły sposób implementować startegią Split-Apply-Combine (takie trochę mniej ogólne Map-Reduce dla analizy danych).
+  Output: Te bardzo przydatne funkcje, wraz z m.in. vapply() i tapply(), pozwalają w prosty i zwięzły sposób implementować startegię Split-Apply-Combine (takie trochę mniej ogólne Map-Reduce dla analizy danych).
 
 - Class: text
   Output: Każda z funkcji z rodziny *apply dzieli dane na mniejsze porcje (SPLIT), wykonuje wskazaną funkcję na każdym fragmencie (APPLY), a na koniec łączy wyniki (COMBINE). Więcej informacji na temat tej strategii można znaleźć w artykule Hadley Wickhama (<- kozak w świecie R!) 'The Split-Apply-Combine Strategy for Data Analysis'.
 
 - Class: text
-  Output: "Przez całą lekcję będziemy korzystać ze zbioru Flags z UCI Machine Learning Repository. Zbiór ten opisuje informacje o krajach i ich flagach. Więcej informacji o tym zbiorze można znaleźć pod adresem: http://archive.ics.uci.edu/ml/datasets/Flags"
+  Output: "Przez całą lekcję będziemy korzystać ze zbioru Flags z UCI Machine Learning Repository. Zbiór ten opisuje kraje i ich flagach. Więcej informacji o tym zbiorze można znaleźć pod adresem: http://archive.ics.uci.edu/ml/datasets/Flags"
 
 - Class: text
   Output: Koniec gadania! Zacznijmy wreszcie klepać!
@@ -28,16 +28,16 @@
   Hint: Wpisz head(flags), aby podejrzeć początek zbioru.
 
 - Class: cmd_question
-  Output: Być może będziesz musiał przewinąć ekran konsoli, aby zobaczyć cały wynik. Teraz sprawdźmy wyniary zbioru za pomocą wyrażenia dim(flags).
+  Output: Być może będziesz musiał przewinąć ekran konsoli, aby zobaczyć cały wynik. Teraz sprawdźmy wymiary zbioru za pomocą wyrażenia dim(flags).
   CorrectAnswer: dim(flags)
   AnswerTests: omnitest(correctExpr='dim(flags)')
   Hint: Wpisz dim(flags), aby zobaczyć wymiary zbioru.
 
 - Class: text
-  Output: Wynik mówi nam, że flags ma 194 wierszy (obserwacji, przykładów, instancji) i 30 kolumn (zmiennych, atrybutów). Każdy przykład oznacza kraj a każdy atrybut opisuje cechy charakterystyczne kraju lub jego flagi. Bardziej szczegółowy opis zbioru będzie dostępny w trakcie lekcji po wpisaniu viewinfo() w konsoli (>).
+  Output: Wynik mówi nam, że flags ma 194 wiersze (obserwacje, przykłady, instancje) i 30 kolumn (zmiennych, atrybutów). Każdy przykład oznacza kraj a każdy atrybut opisuje cechy charakterystyczne kraju lub jego flagi. Bardziej szczegółowy opis zbioru będzie dostępny w trakcie lekcji po wpisaniu viewinfo() w konsoli (>).
 
 - Class: cmd_question
-  Output: Na początku pracy z każdym zbiorem danych jesteśmy zainteresowani w jakiego typu jest każda ze zmiennych. Innymi słowy, interesuje nas atrybut 'class' każdej zmiennej? Co się stanie jak wywołamy class(flags)? Sprawdź to.
+  Output: Na początku pracy z każdym zbiorem danych jesteśmy zainteresowani jakiego typu jest każda ze zmiennych. Innymi słowy, interesuje nas atrybut 'class' każdej zmiennej. Co się stanie jak wywołamy class(flags)? Sprawdź to.
   CorrectAnswer: class(flags)
   AnswerTests: omnitest(correctExpr='class(flags)')
   Hint: Wpisz class(flags), aby zobaczyć co się stanie.
@@ -46,7 +46,7 @@
   Output: Wynik mówi nam, że zmienna flags jest typu 'data.frame' i nie odpowiada na nasze pytanie. Tak naprawdę chcemy wywołać funkcję class() na każdej kolumnie z osobna. Choć możemy to zrobić ręcznie (dla każdej kolumny po kolei) znacznie szybciej wykona to pętla!
 
 - Class: text
-  Output: Funkcja lapply() pobiera jako wejście listę, wywołuje wskazaną funckję na każdym elemencie listy, a na koniec zwraca listę o takiej samej długości jak lista wejściowa. Ponieważ data frame jest tak naprawdę listą wektorów (możesz sprawdzić to wpisując as.list(flags)), możemy wywołać lapply(), aby wykonać funkcję class() na każdej kolumnie zbioru flags.
+  Output: Funkcja lapply() pobiera jako wejście listę, wywołuje wskazaną funkcję na każdym elemencie listy, a na koniec zwraca listę o takiej samej długości jak lista wejściowa. Ponieważ data frame jest tak naprawdę listą wektorów (możesz sprawdzić to wpisując as.list(flags)), możemy wywołać lapply(), aby wykonać funkcję class() na każdej kolumnie zbioru flags.
 
 - Class: cmd_question
   Output: Wpisz cls_list <- lapply(flags, class), aby wykonać funkcję class() na każdej kolumnie zbioru flags i zapisać wynik do zmiennej cls_list. Zwróć uwagę, że jako argument przekazujesz tylko nazwę funkcji (class), bez nawiasów.
@@ -67,10 +67,10 @@
   Hint: Wpisz class(cls_list), aby potwierdzić, że funkcja lapply() zwróciła listę.
 
 - Class: text
-  Output: Tak się spodziewaliśmy, dostaliśmy listę 30 elementów, gdzie każdy element odpowiada kolejnej kolumnie zbioru flags. Wynik byłby znacznie bardzie zwięzły i przyjazny gdybyśmy otrzymali wektor zamiast listy.
+  Output: Tak jak się spodziewaliśmy, dostaliśmy listę 30 elementów, gdzie każdy element odpowiada kolejnej kolumnie zbioru flags. Wynik byłby znacznie bardziej zwięzły i przyjazny gdybyśmy otrzymali wektor zamiast listy.
 
 - Class: cmd_question
-  Output: Jak pewnie kojarzysz z poprzednich lekcji, listy są najbardziej przydatne w sytuacjach, gdy chcemy przechować razem dane różnych typów. W tym przypadku każdy element listy jest wektorem tekstowym o długości jeden i cls_list może zstać uproszczony do wektora tesktowego. Aby zrobić to ręcznie, wpisz as.character(cls_list).
+  Output: Jak pewnie kojarzysz z poprzednich lekcji, listy są najbardziej przydatne w sytuacjach, gdy chcemy przechować razem dane różnych typów. W tym przypadku każdy element listy jest wektorem tekstowym o długości jeden i cls_list może zostać uproszczony do wektora tesktowego. Aby zrobić to ręcznie, wpisz as.character(cls_list).
   CorrectAnswer: as.character(cls_list)
   AnswerTests: omnitest(correctExpr='as.character(cls_list)')
   Hint: Wpisz as.character(cls_list), aby rzutować cls_list na wektor tekstowy.
@@ -88,7 +88,7 @@
   Hint: Wpisz class(cls_vect)aby potwierdzić, że funkcja sapply() zwróciła wektor tekstowy.
 
 - Class: text
-  Output: Jeśli wynik jest listą gdzie każdy element ma długość jeden, sapply() zwraca wektor. Jeśli wynikiem jest lista gdzie każdy element jest wektorem o tej samej długości (> 1), sapply() zwraca macierz. Jeśli sapply() nie może poradzić sobie z uproszczeniem, zwraca listę identyczną do tej jaką zwróciłaby funkcja lapply().
+  Output: Jeśli wynik jest listą gdzie każdy element ma długość jeden, sapply() zwraca wektor. Jeśli wynikiem jest listą gdzie każdy element jest wektorem o tej samej długości (> 1), sapply() zwraca macierz. Jeśli sapply() nie może poradzić sobie z uproszczeniem, zwraca listę identyczną do tej jaką zwróciłaby funkcja lapply().
 
 - Class: text
   Output: Poćwiczmy jeszcze trochę wykorzystanie funkcji lapply() i sapply()!
@@ -118,7 +118,7 @@
   Hint: head(flag_colors) wyświetli 6 pierwszych wierszy flag_colors.
 
 - Class: cmd_question
-  Output: Aby dostać listę zawierającą sumę każdej kolumny flag_colors, wywołaj lapply() z dwoma argumentami. Pierwszy argument to obiekt, po którrym chcemy wykonać pętlę (tutaj flag_colors), a drugi argument to nazwa funkcji, którą chcemy wywołać na każdej kolumnie (tutaj sum).
+  Output: Aby dostać listę zawierającą sumę każdej kolumny flag_colors, wywołaj lapply() z dwoma argumentami. Pierwszy argument to obiekt, po którym chcemy wykonać pętlę (tutaj flag_colors), a drugi argument to nazwa funkcji, którą chcemy wywołać na każdej kolumnie (tutaj sum).
   CorrectAnswer: lapply(flag_colors, sum)
   AnswerTests: omnitest(correctExpr='lapply(flag_colors, sum)')
   Hint: Użyj lapply(flag_colors, sum), aby dostać sumę każdej kolumny.
@@ -142,7 +142,7 @@
   Hint: sapply(flag_colors, mean) powinno załatwić sprawę!
 
 - Class: text
-  Output: W rozważanych do tej pory przykładach sapply() było w stanie uprościć wynik do wektora. Działo się tak ponieważ wszystkie lementy list wynikowych były wektorami o długości 1. Jednak sapply() potrafi też zwracać macierze, gdy elementy listy wynikowej są dłuższe (> 1).
+  Output: W rozważanych do tej pory przykładach sapply() było w stanie uprościć wynik do wektora. Działo się tak ponieważ wszystkie elementy list wynikowych były wektorami o długości 1. Jednak sapply() potrafi też zwracać macierze, gdy elementy listy wynikowej są dłuższe (> 1).
 
 - Class: cmd_question
   Output: Aby to zobrazować, wyodrębnijmy ze zbioru flags kolumny od 19 do 23 i przypiszmy je do zmiennej flag_shapes.
@@ -151,7 +151,7 @@
   Hint: flag_shapes <- flags[, 19:23] powinno dać radę.
 
 - Class: text
-  Output: Każda z wyodrębnionych kolumn reprezentuje liczbę wystąpień wybranego kształtu bądź elementy graficznego w danej fladze. Interesuje nas minimum i maksimum liczby wystąpień każdego kształtu.
+  Output: Każda z wyodrębnionych kolumn reprezentuje liczbę wystąpień wybranego kształtu bądź elementu graficznego w danej fladze. Interesuje nas minimum i maksimum liczby wystąpień każdego kształtu.
 
 - Class: cmd_question
   Output: Funkcja range() zwraca minimum i maksimum wektora liczbowego. Użyj lapply(), aby wykonać funkcję range na każdej kolumnie zmiennej flag_shapes. Nie przypisuj wyniku do żadnej zmiennej.
@@ -181,10 +181,10 @@
   Hint: class(shape_mat) zwróci klasę/typ zmiennej shape_mat.
 
 - Class: text
-  Output: Do tej pory sapply() radziło sobie z upraszczeniem wyniku lapply(). Przyjrzymy się przykładom gdzie sapply() nie będzie potrafiło wykonać uproszczenia i zwróci ten sam wynik co lapply().
+  Output: Do tej pory sapply() radziło sobie z upraszczeniem wyniku lapply(). Przyjrzyjmy się przykładom gdzie sapply() nie będzie potrafiło wykonać uproszczenia i zwróci ten sam wynik co lapply().
 
 - Class: cmd_question
-  Output: Mając dany wektor, funkcja unique() zwraca wektor z usuniętymi duplikatami. Żeby zobacyzć jak działa wpisz unique(c(3, 4, 5, 5, 5, 6, 6)).
+  Output: Mając dany wektor, funkcja unique() zwraca wektor z usuniętymi duplikatami. Żeby zobaczyć jak działa wpisz unique(c(3, 4, 5, 5, 5, 6, 6)).
   CorrectAnswer: unique(c(3, 4, 5, 5, 5, 6, 6))
   AnswerTests: omnitest(correctExpr='unique(c(3, 4, 5, 5, 5, 6, 6))')
   Hint: Wykonaj unique(c(3, 4, 5, 5, 5, 6, 6)), aby zobaczyć jak działa funkcja unique().

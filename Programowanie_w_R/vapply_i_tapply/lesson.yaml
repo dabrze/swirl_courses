@@ -31,7 +31,7 @@
   Output: Pracując interaktywnie w konsoli nie byłby to problem, bo patrząc na wynik polecenia od razu dostrzegłbyś wynik. Ale... pracując nieinteraktywnie (pisząc własne funkcje), taki błąd mógłby pozostać niezauważony i powodować niewłaściwe wyniki w dalszej analizie. Warto zatem zachować dodatkową ostrożność, a pomoże nam w tym funkcja vapply().
 
 - Class: text
-  Output: Podczas gdy sapply() próbuje 'zgadnąć' poprawny format wyniku, vapply() pozwala jawnie ten format zdefiniować. Jesli rezultat nie odpowiada wyspecyfikowanemu formatowi, vapply() rzuci błędem i zatrzyma przetwarzanie. Potrafi to ustrzec się przed niespdziewanymi wynikami, które można otrzymać korzystając z sapply().
+  Output: Podczas gdy sapply() próbuje 'zgadnąć' poprawny format wyniku, vapply() pozwala jawnie ten format zdefiniować. Jeśli rezultat nie odpowiada wyspecyfikowanemu formatowi, vapply() rzuci błędem i zatrzyma przetwarzanie. Pomaga to ustrzec się przed niespdziewanymi wynikami, które można otrzymać korzystając z sapply().
 
 - Class: cmd_question
   Output: Wypróbuj polecenie vapply(flags, unique, numeric(1)), które mówi, że w wyniku oczekujesz, że każdy element będzie wektorem o długości 1 typu numeric. Ponieważ tak w rzeczywistości nie jest, DOSTANIESZ BŁĄD. Gdy już pojawi się błąd, wpisz w konsoli ok() aby przejść do nastepnego pytania.
@@ -55,7 +55,7 @@
   Output: Zauważ, że nasze oczekiwania (character(1)) zostały spełnione i wynik vapply() jest taki sam jak dla sapply().
 
 - Class: text
-  Output: Możesz zapamiętać, że vapply() to 'bezpieczniejsza' wersja sapply(), ponieważ wymaga podania oczekiwanego formatu wyniku. Dodatkowo dlawększych zbiorów danych vapply() może działać trochę szybciej niż sapply(). Niemniej jednak, podczas interaktywnej pracy w konsoli, sapply() oszczędza trochę pisania i często wystarcza.
+  Output: Możesz zapamiętać, że vapply() to 'bezpieczniejsza' wersja sapply(), ponieważ wymaga podania oczekiwanego formatu wyniku. Dodatkowo dla większych zbiorów danych vapply() może działać trochę szybciej niż sapply(). Niemniej jednak, podczas interaktywnej pracy w konsoli, sapply() oszczędza trochę pisania i często wystarcza.
 
 - Class: text
   Output: Jako analityk danych, często będziesz chciał podzielić dane na grupy zgodnie z wartością jakiejś zmienej, a potem wykonać funkcję na elementach każdej grupy osobno. Następna funkcja, którą poznamy, tapply(), dokładnie tym się zajmuje.
@@ -67,7 +67,7 @@
   Hint: Otwórz dokumentację za pomocą polecenia ?tapply.
 
 - Class: cmd_question
-  Output: Zmienna 'landmass' w naszym zbiorze danych przyjmuje wartości całkowitoliczbowe od 1 do 6 i  każda z tych liczb reprezentują inny zakątek świata. Wpisz table(flags$landmass), aby zobaczyć ile flag/krajów należy do każdej grupy.
+  Output: Zmienna 'landmass' w naszym zbiorze danych przyjmuje wartości całkowitoliczbowe od 1 do 6 i  każda z tych liczb reprezentuje inny zakątek świata. Wpisz table(flags$landmass), aby zobaczyć ile flag/krajów należy do każdej grupy.
   CorrectAnswer: table(flags$landmass)
   AnswerTests: omnitest(correctExpr="table(flags$landmass)")
   Hint: Wpisz table(flags$landmass), aby zobaczyć ile flag/krajów należy do każdej grupy.
@@ -82,7 +82,7 @@
   Output: Widzimy, że 39 flag zawiera żywą istotę (animate = 1) i 155 żadnej żywej istoty nie przedstawia (animate = 0).
 
 - Class: cmd_question
-  Output: Jeśli wylicza się średnią arytmetyczną zbioru zer i jedynek dostaje się proporcję jedynek w zbiorze. Użyj polecenia tapply(flags$animate, flags$landmass, mean), aby wywołać funkcje mean na zmiennej 'animate' osobno dla każdej grupy zdefiniowanej wartościami w kolumnie landmass. Jeśli polecenie się powiedzie, dostaniemy proporcję flag zawierających żywą istotę W RAMACH każdej grupy geograficznej (landmass).
+  Output: Jeśli wylicza się średnią arytmetyczną zbioru zer i jedynek dostaje się proporcję jedynek w zbiorze. Użyj polecenia tapply(flags$animate, flags$landmass, mean), aby wywołać funkcję mean na zmiennej 'animate' osobno dla każdej grupy zdefiniowanej wartościami w kolumnie landmass. Jeśli polecenie się powiedzie, dostaniemy proporcję flag zawierających żywą istotę W RAMACH każdej grupy geograficznej (landmass).
   CorrectAnswer: tapply(flags$animate, flags$landmass, mean)
   AnswerTests: omnitest(correctExpr="tapply(flags$animate, flags$landmass, mean)")
   Hint: tapply(flags$animate, flags$landmass, mean) powie nam jaka jest proporcja flag zawierających żywą istotę w ramach każdego z sześiu bloków terytorialnych.
@@ -117,4 +117,4 @@
   Hint: Sprawdź wynik poprzedniego zapytania.
 
 - Class: text  
-  Output: W ramach tej lekcji dowiedziałeś się jak korzystać z vapply() jako bezpieczniejszej wersji sapply(). Poznałeś także funkcję tapply(), która dzieli dane zgodnie z wartością wybranej zmiennej, a następnie wykonuje osobno dla kazdej grupy.
+  Output: W ramach tej lekcji dowiedziałeś się jak korzystać z vapply() jako bezpieczniejszej wersji sapply(). Poznałeś także funkcję tapply(), która dzieli dane zgodnie z wartością wybranej zmiennej, a następnie wykonuje zadanie osobno dla kazdej grupy.

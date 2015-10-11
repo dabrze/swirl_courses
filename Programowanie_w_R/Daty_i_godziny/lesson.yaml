@@ -31,16 +31,16 @@
   Hint: Skorzystaj z funkcji unclass(), aby zobaczyć jak d1 wygląda od wewnątrz.
 
 - Class: text
-  Output: That's the exact number of days since 1970-01-01!
+  Output: To dokładna liczba dni od 1. stycznia 1970 roku!
 
 - Class: cmd_question
-  Output: Jeśli jednak wypiszesz d1 na konsoli, otrzymasz dzisiejszą datę Spróbuj.
+  Output: Jeśli jednak wypiszesz d1 na konsoli, otrzymasz dzisiejszą datę. Spróbuj.
   CorrectAnswer: d1
   AnswerTests: omnitest(correctExpr='d1')
   Hint: Wpisz d1, aby wypisać tę zmienną na konsoli.
 
 - Class: cmd_question
-  Output: A co jeśli musimy uzyskać datę sprzed 1.01.1970 r.? Utwórz zmienną d2, która zawiera as.Date("1969-01-01").
+  Output: A co jeśli musimy uzyskać datę sprzed 1. stycznia 1970 roku? Utwórz zmienną d2 i przypisz do niej as.Date("1969-01-01").
   CorrectAnswer: d2 <- as.Date("1969-01-01")
   AnswerTests: omnitest(correctExpr='d2 <- as.Date("1969-01-01")')
   Hint: Wypróbuj d2 <- as.Date("1969-01-01").
@@ -67,19 +67,19 @@
   Hint: Wpisz t1, aby zobaczyć jej zawartość.
 
 - Class: cmd_question
-  Output: I speawdź typ zmiennej t1.
+  Output: I sprawdź typ zmiennej t1.
   CorrectAnswer: class(t1)
   AnswerTests: omnitest(correctExpr='class(t1)')
   Hint: Wyświetl typ zmiennej t1 używając class(t1).
 
 - Class: cmd_question
-  Output: Jak już wspominaliśmy, POSIXct jest tylko jedynym z dwóch sposobów w jaki R przedstawia informacje o godzinie (możesz zignorować format POSIXt, który funkcjonuje jako powszechny język pomiędzy POSIXct i POSIXlt.) Użyj unclass(), aby zobaczyć jak t1 wygląda od wewnątrz -- powinna to być liczba sekund od początku 1970 roku. 
+  Output: Jak już wspominaliśmy, POSIXct jest tylko jedynym z dwóch sposobów w jaki R przedstawia informacje o godzinie (możesz zignorować fragment "POSIXt", który funkcjonuje jako powszechny język pomiędzy POSIXct i POSIXlt.) Użyj unclass(), aby zobaczyć jak t1 wygląda od wewnątrz -- powinna to być liczba sekund od początku 1970 roku. 
   CorrectAnswer: unclass(t1)
   AnswerTests: omnitest(correctExpr='unclass(t1)')
   Hint: Użyj unclass(t1), aby zobaczyć ile sekund minęło od początku 1970 roku. 
 
 - Class: cmd_question
-  Output: Sys.time() domyślnie zwraca obiekt klasy POSIXct, ale możemy rzutować to na POSIXlt za pomocą as.POSIXlt(Sys.time()). Spróbuj i zapisz wynik w t2. 
+  Output: Sys.time() domyślnie zwraca obiekt klasy POSIXct, ale możemy rzutować tę wartość na POSIXlt za pomocą as.POSIXlt(Sys.time()). Spróbuj i zapisz wynik do zmiennej t2. 
   CorrectAnswer: t2 <- as.POSIXlt(Sys.time())
   AnswerTests: omnitest(correctExpr='t2 <- as.POSIXlt(Sys.time())')
   Hint: t2 <- as.POSIXlt(Sys.time()) zrzutuje wynik Sys.time na 'POSIXlt' i zapisze rezultat.
@@ -97,7 +97,7 @@
   Hint: Wipsz t2, aby wyświetlić jej zawartość. 
 
 - Class: cmd_question
-  Output: t2 zwraca ten sam format gdziny co t1. Teraz użyj unclass() na t2, aby zobaczyć jak różni się wewnętrznie. 
+  Output: t2 zwraca ten sam format godziny co t1. Teraz użyj unclass() na t2, aby zobaczyć jak różni się wewnętrznie. 
   CorrectAnswer: unclass(t2)
   AnswerTests: omnitest(correctExpr='unclass(t2)')
   Hint: Użyj unclass(t2), aby wyświetlić jego wewnętrzną strukturę.
@@ -109,7 +109,7 @@
   Hint: Wpisz str(unclass(t2)), aby zobaczyć bardziej kompaktową reprezentację struktury zmiennej t2.
 
 - Class: cmd_question
-  Output: Jeśli, na przykład, chcemy uzyskać jedynie minuty z godzin zapisanych w t2, możemy je wyświetlić przy pomocy t2$min. Spróbuj.
+  Output: Jeśli, na przykład, chcemy uzyskać jedynie minuty z pełnej daty zapisanej w t2, możemy je wyświetlić przy pomocy t2$min. Spróbuj.
   CorrectAnswer: t2$min
   AnswerTests: omnitest(correctExpr='t2$min')
   Hint: Dzięki t2$min uzyskasz liczbę minut z godziny zapisanych w t2.
@@ -130,7 +130,7 @@
   Hint: Dzięki months(t1) uzyskasz aktualny miesiąc. 
 
 - Class: cmd_question
-  Output: Funkcja quarters() pozyska kwartał roku (Q1-Q4) z każdego obiektu daty i godziny. Wypróbuj ją na t2, który jest obiektem POSIXlt zawierającym czas kiedy go utworzyłeś.  
+  Output: Funkcja quarters() wylicza kwartał roku (Q1-Q4) na podstawie każdego obiektu daty i godziny. Wypróbuj ją na t2, który jest obiektem POSIXlt zawierającym czas kiedy go utworzyłeś.  
   CorrectAnswer: quarters(t2)
   AnswerTests: omnitest(correctExpr='quarters(t2)')
   Hint: Dzięki quarters(t2) uzyskasz aktualny kwartał. 
@@ -142,16 +142,16 @@
   Output: strptime() przekształca wektory tekstowe w obiekty POSIXlt. W tym znaczeniu są one podobne do as.POSIXlt(). Różnią się tym, że dane wejściowe nie muszą być w konkretnym formacie.
 
 - Class: cmd_question
-  Output: Żeby zobaczyć jak to dziala, zapisz następujący łańcuch znaków w zmiennej o nazwie t3: "October 17, 1986 08:24".
-  CorrectAnswer: t3 <- "October 17, 1986 08:24"
-  AnswerTests: omnitest(correctExpr='t3 <- "October 17, 1986 08:24"')
-  Hint: Zapisz tekst "October 17, 1986 08:24" w nowej zmiennej o nazwie t3. 
+  Output: 'Żeby zobaczyć jak to działa, zapisz następujący łańcuch znaków w zmiennej o nazwie t3: "listopad 17, 1986 08:24".'
+  CorrectAnswer: t3 <- "listopad 17, 1986 08:24"
+  AnswerTests: omnitest(correctExpr='t3 <- "listopad 17, 1986 08:24"')
+  Hint: Zapisz tekst "listopad 17, 1986 08:24" w nowej zmiennej o nazwie t3. 
 
 - Class: cmd_question
   Output: Teraz użyj strptime(t3, "%B %d, %Y %H:%M"), aby pomóc R przekształcić nasz obiekt daty/godziny na format który rozumie. Przypisz wynik do nowej zmiennej o nazwie t4 (powinieneś otworzyć dokumentację strptime(), jeśli chcesz wiedzieć lepiej jak to działa). 
   CorrectAnswer: t4 <- strptime(t3, "%B %d, %Y %H:%M")
   AnswerTests: omnitest(correctExpr='t4 <- strptime(t3, "%B %d, %Y %H:%M")')
-  Hint: 't4 <- strptime(t3, "%B %d, %Y %H:%M") przekształci nasz obiekt daty/godziny na format, który R rozumie. 
+  Hint: 't4 <- strptime(t3, "%B %d, %Y %H:%M") przekształci nasz obiekt daty/godziny na format, który R rozumie.'
 
 - Class: cmd_question
   Output: Wypisz na konsolę zawartość t4.  

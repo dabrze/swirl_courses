@@ -24,7 +24,7 @@
   Hint: Użyj class(plants), żeby sprawdzić klasę zmiennej plants. 
 
 - Class: text
-  Output: Dane zazwyczaj są gromadzone w data frame'ach. Jest to domyślna klasa dla danych wczytywanych w R przy użyciu takich funkcji jak read.csv() czy read.table(), o których dowiesz sie w czasie kolejnej lekcji.
+  Output: Dane zazwyczaj są gromadzone w data frame'ach. Jest to domyślna klasa dla danych wczytywanych w R przy użyciu takich funkcji jak read.csv() czy read.table(), o których dowiesz sie w czasie jednej z kolejnych lekcji.
 
 - Class: cmd_question
   Output:  Wiemy, że skoro zbiór danych jest zapisany w data frame'ie, to jest tabelaryczny. Innymi słowy, ma dwa wymiary (wiersze i kolumny) i idealnie wpasowuje się w tabelę bądź arkusz kalkulacyjny. Wpisz dim(plants), aby zobaczyć dokładnie ile jest wierszy i kolumn.

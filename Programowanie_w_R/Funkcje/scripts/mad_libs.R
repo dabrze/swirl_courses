@@ -3,7 +3,7 @@
 # alpha i beta.
 # 
 # add_alpha_and_beta <- function(...){
-#   # Najpierw zamieniami argumenty ukryte w ... na listę,
+#   # Najpierw zamieniamy argumenty ukryte w ... na listę,
 #   # a następnie przypisujemy wynik do zmiennej `args`.
 #
 #   args <- list(...)

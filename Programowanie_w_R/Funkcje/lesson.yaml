@@ -74,7 +74,7 @@
   Hint: "Wypróbujmy napisaną przez Ciebie funkcję, wywołując: remainder(5)"
 
 - Class: text
-  Output: "Upewnijmy się, że rozumiemy co się stało. Przekazałeś jeden argument do funkcji, a R dopasowało ten argument do 'num' ponieważ 'num' jest periwszym parametrem. Domyślną wartością 'divisor' jest 2, więc funkcja wykorzystała tę wartość jako drugi parametr."
+  Output: "Upewnijmy się, że rozumiemy co się stało. Przekazałeś jeden argument do funkcji, a R dopasowało ten argument do 'num' ponieważ 'num' jest pierwszym parametrem. Domyślną wartością 'divisor' jest 2, więc funkcja wykorzystała tę wartość jako drugi parametr."
 
 - Class: cmd_question
   Output: "Wypróbujmy działanie funkcji z dwoma parametrami. Wpisz: remainder(11, 5) i zobaczymy co się stanie."
@@ -119,7 +119,7 @@
   Script: evaluate.R
 
 - Class: cmd_question
-  Output: "Weźmy funkcję evaluate() w obroty! Uzyj evaluate do znalezienia odchylenia standardowego wektora c(1.4, 3.6, 7.9, 8.8)."
+  Output: "Weźmy funkcję evaluate() w obroty! Użyj evaluate do znalezienia odchylenia standardowego wektora c(1.4, 3.6, 7.9, 8.8)."
   CorrectAnswer: evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
   AnswerTests: omnitest(correctExpr='evaluate(sd, c(1.4, 3.6, 7.9, 8.8))')
   Hint: "Funkcja obliczająca odchylenie standardowe w R to sd(). Upewnij się, że przekazując funkcję jako parametr pomijasz nawiasy!"

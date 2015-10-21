@@ -10,7 +10,7 @@
   Output: W ramach tej lekcji dowiesz się jak wstępnie przetwarzać dane za pomocą biblioteki dplyr. dplyr jest szybką i wydajną paczką R napisaną przez Hadley'a Wickhama i Romaina Francois uspójniającą sposób przetwarzania danych tabelarycznych.
 
 - Class: text
-  Output: Cechą charakterystyczną biblioteki dplyr jest to, że udostępnia szereg narzędzi, które działają na różnych źródłach danych, takich jak data frame'y, bazy danych czy tablice wielowymiarowe. W trakcie lekcji będziemy operaować na data frame'ie, ale wszystko czego się nauczysz będziesz mógł zastosować do innych tabelarycznych źródeł danych.
+  Output: Cechą charakterystyczną biblioteki dplyr jest to, że udostępnia szereg narzędzi, które działają na różnych źródłach danych, takich jak data frame'y, bazy danych czy tablice wielowymiarowe. W trakcie lekcji będziemy operować na data frame'ie, ale wszystko czego się nauczysz będziesz mógł zastosować do innych tabelarycznych źródeł danych.
 
 - Class: text
   Output: 'Jak pewnie wiesz, CRAN to sieć serwerów ftp i http, trzymających najnowsze wersje kodu i dokumentacji paczek R (http://cran.rstudio.com/). RStudio hostuje jeden z takich serwerów i publicznie udostępnia jego logi (http://cran-logs.rstudio.com/). Popracujemy z logiem z dnia 8. lipca 2014, który zawiera około 225,000 wpisów.'
@@ -61,7 +61,7 @@
   Hint: Użyj rm("mydf"), aby usunąć oryginalnego data frame'a z przestrzeni roboczej.
 
 - Class: cmd_question
-  Output: Wywołując ?tbl_df możemy przeczytać, że "Główną zaletą korzystania z tbl_df w stosunku do tradycyjnego data frame'a jest wypisywanie na konsolę." Zobaczmy co autorzy mają na myśli. Wpisz cran, aby wypisać tbl_df na konsolę.
+  Output: Wywołując ?tbl_df możemy przeczytać, że "Główną zaletą korzystania z tbl_df w stosunku do tradycyjnego data frame'a jest wypisywanie na konsolę." Zobaczmy co autorzy mają na myśli. Wpisz cran, aby wypisać obiekt typu tbl_df na konsolę.
   CorrectAnswer: cran
   AnswerTests: omnitest(correctExpr='cran')
   Hint: Wpisz cran, aby wypisać tbl_df na konsolę.
@@ -91,7 +91,7 @@
   Output: Pierwsza rzecz na którą warto zwrócić uwagę to to, że nie musimy pisać cran$ip_id, cran$package czy cran$country, jak to normlanie robimy kiedy odwołujemy się do kolumn data frame'a. Funkcja select() wie że odwołujemy się do kolumn zbioru cran.
 
 - Class: text
-  Output: Ponadto warto zauważyć, że dostajemy w tej kolejności w jakiej je wyspecyfikowaliśmy, mimo tego że ip_id jest ostatnią kolumną w zbiorze.
+  Output: Ponadto warto zauważyć, że dostajemy kolumny w tej kolejności w jakiej je wyspecyfikowaliśmy, mimo tego że ip_id jest ostatnią kolumną w zbiorze.
 
 - Class: cmd_question
   Output: Przypomnij sobie, że w R operator `:` pozwala w zwięzły sposób tworzyć ciągi liczb. Dla przykładu, wpisz 5:20.
@@ -130,7 +130,7 @@
   Hint: Zobacz co zwróci wyrażenie -5:20.
 
 - Class: cmd_question
-  Output: Ups! Dostaliśmy wektor liczb od -5 do 20, a nie o to nam chodziło. Zamiast tego powinniśmy zanegować caly ciąg liczb od 5 do 20, aby dostać -5, -6, -7, ... , -18, -19, -20. Wykonaj to samo polecenie jeszcze raz, ale tym razem otocz 5:20 nawiasami żeby R, że chcemy najpierw dostać ciąg a potem go zanegować.
+  Output: Ups! Dostaliśmy wektor liczb od -5 do 20, a nie o to nam chodziło. Zamiast tego powinniśmy zanegować cały ciąg liczb od 5 do 20, aby dostać -5, -6, -7, ... , -18, -19, -20. Wykonaj to samo polecenie jeszcze raz, ale tym razem otocz 5:20 nawiasami żeby R wiedziało, że chcemy najpierw dostać ciąg a potem go zanegować.
   CorrectAnswer: -(5:20)
   AnswerTests: omnitest(correctExpr='-(5:20)')
   Hint: -(5:20) załatwi sprawę.
@@ -151,7 +151,7 @@
   Hint: filter(cran, package == "swirl") zwróci wiersze, dla kórych zmienna package ma wartość "swirl".
 
 - Class: text
-  Output: Ponownie zwróc uwagę, że filter() rozpoznaje 'package' jako kolumnę tabeli cran, bez konieczności jawnego specyfikowania cran$package.
+  Output: Ponownie zwróć uwagę, że filter() rozpoznaje 'package' jako kolumnę tabeli cran, bez konieczności jawnego specyfikowania cran$package.
 
 - Class: text
   Output: Wyrażenie package == "swirl" zwraca wektor wartości TRUE i FALSE. Następnie filter() zwraca tylko wiersze odpowiadające wartościom TRUE.
@@ -175,7 +175,7 @@
   Hint: filter(cran, country == "US" | country == "IN") zwróci wiersze, dla których zmienna country wynosi "US" lub "IN".
 
 - Class: cmd_question
-  Output: 'Teraz użyj filter(), aby wybrać wiersze dla których size większy niż 100500 I r_os wynosi "linux-gnu".
+  Output: Teraz użyj filter(), aby wybrać wiersze dla których wartość size jest większa niż 100500 i r_os wynosi "linux-gnu".
   CorrectAnswer: filter(cran, size > 100500, r_os == "linux-gnu")
   AnswerTests: any_of_exprs('filter(cran, size > 100500, r_os == "linux-gnu")', 'filter(cran, r_os == "linux-gnu", size > 100500)')
   Hint: filter(cran, size > 100500, r_os == "linux-gnu") zwróci to o co prosiliśmy.
@@ -187,7 +187,7 @@
   Hint: To było trochę trudniejsze. filter(cran, !is.na(r_version)) zwróci te wiersze cran, dla których r_version nie wynosi NA.
 
 - Class: text
-  Output: Widzieliśmy już jak wybrać podzbiór kolumn i wierszy zbioru danych za pomocą select() i filter(). Pośrednio dzięki select() poznaliśmy również sposób określania kolejności kolumn.
+  Output: Widzieliśmy już jak wybrać podzbiór kolumn i wierszy za pomocą select() i filter(). Pośrednio dzięki select() poznaliśmy również sposób określania kolejności kolumn.
 
 - Class: text
   Output: Czasami chcemy też posortować wiersze według wartości jednej z kolumn. To zadanie dla funkcji arrange().
@@ -238,7 +238,7 @@
   Output: Dość często tworzy się nowe zmienne w oparciu jedną lub więcej kolumn w zbiorze danych. Właśnie to robi funkcja mutate().
 
 - Class: text
-  Output: Kolumna size podaj rozmiar pobranej paczki w bajtachof. Załóżmy, że bardziej interesje nas rozmiar w megabajtach (MB). Jeden megabajt to 2^20 bajtów.
+  Output: Kolumna size zawiera rozmiar pobranej paczki w bajtach. Załóżmy, że bardziej interesje nas rozmiar w megabajtach (MB). Jeden megabajt to 2^20 bajtów.
 
 - Class: cmd_question
   Output: "Dodajmy nową kolumnę o nazwie size_mb, która będzie przechowywała rozmiar pobranej paczki w megabajtach. Tu jest potrzebny kod:\n\nmutate(cran3, size_mb = size / 2^20)"
@@ -262,7 +262,7 @@
   Hint: mutate(cran3, correct_size = size + 1000) stworzy nową kolumnę, która będzie przechowywała oryginalny rozmiar paczek powiększony o 1000.
 
 - Class: cmd_question
-  Output: Ostatnią z pięciu podstawowych funkcji paczki dplyr, summarize(), zamienia zbiór na jeden wiersz. Załóżmy, że interesuje nas średni rozmiar pobieranych paczek. summarize(cran, avg_bytes = mean(size)) zwróci średnią kolumny. W tym przypaku nazwaliśmy kolumnę wynikową 'avg_bytes', ale mogliśmy nadać dowolną nazwę. Spawdź jak to działa.
+  Output: Ostatnia z pięciu podstawowych funkcji paczki dplyr, summarize(), zamienia zbiór na jeden wiersz. Załóżmy, że interesuje nas średni rozmiar pobieranych paczek. summarize(cran, avg_bytes = mean(size)) zwróci średnią kolumny size. W tym przypaku nazwaliśmy kolumnę wynikową 'avg_bytes', ale mogliśmy nadać dowolną nazwę. Spawdź jak to działa.
   CorrectAnswer: summarize(cran, avg_bytes = mean(size))
   AnswerTests: omnitest('summarize(cran, avg_bytes = mean(size))')
   Hint: summarize(cran, avg_bytes = mean(size)) zwróci średnią i nazwie wynik 'avg_bytes'.
@@ -271,7 +271,7 @@
   Output: To nie było jakoś szczególnie interesujące. summarize() najbardziej się przydaje podczas pracy z danymi, które zostały pogrupowane według wartości jakiejś zmiennej.
 
 - Class: text
-  Output: Nad grupowaniem danych popracujemy trochę w ramach następnej lekcji, ale ideą funkcji summarize() jest to, że zwraca wynik dla każdej grupy danych.
+  Output: Nad grupowaniem danych popracujemy w ramach następnej lekcji, ale ideą funkcji summarize() jest to, że zwraca wynik dla każdej grupy danych.
 
 - Class: text
-  Output: Podczas tej lekcji nauczyłeś się pięciu podstawowych funkcji paczki dplyr. W ramach następnej lekcji, dowiesz się jak wykorzystać kolejne własności paczki dplyr i ułatwić sobie życie jako analityka.
+  Output: Podczas tej lekcji nauczyłeś się pięciu podstawowych funkcji paczki dplyr. W ramach następnej lekcji, dowiesz się jak wykorzystać kolejne własności paczki dplyr i ułatwić sobie życie w R.

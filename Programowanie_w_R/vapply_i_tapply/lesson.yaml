@@ -19,13 +19,13 @@
   Output: Zbiór danych zapisałem do zmiennej o nazwie flags. Jeśli minęło już trochę czasu od kiedy ukończyłeś lekcję 'lapply i sapply', możesz chcieć przypomnieć sobie podstawowe właściwości analizowanego zbioru. Możesz skorzystać z funkcji dim(), head(), str() i summary(), gdy wrócisz do konsoli (>). Zaczynamy!
 
 - Class: cmd_question
-  Output: Jak widziałeś  na ostatniej lekcji, funkcja unique() zwraca wektor unikalnych wartości przechowywanych w obiekcie przekazanym jako parametr. Tym samym, sapply(flags, unique) zwróci listę zawierającą wektor unikatowych wartości dla kazdej kolumny w zbiorze flags. Wykonaj to polecenie teraz.
+  Output: Jak widziałeś  na ostatniej lekcji, funkcja unique() zwraca wektor unikalnych wartości przechowywanych w obiekcie przekazanym jako parametr. Tym samym, sapply(flags, unique) zwróci listę zawierającą wektor unikatowych wartości dla każdej kolumny w zbiorze flags. Wykonaj to polecenie teraz.
   CorrectAnswer: sapply(flags, unique)
   AnswerTests: omnitest(correctExpr='sapply(flags, unique)')
   Hint: Wpisz sapply(flags, unique), aby dostać listę zawierającą wektor unikatowych wartości dla kazdej kolumny w zbiorze flags.
 
 - Class: text
-  Output: A co by było gdybyś zapomniał jak działa unique() i pomyslał, że zwraca *liczbę* unikatowych wartości w przekazanym obiekcie? Wtedy mógłbyś niesłusznie przypuszczać, że sapply(flags, unique) zwróci wektor liczbowy, wynik pętli zwróciłby listę z elementami o długości 1 i funkcja sapply() uprościłaby wynik do wektora.
+  Output: A co by było gdybyś zapomniał jak działa unique() i pomyślał, że zwraca *liczbę* unikatowych wartości w przekazanym obiekcie? Wtedy mógłbyś niesłusznie przypuszczać, że sapply(flags, unique) zwróci wektor liczbowy, wynik pętli zwróciłby listę z elementami o długości 1 i funkcja sapply() uprościłaby wynik do wektora.
 
 - Class: text
   Output: Pracując interaktywnie w konsoli nie byłby to problem, bo patrząc na wynik polecenia od razu dostrzegłbyś wynik. Ale... pracując nieinteraktywnie (pisząc własne funkcje), taki błąd mógłby pozostać niezauważony i powodować niewłaściwe wyniki w dalszej analizie. Warto zatem zachować dodatkową ostrożność, a pomoże nam w tym funkcja vapply().
@@ -117,4 +117,4 @@
   Hint: Sprawdź wynik poprzedniego zapytania.
 
 - Class: text  
-  Output: W ramach tej lekcji dowiedziałeś się jak korzystać z vapply() jako bezpieczniejszej wersji sapply(). Poznałeś także funkcję tapply(), która dzieli dane zgodnie z wartością wybranej zmiennej, a następnie wykonuje zadanie osobno dla kazdej grupy.
+  Output: W ramach tej lekcji dowiedziałeś się jak korzystać z vapply() jako bezpieczniejszej wersji sapply(). Poznałeś także funkcję tapply(), która dzieli dane zgodnie z wartością wybranej zmiennej, a następnie wykonuje zadanie osobno dla każdej grupy.

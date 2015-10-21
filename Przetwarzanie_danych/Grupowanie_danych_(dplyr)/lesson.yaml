@@ -7,13 +7,13 @@
   Version: 1.0.0
 
 - Class: text
-  Output: 'Na ostatniej lekcji poznałeś pięc podstawowych funkcji z paczki dplyr: select(), filter(), arrange(), mutate() i summarize(). Ostatnia z funkcji, summarize(), najlepiej się sprawdza przy pracy z pogrupowanymi danymi.'
+  Output: 'Na ostatniej lekcji poznałeś pięć podstawowych funkcji z paczki dplyr: select(), filter(), arrange(), mutate() i summarize(). Ostatnia z funkcji, summarize(), najlepiej się sprawdza przy pracy z pogrupowanymi danymi.'
 
 - Class: text
-  Output: Głownym celem grupowania danych jest podzielenie zbioru danych na podzbiory wierszy zgodnie z wartościami wskazanej kolumny. Taki efekt można uzyskać z pomocą funkcji group_by().
+  Output: Głównym celem grupowania danych jest podzielenie zbioru danych na podzbiory wierszy zgodnie z wartościami wskazanej kolumny. Taki efekt można uzyskać z pomocą funkcji group_by().
 
 - Class: text
-  Output: Będziemy kontynuować pracę z logiem serwera CRAN hostowanego przez RStudio z dnia 8 lipca 2014, który zawiera informacje o trochę ponad 225,000 pobraniach paczek R (http://cran-logs.rstudio.com/).
+  Output: Będziemy kontynuować pracę z logiem serwera CRAN hostowanego przez RStudio z dnia 8 lipca 2014. Log ten zawiera informacje o ponad 225,000 pobraniach paczek R (http://cran-logs.rstudio.com/).
 
 - Class: cmd_question
   Output: Tak jak w poprzedniej lekcji, paczka dplyr została załadowana na początku lekcji. Normalnie trzeba to zrobić samemu. Aby nabrać nawyku, wpisz library(dplyr) i załaduj paczkę jeszcze raz.
@@ -58,7 +58,7 @@
   Hint: Wpisz by_package, aby zobaczyć zawartość tej zmiennej.
 
 - Class: text
-  Output: "Na górze widzimy 'Groups: package', co mówi nam, że ten obiekt tbl został pogrupowany weług zmiennej package. Wszystko inne wygląda tak jak do tej pory, ale teraz kazda operacja będzie wykonywana osobno dla każdej nazwy paczki."
+  Output: "Na górze widzimy 'Groups: package', co mówi nam, że ten obiekt tbl został pogrupowany weług zmiennej package. Wszystko inne wygląda tak jak do tej pory, ale teraz każda operacja będzie wykonywana osobno dla każdej nazwy paczki."
 
 - Class: text
   Output: Być może pamiętasz, że jak w poprzedniej lekcji obliczyliśmy mean(size) na oryginalnym obiekcie tbl_df za pomocą funkcji summarize(), to dotaliśmy jedną liczbę -- średnią wszystkich wartości w kolumnie size. Może i interesuje nas ta wartość, ale znacznie ciekawiej byłoby poznać średni rozmiar każdej paczki według nazwy.
@@ -70,7 +70,7 @@
   Hint: 'Wywołaj summarize() z dwoma argumentami: by_package i mean(size).'
 
 - Class: text
-  Output: Zamiast jednej liczby summarize() zwróciło średnią dla każdej paczki w naszym zbiorze danych.
+  Output: Zamiast jednej liczby, summarize() zwróciło średnią dla każdej paczki w naszym zbiorze danych.
 
 - Class: script
   Output: "Pójdźmy krok dalej. Właśnie otworzyłem skrypt R, który zawiera częściowe wywołanie summarize(). Wykonaj instrukcje zawarte w komentarzach.\n\nGdy będziesz gotowy iść dalej, zapisz skrypt i wpisz submit(), lub wpisz reset() aby przywrócić skrypt do oryginalnego stanu."
@@ -160,7 +160,7 @@
   Hint: Wpisz View(top_unique) i przejrzyj wynik.
 
 - Class: cmd_question
-  Output: Teraz posortuj top_unique według kolumny 'unique' cmalejąco. Wynik przypisz do top_unique_sorted.
+  Output: Teraz posortuj top_unique według kolumny 'unique' malejąco. Wynik przypisz do top_unique_sorted.
   CorrectAnswer: top_unique_sorted <- arrange(top_unique, desc(unique))
   AnswerTests: omnitest('top_unique_sorted <- arrange(top_unique, desc(unique))')
   Hint: arrange(top_unique, desc(unique)) posortuje wiersze top_unique według zmiennej 'unique', malejąco. Wynik przypisz do top_unique_sorted.

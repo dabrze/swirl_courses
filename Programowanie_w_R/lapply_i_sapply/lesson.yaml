@@ -175,7 +175,7 @@
   Output: Każda kolumna shape_mat przechowuje minimum (wiersz 1) i maksimum (wiersz 2) liczby wystąpień kolejnych kształtów w różnych flagach.
 
 - Class: cmd_question
-  Output: Uzyj funkcji class(), aby potwierdzić, że shape_mat jest macierzą.
+  Output: Użyj funkcji class(), aby potwierdzić, że shape_mat jest macierzą.
   CorrectAnswer: class(shape_mat)
   AnswerTests: omnitest(correctExpr='class(shape_mat)')
   Hint: class(shape_mat) zwróci klasę/typ zmiennej shape_mat.
@@ -208,7 +208,7 @@
   Hint: Wykonaj funkcję length() na każdym elemencie unique_vals za pomocą sapply().
 
 - Class: text
-  Output: Fakt, że elementy listy unique_vals są różnej długości sprawia może sprawić sapply() kłopot.
+  Output: Fakt, że elementy listy unique_vals są różnej długości może sprawić sapply() kłopot.
 
 - Class: cmd_question
   Output: Za pomocą sapply() wywołaj funkcję unique() na każdej kolumnie zbioru flags, aby zobaczyć, że dostaniesz ten sam, nieuproszczony, wynik co przy wywołaniu lapply().

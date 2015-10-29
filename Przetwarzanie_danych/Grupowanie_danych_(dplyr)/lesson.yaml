@@ -121,7 +121,7 @@
   Hint: Użyj View(top_counts), aby obejrzeć wszystkie 61 wierszy. To polecenie zadziała w RStudio, ale niekoniecznie w innych środowiskach programistycznych.
 
 - Class: cmd_question
-  Output: Posortuj wiersze w top_counts w oparciu o kolumnę 'count' i przypisz wynik do nowej zmiennej o nazwie top_counts_sorted. Chcemy zobaczyć paczki z największą liczbę pobrań na górze, co oznacza że musimy posortować dane malejąco. W razie problemów wpisz ?arrange i/lub ?desc.
+  Output: Posortuj wiersze w top_counts w oparciu o kolumnę 'count' i przypisz wynik do nowej zmiennej o nazwie top_counts_sorted. Chcemy zobaczyć paczki z największą liczbą pobrań na górze, co oznacza że musimy posortować dane malejąco. W razie problemów wpisz ?arrange i/lub ?desc.
   CorrectAnswer: top_counts_sorted <- arrange(top_counts, desc(count))
   AnswerTests: omnitest('top_counts_sorted <- arrange(top_counts, desc(count))')
   Hint: arrange(top_counts, desc(count)) posortuje wiersze top_counts zgodnie z wartościami w kolumnie 'count', malejąco. Nie zapomnij przypisać wyniku do zmiennej top_counts_sorted.

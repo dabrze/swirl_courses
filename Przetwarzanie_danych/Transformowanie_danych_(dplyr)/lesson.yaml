@@ -163,7 +163,7 @@
   Hint: filter(cran, r_version == "3.1.1", country == "US") zwróci wiersze odpowiadające pobraniom paczek przez użytkowników z USA korzystajacych z R w wersji 3.1.1. Nie zapomnij o podwójnych ciapkach wokół 3.1.1 i US!
 
 - Class: cmd_question
-  Output: Warunki przekazane jako argumenty filter() mogą korzystać z dowolnych operatorów logicznych. Zmień poprzednie wywołanie filter(), aby teraz pozostawiło tylko uzytkowników z "IN" (Indii) korzystających z R w wersji mniejszej lub równej "3.0.2". Strzałka w górę może się przydać.
+  Output: Warunki przekazane jako argumenty filter() mogą korzystać z dowolnych operatorów logicznych. Zmień poprzednie wywołanie filter(), aby teraz pozostawiło tylko użytkowników z "IN" (Indii) korzystających z R w wersji mniejszej lub równej "3.0.2". Strzałka w górę może się przydać.
   CorrectAnswer: filter(cran, r_version <= "3.0.2", country == "IN")
   AnswerTests: any_of_exprs('filter(cran, r_version <= "3.0.2", country == "IN")', 'filter(cran, country == "IN", r_version <= "3.0.2")')
   Hint: filter(cran, r_version <= "3.0.2", country == "IN") zwróci wiersze, dla których r_version jest mniejsze lub równe "3.0.2" i country jest równe "IN".
@@ -235,7 +235,7 @@
   Hint: Wpisz cran3, aby zobaczyć co zawiera.
 
 - Class: text
-  Output: Dość często tworzy się nowe zmienne w oparciu jedną lub więcej kolumn w zbiorze danych. Właśnie to robi funkcja mutate().
+  Output: Dość często tworzy się nowe zmienne w oparciu o jedną lub więcej kolumn w zbiorze danych. Właśnie to robi funkcja mutate().
 
 - Class: text
   Output: Kolumna size zawiera rozmiar pobranej paczki w bajtach. Załóżmy, że bardziej interesje nas rozmiar w megabajtach (MB). Jeden megabajt to 2^20 bajtów.
@@ -262,7 +262,7 @@
   Hint: mutate(cran3, correct_size = size + 1000) stworzy nową kolumnę, która będzie przechowywała oryginalny rozmiar paczek powiększony o 1000.
 
 - Class: cmd_question
-  Output: Ostatnia z pięciu podstawowych funkcji paczki dplyr, summarize(), zamienia zbiór na jeden wiersz. Załóżmy, że interesuje nas średni rozmiar pobieranych paczek. summarize(cran, avg_bytes = mean(size)) zwróci średnią kolumny size. W tym przypaku nazwaliśmy kolumnę wynikową 'avg_bytes', ale mogliśmy nadać dowolną nazwę. Spawdź jak to działa.
+  Output: Ostatnia z pięciu podstawowych funkcji paczki dplyr, summarize(), zamienia zbiór na jeden wiersz. Załóżmy, że interesuje nas średni rozmiar pobieranych paczek. summarize(cran, avg_bytes = mean(size)) zwróci średnią kolumny size. W tym przypadku nazwaliśmy kolumnę wynikową 'avg_bytes', ale mogliśmy nadać dowolną nazwę. Spawdź jak to działa.
   CorrectAnswer: summarize(cran, avg_bytes = mean(size))
   AnswerTests: omnitest('summarize(cran, avg_bytes = mean(size))')
   Hint: summarize(cran, avg_bytes = mean(size)) zwróci średnią i nazwie wynik 'avg_bytes'.

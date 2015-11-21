@@ -70,7 +70,7 @@
   Output: Tak jak się spodziewaliśmy, dostaliśmy listę 30 elementów, gdzie każdy element odpowiada kolejnej kolumnie zbioru flags. Wynik byłby znacznie bardziej zwięzły i przyjazny gdybyśmy otrzymali wektor zamiast listy.
 
 - Class: cmd_question
-  Output: Jak pewnie kojarzysz z poprzednich lekcji, listy są najbardziej przydatne w sytuacjach, gdy chcemy przechować razem dane różnych typów. W tym przypadku każdy element listy jest wektorem tekstowym o długości jeden i cls_list może zostać uproszczony do wektora tesktowego. Aby zrobić to ręcznie, wpisz as.character(cls_list).
+  Output: Jak pewnie kojarzysz z poprzednich lekcji, listy są najbardziej przydatne w sytuacjach, gdy chcemy przechować razem dane różnych typów. W tym przypadku każdy element listy jest wektorem tekstowym o długości jeden i cls_list może zostać uproszczony do wektora tekstowego. Aby zrobić to ręcznie, wpisz as.character(cls_list).
   CorrectAnswer: as.character(cls_list)
   AnswerTests: omnitest(correctExpr='as.character(cls_list)')
   Hint: Wpisz as.character(cls_list), aby rzutować cls_list na wektor tekstowy.
@@ -232,4 +232,4 @@
   Output: Jedyna różnica pomiędzy tym przykładem a poprzednimi to to, że teraz nie korzystaliśmy z żadnej wbudowanej funkcji tylko napisaliśmy własną. Ponieważ napisaliśmy funkcję anonimową, zniknie ona z pamięci jak tylko lapply() wykona swoją pracę.
 
 - Class: text
-  Output: W tej lekcji nauczyłeś się dwóch bardzo przydatnych funkcji, lapply() i sapply(), które w pętli wykonują wskazaną funkcję na elementach listy. W nastepnej lekcji poznamy bliskich krewnych lapply() i sapply().
+  Output: W tej lekcji nauczyłeś się dwóch bardzo przydatnych funkcji, lapply() i sapply(), które w pętli wykonują wskazaną funkcję na elementach listy. W następnej lekcji poznamy bliskich krewnych lapply() i sapply().

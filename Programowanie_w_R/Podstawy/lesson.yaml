@@ -100,15 +100,15 @@
     oznacza 'x do potęgi 2'). Aby uzyskać pierwiastek, użyj funckji sqrt(). Aby dostać wartość bezwzględną użyj funkcji abs().
 
 - Class: cmd_question
-  Output: Oblicz pierwiastek kwadratowy z z - 1 i przypisz go do nowej zmiennej o nazwie my_sqrt.
+  Output: Oblicz pierwiastek kwadratowy z (z - 1) i przypisz go do nowej zmiennej o nazwie my_sqrt.
   CorrectAnswer: my_sqrt <- sqrt(z - 1)
   AnswerTests: omnitest(correctExpr='my_sqrt <- sqrt(z - 1)')
   Hint: Przypisz wynik sqrt(z - 1) do zmiennej o nazwie my_sqrt.
 
 - Class: mult_question
   Output: Zanim zobaczysz zawartość zmiennej my_sqrt, jak myślisz co zawiera? 
-  CorrectAnswer: wektor od długości 3
-  AnswerChoices: wektor od długości 3; pojedynczą liczbę (wektor o długości 1);
+  CorrectAnswer: wektor o długości 3
+  AnswerChoices: wektor o długości 3; pojedynczą liczbę (wektor o długości 1);
     wektor o długości 0 (pusty wektor)
   AnswerTests: omnitest(correctVal='wektor od długości 3')
   Hint: 'Pomyśl jak R poradziło sobie z innymi zwektoryzowanymi operacjami: element po elemencie.'
@@ -144,7 +144,7 @@
   Hint: Wpisz my_div i wciśnij Enter, żeby zobaczyć jego zawartość.
 
 - Class: text
-  Output: Mając dwa wektory o tej samej długości R po prostu wykonuje określoną operację arytmetyczną (`+`, `-`, `*`, etc.) element po elemencie. Jeśli wektory są różnej długości, R przetwarza krótszy wektor póki osiągnię on długość dłuższego wektora.   
+  Output: Mając dwa wektory o tej samej długości R po prostu wykonuje określoną operację arytmetyczną (`+`, `-`, `*`, etc.) element po elemencie. Jeśli wektory są różnej długości, R przetwarza krótszy wektor póki osiągnie on długość dłuższego wektora.
 
 - Class: text
   Output: Kiedy w naszym poprzednim przykładzie wykonaliśmy z * 2 + 100, `z` był wektorem o długości 3, ale formalnie rzecz biorąc dwa pozostałe elementy, 2 i 100, są wektorami o długości 1.

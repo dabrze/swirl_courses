@@ -97,7 +97,7 @@
 
 - Class: text
   Output: Innymi powszechnymi arytmetycznymi operatorami są `+`, `-`, `/` i `^` (gdzie x^2
-    oznacza 'x do potęgi 2'). Aby uzyskać pierwiastek, użyj funckji sqrt(). Aby dostać wartość bezwzględną użyj funkcji abs().
+    oznacza 'x do potęgi 2'). Aby uzyskać pierwiastek, użyj funkcji sqrt(). Aby dostać wartość bezwzględną użyj funkcji abs().
 
 - Class: cmd_question
   Output: Oblicz pierwiastek kwadratowy z (z - 1) i przypisz go do nowej zmiennej o nazwie my_sqrt.
@@ -110,7 +110,7 @@
   CorrectAnswer: wektor o długości 3
   AnswerChoices: wektor o długości 3; pojedynczą liczbę (wektor o długości 1);
     wektor o długości 0 (pusty wektor)
-  AnswerTests: omnitest(correctVal='wektor od długości 3')
+  AnswerTests: omnitest(correctVal='wektor o długości 3')
   Hint: 'Pomyśl jak R poradziło sobie z innymi zwektoryzowanymi operacjami: element po elemencie.'
 
 - Class: cmd_question

@@ -59,7 +59,7 @@
   Hint: Wpisz y, aby zobaczyć jego zawartość.
 
 - Class: text
-  Output: Skoro już wyizolowaliśmy wszystkie elementy wektora x, które nie są NA, możemy spokojnie przejśc do filtrowania wektora y.
+  Output: Skoro już wyizolowaliśmy wszystkie elementy wektora x, które nie są NA, możemy spokojnie przejść do filtrowania wektora y.
 
 - Class: mult_question
   Output: Jak wiesz z poprzednich lekcji, wyrażenie y > 0 zwróci wektor o tej samej długości co y, z wartościami TRUE wszędzie tam gdzie element jest większy od 0 i FALSE wszędzie tam gdzie element jest mniejszy równy 0. Jak myślisz, co zwróci y[y > 0]?

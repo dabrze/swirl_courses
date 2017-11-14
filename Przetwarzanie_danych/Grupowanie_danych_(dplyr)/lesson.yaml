@@ -61,7 +61,7 @@
   Output: "Na górze widzimy 'Groups: package', co mówi nam, że ten obiekt tbl został pogrupowany weług zmiennej package. Wszystko inne wygląda tak jak do tej pory, ale teraz każda operacja będzie wykonywana osobno dla każdej nazwy paczki."
 
 - Class: text
-  Output: Być może pamiętasz, że jak w poprzedniej lekcji obliczyliśmy mean(size) na oryginalnym obiekcie tbl_df za pomocą funkcji summarize(), to dotaliśmy jedną liczbę -- średnią wszystkich wartości w kolumnie size. Może i interesuje nas ta wartość, ale znacznie ciekawiej byłoby poznać średni rozmiar każdej paczki według nazwy.
+  Output: Być może pamiętasz, że jak w poprzedniej lekcji obliczyliśmy mean(size) na oryginalnym obiekcie tbl_df za pomocą funkcji summarize(), to dostaliśmy jedną liczbę -- średnią wszystkich wartości w kolumnie size. Może i interesuje nas ta wartość, ale znacznie ciekawiej byłoby poznać średni rozmiar każdej paczki według nazwy.
 
 - Class: cmd_question
   Output: Właśnie to dostaniemy jeśli użyjemy summarize(), aby wykonać mean(size) na danych pogrupowanych w by_package. Spróbuj.

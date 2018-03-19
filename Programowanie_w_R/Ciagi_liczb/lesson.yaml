@@ -50,7 +50,7 @@
   Hint: "Dokumentacja dla operatorów wymaga apostrofów. Spróbuj wpisać ?`:`."
 
 - Class: text
-  Output: Czasami będziemy potrzebować większej kontroli na ciągiem liczb niż ta oferowana przez operator `:`. W tym celu przyda nam się funkcja seq().
+  Output: Czasami będziemy potrzebować większej kontroli nad ciągiem liczb niż ta oferowana przez operator `:`. W tym celu przyda nam się funkcja seq().
 
 - Class: cmd_question
   Output: W podstawowym zastosowaniu funkcja seq() robi to samo co operator `:`.

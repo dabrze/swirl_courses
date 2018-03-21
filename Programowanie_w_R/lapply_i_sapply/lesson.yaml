@@ -16,7 +16,7 @@
   Output: Każda z funkcji z rodziny *apply dzieli dane na mniejsze porcje (SPLIT), wykonuje wskazaną funkcję na każdym fragmencie (APPLY), a na koniec łączy wyniki (COMBINE). Więcej informacji na temat tej strategii można znaleźć w artykule Hadley Wickhama (<- kozak w świecie R!) 'The Split-Apply-Combine Strategy for Data Analysis'.
 
 - Class: text
-  Output: "Przez całą lekcję będziemy korzystać ze zbioru Flags z UCI Machine Learning Repository. Zbiór ten opisuje kraje i ich flagach. Więcej informacji o tym zbiorze można znaleźć pod adresem: http://archive.ics.uci.edu/ml/datasets/Flags"
+  Output: "Przez całą lekcję będziemy korzystać ze zbioru Flags z UCI Machine Learning Repository. Zbiór ten opisuje kraje i ich flagi. Więcej informacji o tym zbiorze można znaleźć pod adresem: http://archive.ics.uci.edu/ml/datasets/Flags"
 
 - Class: text
   Output: Koniec gadania! Zacznijmy wreszcie klepać!

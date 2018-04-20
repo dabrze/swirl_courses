@@ -94,10 +94,10 @@
   Output: Ponadto warto zauważyć, że dostajemy kolumny w tej kolejności w jakiej je wyspecyfikowaliśmy, mimo tego że ip_id jest ostatnią kolumną w zbiorze.
 
 - Class: cmd_question
-  Output: Przypomnij sobie, że w R operator `:` pozwala w zwięzły sposób tworzyć ciągi liczb. Dla przykładu, wpisz 5:20.
-  CorrectAnswer: 5:20
+  Output: "Przypomnij sobie, że w R operator ':' pozwala w zwięzły sposób tworzyć ciągi liczb. Dla przykładu, wpisz 5:20."
+  CorrectAnswer: '5:20'
   AnswerTests: omnitest(correctExpr='5:20')
-  Hint: Wpisz 5:20, aby zobacyzć jak `:` pozwala tworzyć ciągi liczb.
+  Hint: "Wpisz 5:20, aby zobacyzć jak ':' pozwala tworzyć ciągi liczb."
 
 - Class: cmd_question
   Output: Normalnie ta notacja zarezerwowana jest dla liczb, ale select() pozwala  w ten sposób wyspecyfikować listę kolumn i zaoszczędzić sporo klepania. Wpisz select(cran, r_arch:country), aby wybrać wszystkie kolumny zaczynając od r_arch i kończąc na country.
@@ -124,10 +124,10 @@
   Hint: Wpisz select(cran, -time), aby pozbyć się kolumny time.
 
 - Class: cmd_question
-  Output: Znak minus przed time mówi select(), że NIE chcemy kolumny time. Spróbujmy teraz połączyć strategie i ominąć kolumny od X do size (X:size). Aby zobaczyć jak to mogłoby zadziałać, spójrzmy na przykład liczbowy -5:20.
-  CorrectAnswer: -5:20
+  Output: "Znak minus przed time mówi select(), że NIE chcemy kolumny time. Spróbujmy teraz połączyć strategie i ominąć kolumny od X do size (X:size). Aby zobaczyć jak to mogłoby zadziałać, spójrzmy na przykład liczbowy -5:20."
+  CorrectAnswer: '-5:20'
   AnswerTests: omnitest(correctExpr='-5:20')
-  Hint: Zobacz co zwróci wyrażenie -5:20.
+  Hint: "Zobacz co zwróci wyrażenie -5:20."
 
 - Class: cmd_question
   Output: Ups! Dostaliśmy wektor liczb od -5 do 20, a nie o to nam chodziło. Zamiast tego powinniśmy zanegować cały ciąg liczb od 5 do 20, aby dostać -5, -6, -7, ... , -18, -19, -20. Wykonaj to samo polecenie jeszcze raz, ale tym razem otocz 5:20 nawiasami żeby R wiedziało, że chcemy najpierw dostać ciąg a potem go zanegować.

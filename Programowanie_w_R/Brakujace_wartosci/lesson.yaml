@@ -37,7 +37,7 @@
   Output: Teraz stwórzmy wektor zawierający 1000 wartości NA za pomocą z <- rep(NA, 1000).
   CorrectAnswer: z <- rep(NA, 1000)
   AnswerTests: omnitest(correctExpr='z <- rep(NA, 1000)')
-  Hint: Wpisz z <- rep(NA, 1000, aby wygenerować 1000 wartości NA.
+  Hint: Wpisz z <- rep(NA, 1000), aby wygenerować 1000 wartości NA.
 
 - Class: cmd_question
   Output: Na koniec wybierzmy losowo 100 elementów z tych 2000 wartości (połączenia y i z) w taki sposób, abyśmy nie wiedzieli gdzie i ile wartości NA trafi do wektora wynikowego --- my_data <- sample(c(y, z), 100).

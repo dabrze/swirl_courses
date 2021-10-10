@@ -125,7 +125,7 @@
     "imię". Użyj podwójnych ciapek. Zapisz wynik do zmiennej my_char.'
   CorrectAnswer: my_char <- c("Mam", "na", "imię")
   AnswerTests: omnitest(correctExpr='my_char <- c("Mam", "na", "imię")')
-  Hint: Wpisz my_char <- c("My", "na", "imię") aby stowrzyć nową zmienną my_char, która przechowuje wektor tekstowy o długości 3.
+  Hint: Wpisz my_char <- c("Mam", "na", "imię") aby stworzyć nową zmienną my_char, która przechowuje wektor tekstowy o długości 3.
 
 - Class: cmd_question
   Output: Wypisz zawartość my_char na konsolę.

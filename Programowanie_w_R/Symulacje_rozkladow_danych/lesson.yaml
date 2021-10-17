@@ -64,7 +64,7 @@
   Output: 'Niech wartość zero reprezentuje orła a wartość 1 reszkę. Użyj funkcji sample(), aby wylosować próbkę o rozmiarze 100 z wektora c(0,1). Ponieważ moneta jest nieuczciwa, musimy podać konkretne prawdopodobieństwa poszczególnych wyników korzystając z czwartego argumentu: prob = c(0.3, 0.7). Przypisz wynik do nowej zmiennej o nazwie flips.'
   CorrectAnswer: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
   AnswerTests: match_call('flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))')
-  Hint: 'Następujące polecenie zasynuluje 100 rzutów nieuczciwą monetą i przypisze wynik do zmiennej: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))'
+  Hint: 'Następujące polecenie zasymuluje 100 rzutów nieuczciwą monetą i przypisze wynik do zmiennej: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))'
 
 - Class: cmd_question
   Output: Zobacz zawartość zmiennej flips.
@@ -106,7 +106,7 @@
   Hint: Wpisz flips2, aby obejrzeć zawartość tej zmiennej.
 
 - Class: cmd_question
-  Output: Teraz uzyj funkcji sum(), aby policzyć ile wypadlo reszek. Wynik powinien oscylować wokół 70!
+  Output: Teraz użyj funkcji sum(), aby policzyć ile wypadło reszek. Wynik powinien oscylować wokół 70!
   CorrectAnswer: sum(flips2)
   AnswerTests: omnitest('sum(flips2)')
   Hint: Wpisz sum(flips2), aby policzyć liczbę jedynek.

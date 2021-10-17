@@ -85,7 +85,7 @@
   Output: Jeśli wylicza się średnią arytmetyczną zbioru zer i jedynek dostaje się proporcję jedynek w zbiorze. Użyj polecenia tapply(flags$animate, flags$landmass, mean), aby wywołać funkcję mean na zmiennej 'animate' osobno dla każdej grupy zdefiniowanej wartościami w kolumnie landmass. Jeśli polecenie się powiedzie, dostaniemy proporcję flag zawierających żywą istotę W RAMACH każdej grupy geograficznej (landmass).
   CorrectAnswer: tapply(flags$animate, flags$landmass, mean)
   AnswerTests: omnitest(correctExpr="tapply(flags$animate, flags$landmass, mean)")
-  Hint: tapply(flags$animate, flags$landmass, mean) powie nam jaka jest proporcja flag zawierających żywą istotę w ramach każdego z sześiu bloków terytorialnych.
+  Hint: tapply(flags$animate, flags$landmass, mean) powie nam jaka jest proporcja flag zawierających żywą istotę w ramach każdego z sześciu bloków terytorialnych.
 
 - Class: text
   Output: Pierwsza grupa terytorialna (landmass = 1) odpowiada Ameryce Północnej i zawiera największą proporcję flag z rysunkiem żyjącej istoty(0.4194).

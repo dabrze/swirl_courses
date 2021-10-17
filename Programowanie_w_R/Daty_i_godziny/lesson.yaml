@@ -19,7 +19,7 @@
   Hint: Wpisz d1 <- Sys.Date(), aby uzyskać bieżące dane i zapisać je w zmiennej d1.
 
 - Class: cmd_question
-  Output: Użyj funkcji class(), aby powierdzić, że d1 jest obiektem typu Date.
+  Output: Użyj funkcji class(), aby potwierdzić, że d1 jest obiektem typu Date.
   CorrectAnswer: class(d1)
   AnswerTests: omnitest(correctExpr='class(d1)')
   Hint: class(d1) zwróci klasę/typ zmiennej d1.
@@ -94,7 +94,7 @@
   Output: A teraz wyświetl jej zawartość.  
   CorrectAnswer: t2
   AnswerTests: omnitest(correctExpr='t2')
-  Hint: Wipsz t2, aby wyświetlić jej zawartość. 
+  Hint: Wpisz t2, aby wyświetlić jej zawartość. 
 
 - Class: cmd_question
   Output: t2 zwraca ten sam format godziny co t1. Teraz użyj unclass() na t2, aby zobaczyć jak różni się wewnętrznie. 

@@ -13,7 +13,7 @@
   Output: Podarujemy sobie operatory `==`, `!=`, `<`, `<=`, `>`, `>=` i skupimy się na warunkach złożonych.
 
 - Class: cmd_question
-  Output: Zobaczmy jeszcze raz jak działa operator AND. Jak wspominaliśmy w jednej z poprzednich lekcji, operator AND w R ma dwie wersje, `&` i `&&`. Za pomocą `&` można wykonać operację AND na całym wektorze. Wersja `&&` ewaluuje tylko pierwszy element wektora. Wypróbujmy obie wersje w praktyce. Wpisz wyrażenie TRUE & c(TRUE, FALSE, FALSE)."
+  Output: Zobaczmy jeszcze raz jak działa operator AND. Jak wspominaliśmy w jednej z poprzednich lekcji, operator AND w R ma dwie wersje, `&` i `&&`. Za pomocą `&` można wykonać operację AND na całym wektorze. Wersja `&&` działa tylko na skalarach (w starszych wersjach języka < 4.3.0 ewaluowany był tylko pierwszy element wektora). Wypróbujmy obie wersje w praktyce. Wpisz wyrażenie TRUE & c(TRUE, FALSE, FALSE)."
   CorrectAnswer: "TRUE & c(TRUE, FALSE, FALSE)"
   AnswerTests: omnitest(correctExpr='TRUE & c(TRUE, FALSE, FALSE)')
   Hint: "Wpisz: TRUE & c(TRUE, FALSE, FALSE)"
@@ -22,10 +22,10 @@
   Output: To co tu się wydarzyło to reiterowanie lewej strony operatora (`TRUE`) stosownie do długości prawej strony operatora. To to samo co wyrażenie c(TRUE, TRUE, TRUE) & c(TRUE, FALSE, FALSE). 
 
 - Class: cmd_question
-  Output: "Spróbujmy  zastosować operator `&&`. Wpisz teraz wyrażenie TRUE && c(TRUE, FALSE, FALSE)."
-  CorrectAnswer: "TRUE && c(TRUE, FALSE, FALSE)"
-  AnswerTests: omnitest(correctExpr='TRUE && c(TRUE, FALSE, FALSE)')
-  Hint: "Jak zaraz zobaczysz wersja && działa inaczej. Wpisz: TRUE && c(TRUE, FALSE, FALSE)"
+  Output: "Spróbujmy  zastosować operator `&&`. Wpisz teraz wyrażenie TRUE && FALSE."
+  CorrectAnswer: "TRUE && FALSE"
+  AnswerTests: omnitest(correctExpr='TRUE && FALSE')
+  Hint: "Jak zaraz zobaczysz wersja && działa inaczej. Wpisz: TRUE && FALSE"
 
 - Class: text
   Output: "W tym wypadku lewa strona operatora dopasowywana jest tylko do pierwszego elementu wektora. Pozostałe elementy nie są w ogóle brane pod uwagę."
@@ -37,10 +37,10 @@
   Hint: "Wypróbuj zwektoryzowaną wersję operatora OR: TRUE | c(TRUE, FALSE, FALSE)"
   
 - Class: cmd_question
-  Output: "Teraz wypróbuj niezwektoryzowaną wersję tego operatora: TRUE || c(TRUE, FALSE, FALSE)."
-  CorrectAnswer: "TRUE || c(TRUE, FALSE, FALSE)"
-  AnswerTests: omnitest(correctExpr='TRUE || c(TRUE, FALSE, FALSE)')
-  Hint: "Jak zaraz zobaczysz operator || nie jest zwektoryzowany. Wpisz: TRUE || c(TRUE, FALSE, FALSE)"
+  Output: "Teraz wypróbuj niezwektoryzowaną wersję tego operatora: TRUE || FALSE."
+  CorrectAnswer: "TRUE || FALSE"
+  AnswerTests: omnitest(correctExpr='TRUE || FALSE')
+  Hint: "Jak zaraz zobaczysz operator || nie jest zwektoryzowany. Wpisz: TRUE || FALSE"
   
 - Class : text
   Output: "To tyle jeśli chodzi o powtórkę. Teraz omówimy kilka wbudowanych funkcji R, które również mogą przydać się do warunkowania."
